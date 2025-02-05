@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazli Singh - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #6a1b9a;  /* Changed to a purple shade */
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #8e24aa;  /* Slightly lighter purple for nav */
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #e1bee7;  /* Light purple for hover */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .projects, .creative-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card, .creative-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .project-card:hover, .creative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .blog-posts {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-post {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+        }
+
+        footer {
+            background: #6a1b9a;  /* Matching header color */
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nazli Singh</h1>
+            <p>Software Developer & Technical Writer</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#creative">Creative Content</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="/api/placeholder/300/300" alt="Nazli Singh" class="profile-img">
+                <div>
+                    <p>Welcome to my personal website! I'm a passionate software developer with expertise in web development and a love for creating innovative solutions.</p>
+                    <p>I specialize in full-stack development and enjoy writing about technical topics to share my knowledge with the community.</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, and writing technical articles.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>A brief description of your first project. Highlight the key features and technologies used.</p>
+                    <a href="#">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Description of your second project. What problems did it solve? What did you learn?</p>
+                    <a href="#">View on GitHub</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <p>Details about your third project. Share your achievements and technical challenges.</p>
+                    <a href="#">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="creative">
+            <h2>Creative Content</h2>
+            <div class="creative-content">
+                <div class="creative-card">
+                    <h3>Digital Art</h3>
+                    <p>Showcase of your digital artwork, illustrations, or designs. Share your creative process and inspiration.</p>
+                    <a href="#">View Gallery</a>
+                </div>
+                <div class="creative-card">
+                    <h3>Photography</h3>
+                    <p>Collection of your best photographs, capturing moments and telling stories through your lens.</p>
+                    <a href="#">View Collection</a>
+                </div>
+                <div class="creative-card">
+                    <h3>Writing</h3>
+                    <p>Creative writing pieces, poetry, or short stories that showcase your literary talents.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog Posts</h2>
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <h3>Blog Post Title 1</h3>
+                    <p>Preview of your first blog post. Share your insights and experiences...</p>
+                    <a href="#">Read more</a>
+                </article>
+                <article class="blog-post">
+                    <h3>Blog Post Title 2</h3>
+                    <p>Preview of your second blog post. Technical tutorials, tips, or industry analysis...</p>
+                    <a href="#">Read more</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me for collaborations or questions.</p>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+                <a href="#">Email</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nazli Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
