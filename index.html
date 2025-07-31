@@ -212,9 +212,6 @@
 
 </head>
 <body>
-    <!-- Rest of the HTML content remains exactly the same as in the previous version -->
-    <!-- I'll include it here for completeness -->
-    <header>
     <header style="
     background: var(--secondary-color) url('/img/header-bg.jpg') center/cover no-repeat;
     color: white;
@@ -353,7 +350,10 @@
         </section>
 
         <section id="contact">
-        </main>
++         <!-- you can put a contact form or email here, or leave empty -->
++       </section>
++     </main>
+
         <footer>
             <div class="container footer-content">
                 <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
@@ -363,6 +363,7 @@
                 </div>
             </div>
         </footer>
+        
         <script>
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
         </script>
