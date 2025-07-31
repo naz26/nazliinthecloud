@@ -110,9 +110,9 @@ Contributions, feedback, and feature requests are welcome!
 
 
 3. Commit your changes:
-   ```bash
-git commit -m "Add my feature"
-````
+    ```bash
+      git commit -m "Add my feature"
+      ```
 
 4. Push and open a Pull Request
 
