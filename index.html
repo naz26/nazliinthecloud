@@ -19,20 +19,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      font-size: 18px; /* improved base font size */
-      --bg: #b7b2d1; /* slightly deeper lavender for more depth */
+      font-size: 18px;
+      --bg: #e3e0f7; /* soft cozy lavender */
       --fg: #2d1e4f;
-      --muted: #7c7bbd; /* muted lavender for text */
-      --primary: #a23bb9; /* rich magenta for headings */
-      --secondary: #b6b2cc; /* muted lavender, not white */
-      --highlight: #f7c6e0; /* soft pink */
-      --border: #bdb8d3; /* soft gray-lavender */
-      --tag-bg: #d7d4e6; /* lighter than bg */
+      --muted: #7c7bbd;
+      --primary: #4b3c6e; /* muted deep indigo for headings */
+      --secondary: #d1d0e6; /* soft lavender-gray for sections */
+      --highlight: #f7c6e0;
+      --border: #bdb8d3;
+      --tag-bg: #ded7e6;
       --shadow: 0 5px 15px rgba(44, 34, 84, 0.08);
       --card-radius: 12px;
       --transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      --accent: #ffb085; /* muted peach/coral */
-      --accent2: #6bb7e3; /* muted sky blue */
+      --accent: #e6a7c7; /* muted pink accent */
+      --accent2: #7ca7e6; /* muted blue accent */
     }
 
     [data-theme="dark"] {
@@ -70,9 +70,8 @@
       padding-top: 2rem;
       padding-bottom: 2rem;
     }
-    section {
-      padding: 5rem 2rem;
-      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+    section, .skills {
+      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%) !important;
       border-radius: 16px;
       margin-bottom: 2.5rem;
       box-shadow: 0 2px 12px rgba(44,34,84,0.06);
@@ -81,7 +80,7 @@
       margin: 0.5em 0;
       font-family: 'Quicksand', sans-serif;
       color: var(--primary);
-      text-shadow: 0 2px 12px rgba(162,59,185,0.13); /* magenta shadow for clarity */
+      text-shadow: 0 2px 8px rgba(75,60,110,0.10);
       font-weight: 700;
       letter-spacing: 0.02em;
     }
