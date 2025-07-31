@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Nazli Singh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --primary-color: #6a1b9a;
+    --secondary-color: #1e1e2f;
+    --accent-color: #e1bee7;
+    --bg-color: #fdfdfd;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-color: #ddd;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  }
+
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  header {
+    background: var(--primary-color);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .header-cta {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid white;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  nav {
+    background: var(--secondary-color);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  nav a:hover {
+    color: var(--accent-color);
+  }
+
+  section {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    margin-bottom: 3rem;
+  }
+
+  .section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 1rem auto 0;
+  }
+
+  .skill-tag, .tech-tag, .cert-tag {
+    background: var(--light-gray);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    margin: 0.25rem;
+    display: inline-block;
+    font-size: 0.85rem;
+  }
+
+  footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .footer-links {
+    margin-top: 1rem;
+  }
+
+  .footer-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-color);
+  }
+
+  @media (max-width: 768px) {
+    .header-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    nav ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    section {
+      padding: 2rem 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <h1>Projects</h1>
+
+  <div class="project-card">
+    <h2>Secure Static Website Hosting on GitHub Pages + Route 53</h2>
+    <p>This portfolio site is hosted on GitHub Pages with a custom domain via Route 53. The deployment workflow uses Git, and DNS is managed using A and CNAME records. It's a lightweight static site designed to showcase my DevOps and security knowledge.</p>
+    <div class="project-tech">
+      <span class="tech-tag">GitHub Pages</span>
+      <span class="tech-tag">Route 53</span>
+      <span class="tech-tag">DNS</span>
+      <span class="tech-tag">HTML/CSS</span>
+    </div>
+    <div class="project-links">
+      <a href="https://nazliinthecloud.com" target="_blank">Live Site</a>
+      <a href="https://github.com/naz26/nazliinthecloud" target="_blank">GitHub Repo</a>
+    </div>
+  </div>
+
+  <!-- Add more project cards below this -->
+
+  <footer>
+    &copy; 2025 Nazli Singh — Built with 💻 and ☁️
+  </footer>
+</body>
+</html>
