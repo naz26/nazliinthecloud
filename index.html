@@ -164,6 +164,14 @@
     color: var(--highlight-color);
   }
 
+    .emoji {
+    font-size: 3rem;
+    line-height: 1;
+    display: block;
+    margin-bottom: 1rem;
+    text-align: center;
+    }
+
   @media (max-width: 768px) {
     .header-cta {
       flex-direction: column;
@@ -251,54 +259,61 @@
         </div>
         </nav>
 
-    <main class="container">
-        <section id="about">
+<main class="container">
+  <section id="about">
     <h2 class="section-title">About Me</h2>
     <div class="about-content">
-        <div class="profile-container">
-            <img src="/api/placeholder/300/300" alt="Nazli Singh" class="profile-img">
-            <div class="skills">
-                <h3>Skills</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">Terraform</span>
-                    <span class="skill-tag">GitLab CI/CD</span>
-                    <span class="skill-tag">Ansible</span>
-                    <span class="skill-tag">KMS & IAM</span>
-                    <span class="skill-tag">AI Services (Rekognition, Bedrock)</span>
-                </div>
-            </div>
+      
+      <!-- Profile block -->
+      <div class="profile-container">
+        <div class="emoji">🙋‍♀️</div>
+        <h3>Nazli Singh</h3>
+      </div>
+      
+      <!-- Skills block -->
+      <div class="skills">
+        <h3>Skills</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Terraform</span>
+          <span class="skill-tag">GitLab CI/CD</span>
+          <span class="skill-tag">Ansible</span>
+          <span class="skill-tag">KMS & IAM</span>
+          <span class="skill-tag">AI Services (Rekognition, Bedrock)</span>
         </div>
-        <div class="about-text">
-            <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
-            <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
-            <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a> — Feel free to reach out if you have any questions or just want to chat about tech!</p>
-            
-            <div class="quick-stats">
-                <div class="stat">
-                    <span class="stat-number">3+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Projects Deployed</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">4</span>
-                    <span class="stat-label">Blog Articles</span>
-                </div>
-            </div>
+      </div>
+      
+      <!-- About text and stats -->
+      <div class="about-text">
+        <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
+        <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
+        <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a> — feel free to reach out if you have any questions or just want to chat about tech!</p>
+        
+        <div class="quick-stats">
+          <div class="stat">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Projects Deployed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">Blog Articles</span>
+          </div>
         </div>
+      </div>
+      
     </div>
-</section>
+  </section>
 
-
-        <section id="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects">
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="projects">
     <div class="project-card">
+        <div class="emoji">🛠️</div>
         <div class="project-image">
-            <img src="/api/placeholder/400/250" alt="Secure S3 Static Website">
         </div>
         <div class="project-content">
             <h3>Website Hosting on GitHub and Route53</h3>
@@ -315,46 +330,49 @@
             </div>
         </div>
     </div>
-</div>
-        </section>
+        </div>
+  </section>
 
-        <section id="creative">
-            <h2 class="section-title">Creative Work</h2>
-            <div class="creative-content">
-                <div class="creative-card">
-                    <div class="creative-image">
-                        <img src="/api/placeholder/400/300" alt="Digital Art">
-                    </div>
-                    <h3>Digital Art</h3>
-                    <p>Showcase of your digital artwork, illustrations, or designs. Share your creative process and inspiration.</p>
-                    <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
-                </div>
+  <section id="creative">
+    <h2 class="section-title">Creative Work</h2>
+    <div class="creative-content">
+        <div class="creative-card">
+            <div class="creative-image">
+                <div class="emoji">🎨</div>
             </div>
-        </section>
+            <h3>Digital Art</h3>
+            <p>Showcase of your digital artwork, illustrations, or designs. Share your creative process and inspiration.</p>
+            <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+  </section>
 
-        <section id="blog">
-            <h2 class="section-title">Latest Articles</h2>
-            <div class="blog-posts">
-                <article class="blog-post">
-                <div class="post-meta">
-                    <span class="post-date">Published on Medium</span>
-                    <span class="post-category">Career Journey</span>
-                </div>
-                <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
-                <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health, self-doubt, and the courage it takes to start over. It’s been a wild ride, but one I’m grateful for.</p>
-                <a href="https://medium.com/version-1/code-and-coping-c0ec8141e3fa" class="btn-primary" target="_blank">
-                    Read on Medium <i class="fas fa-arrow-right"></i>
-                </a>
-            </article>
-            </div>
-        </section>
+  <section id="blog">
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="emoji">📝</div>
+    <div class="blog-posts">…</div>
+    <article class="blog-post">
+      <div class="post-meta">
+        <span class="post-date">Published on Medium</span>
+        <span class="post-category">Career Journey</span>
+      </div>
+      <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
+      <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health, self-doubt, and the courage it takes to start over. It’s been a wild ride, but one I’m grateful for.</p>
+      <a href="https://medium.com/version-1/code-and-coping-c0ec8141e3fa" class="btn-primary" target="_blank">
+        Read on Medium <i class="fas fa-arrow-right"></i>
+      </a>
+    </article>
+  </section>
 
-        <section id="contact">
-+         <!-- you can put a contact form or email here, or leave empty -->
-+       </section>
-+     </main>
+  <section id="contact">
+    <div class="emoji">📫</div>
+    <h2 class="section-title">Get in Touch</h2>
+    <p>If you’d like to collaborate, have questions, or just want to say hi, feel free to reach out!</p>
+    <!-- you can put a contact form or email here, or leave empty -->
+  </section>
+</main>
 
-        <footer>
+<footer>
             <div class="container footer-content">
                 <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
                 <div class="footer-links">
@@ -363,7 +381,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <script>
             document.getElementById('copyright-year').textContent = new Date().getFullYear();
         </script>
