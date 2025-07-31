@@ -105,6 +105,7 @@ Contributions, feedback, and feature requests are welcome!
 2. Create a branch:
 
    ```bash
+   git checkout -b feature/my-update
    ```
 
 git checkout -b feature/my-update
