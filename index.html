@@ -387,7 +387,9 @@
         </p>
         <div class="header-cta">
             <a href="#projects" class="btn-primary">Explore My Work</a>
-            <a href="#contact" class="btn-secondary">Contact Me</a>
+            <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank">
+                Connect on LinkedIn
+            </a>
         </div>
     </div>
 </header>
@@ -425,6 +427,8 @@
         <div class="about-text">
             <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
             <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
+            <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a> — Feel free to reach out if you have any questions or just want to chat about tech!</p>
+            
             <div class="quick-stats">
                 <div class="stat">
                     <span class="stat-number">3+</span>
@@ -452,7 +456,7 @@
             <img src="/api/placeholder/400/250" alt="Secure S3 Static Website">
         </div>
         <div class="project-content">
-            <h3>Secure Static Website Hosting on AWS</h3>
+            <h3>Website Hosting on GitHub and Route53</h3>
             <p><p>This site is hosted using GitHub Pages, with a custom domain managed via Amazon Route 53. It’s a fully static HTML/CSS portfolio built from scratch, designed to highlight my AWS DevOps work and learning journey in security and AI.</p>
             <div class="project-tech">
                 <span class="tech-tag">AWS S3</span>
@@ -488,14 +492,31 @@
             <div class="blog-posts">
                 <article class="blog-post">
                 <div class="post-meta">
-                    <span class="post-date">July 28, 2025</span>
-                    <span class="post-category">AWS Security</span>
+                    <span class="post-date">Published on Medium</span>
+                    <span class="post-category">Career Journey</span>
                 </div>
-                <h3>Top IAM Pitfalls and How to Avoid Them</h3>
-                <p>A look at common AWS IAM misconfigurations from real projects — and how to implement least privilege without breaking things.</p>
-                <a href="#" class="btn-primary">Read more <i class="fas fa-arrow-right"></i></a>
+                <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
+                <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health, self-doubt, and the courage it takes to start over. It’s been a wild ride, but one I’m grateful for.</p>
+                <a href="https://medium.com/version-1/code-and-coping-c0ec8141e3fa" class="btn-primary" target="_blank">
+                    Read on Medium <i class="fas fa-arrow-right"></i>
+                </a>
             </article>
             </div>
         </section>
 
         <section id="contact">
+        </main>
+        <footer>
+            <div class="container footer-content">
+                <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
+                <div class="footer-links">
+                    <a href="https://github.com/naz26" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.getElementById('copyright-year').textContent = new Date().getFullYear();
+        </script>
+        </body>
+        </html>
