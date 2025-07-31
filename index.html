@@ -7,197 +7,299 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
- <style>
-  /*──────────────────────────────────────────────────────────
-     Base Palette (light mode)
-  ──────────────────────────────────────────────────────────*/
-  :root {
-    --bg:         #f2eff8;
-    --fg:         #2e2e3a;
-    --muted:      #7e6a8a;
-    --primary:    #b39ddb;
-    --secondary:  #7e57c2;
-    --highlight:  #fce4ec;
-    --border:     #ded7e6;
-    --tag-bg:     #ede7f6;
-    --shadow:     0 5px 15px rgba(126,87,194,0.1);
-  }
+  <style>
+    :root {
+      --bg: #f2eff8;
+      --fg: #2e2e3a;
+      --muted: #7e6a8a;
+      --primary: #b39ddb;
+      --secondary: #7e57c2;
+      --highlight: #fce4ec;
+      --border: #ded7e6;
+      --tag-bg: #ede7f6;
+      --shadow: 0 5px 15px rgba(126,87,194,0.12);
+      --card-radius: 12px;
+      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Dark Mode Overrides
-  ──────────────────────────────────────────────────────────*/
-  [data-theme="dark"] {
-    --bg:         #1e1e2f;
-    --fg:         #eceff4;
-    --muted:      #a29bb4;
-    --primary:    #9575cd;
-    --secondary:  #512da8;
-    --highlight:  #673ab7;
-    --border:     #4c426e;
-    --tag-bg:     #3e3150;
-    --shadow:     0 5px 15px rgba(0,0,0,0.4);
-  }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      transition: background .3s, color .3s;
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Global Styles
-  ──────────────────────────────────────────────────────────*/
-  *, *::before, *::after { box-sizing: border-box; }
+    h1,h2,h3 {
+      margin: 0.5em 0;
+      font-family: 'Quicksand', sans-serif;
+      color: var(--secondary);
+    }
 
-  body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.7;
-    transition: background .3s, color .3s;
-  }
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    a:hover { color: var(--highlight); }
 
-  h1,h2,h3 {
-    margin: 0.5em 0;
-    font-family: 'Quicksand', sans-serif;
-    color: var(--secondary);
-  }
+    /*──────────────────────────────────────────────────────────
+       Header & Navigation
+    ──────────────────────────────────────────────────────────*/
+    header {
+      background-color: var(--secondary);
+      background-image: url('img/header-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 4rem 2rem 2rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-bottom-left-radius: var(--card-radius);
+      border-bottom-right-radius: var(--card-radius);
+    }
+    header img {
+      box-shadow: var(--shadow);
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      transition: var(--transition);
+    }
+    header img:hover {
+      transform: scale(1.05);
+      border-color: var(--highlight);
+    }
 
-  a {
-    color: var(--secondary);
-    text-decoration: none;
-    transition: color .2s;
-  }
-  a:hover { color: var(--highlight); }
+    nav {
+      background: var(--secondary);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border);
+    }
+    nav ul {
+      margin: 0;
+      padding: .5rem 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    nav a, nav button {
+      font-family: 'Quicksand', sans-serif;
+      color: white;
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color .2s;
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+    }
+    nav a:hover, nav button:hover {
+      color: var(--highlight);
+      background: rgba(255,255,255,0.08);
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Header & Navigation
-  ──────────────────────────────────────────────────────────*/
-  header {
-    background-color: var(--secondary);
-    background-image: url('img/header-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  header h1 { color: white !important; }
+    /*──────────────────────────────────────────────────────────
+       Buttons
+    ──────────────────────────────────────────────────────────*/
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      font-weight: 600;
+      padding: .75rem 1.5rem;
+      border-radius: var(--card-radius);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: none;
+    }
+    .btn-primary {
+      background: white;
+      color: var(--secondary);
+      border: 2px solid white;
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      background: var(--highlight);
+      color: var(--fg);
+      box-shadow: 0 8px 24px rgba(126,87,194,0.18);
+      transform: translateY(-2px) scale(1.03);
+    }
 
-  nav {
-    background: var(--secondary);
-    box-shadow: var(--shadow);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-  nav ul {
-    margin: 0;
-    padding: .5rem 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-  nav a, nav button {
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-    font-weight: 500;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: color .2s;
-  }
-  nav a:hover, nav button:hover { color: var(--highlight); }
+    /*──────────────────────────────────────────────────────────
+       Sections & Titles
+    ──────────────────────────────────────────────────────────*/
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      position: relative;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      margin: .5rem auto 0;
+      border-radius: 2px;
+    }
+    .section-intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Buttons
-  ──────────────────────────────────────────────────────────*/
-  .btn-primary, .btn-secondary {
-    display: inline-block;
-    font-weight: 600;
-    padding: .75rem 1.5rem;
-    border-radius: 5px;
-    transition: all .3s ease;
-  }
-  .btn-primary {
-    background: white;
-    color: var(--secondary);
-    border: 2px solid white;
-  }
-  .btn-secondary {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-  }
-  .btn-primary:hover, .btn-secondary:hover {
-    background: var(--highlight);
-    color: var(--fg);
-    box-shadow: var(--shadow);
-    transform: translateY(-2px);
-  }
+    .projects-grid, .blog-posts {
+      gap: 2rem;
+    }
+    .project-card, .creative-card, .blog-post {
+      background: white;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.5rem;
+      transition: var(--transition);
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .project-card:hover, .creative-card:hover, .blog-post:hover {
+      box-shadow: 0 8px 24px rgba(126,87,194,0.18);
+      transform: scale(1.02);
+      background: var(--highlight);
+    }
+    .project-card img, .creative-card img, .blog-post img {
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 320px;
+      object-fit: cover;
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Sections & Titles
-  ──────────────────────────────────────────────────────────*/
-  section {
-    padding: 4rem 2rem;
-    max-width: 1000px;
-    margin: auto;
-  }
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    position: relative;
-    margin-bottom: 2rem;
-  }
-  .section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--primary);
-    margin: .5rem auto 0;
-  }
+    /*──────────────────────────────────────────────────────────
+       Utility Tags & Emoji
+    ──────────────────────────────────────────────────────────*/
+    .skill-tag, .tech-tag, .cert-tag {
+      background: var(--tag-bg);
+      padding: .4rem .8rem;
+      border-radius: 20px;
+      margin: .2rem;
+      display: inline-block;
+      font-size: .85rem;
+      color: var(--fg);
+      box-shadow: 0 2px 8px rgba(126,87,194,0.08);
+    }
+    .emoji {
+      font-size: 3rem;
+      line-height: 1;
+      display: block;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Utility Tags & Emoji
-  ──────────────────────────────────────────────────────────*/
-  .skill-tag, .tech-tag, .cert-tag {
-    background: var(--tag-bg);
-    padding: .4rem .8rem;
-    border-radius: 20px;
-    margin: .2rem;
-    display: inline-block;
-    font-size: .85rem;
-    color: var(--fg);
-  }
-  .emoji {
-    font-size: 3rem;
-    line-height: 1;
-    display: block;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
+    form {
+      background: white;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    input, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      transition: border-color .2s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    label {
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--secondary);
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Footer
-  ──────────────────────────────────────────────────────────*/
-  footer {
-    background: var(--secondary);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-    font-size: .9rem;
-  }
-  .footer-links a:hover { color: var(--highlight); }
+    .contact-social a {
+      margin-right: 1rem;
+      color: var(--secondary);
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .contact-social a:hover {
+      color: var(--highlight);
+    }
 
-  /*──────────────────────────────────────────────────────────
-     Responsive
-  ──────────────────────────────────────────────────────────*/
-  @media (max-width: 768px) {
-    nav ul { flex-direction: column; gap: 1rem; }
-    .header-cta { flex-direction: column; gap: 1rem; }
-    section { padding: 2rem 1rem; }
-  }
-</style>
+    footer {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: .9rem;
+      border-top-left-radius: var(--card-radius);
+      border-top-right-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+    }
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .footer-links a {
+      color: white;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .2s;
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+    }
+    .footer-links a:hover {
+      color: var(--highlight);
+      background: rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 768px) {
+      .header-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      .projects-grid, .blog-posts {
+        grid-template-columns: 1fr;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
 <script>
   // on load, apply saved theme
   const root = document.documentElement;
@@ -218,7 +320,7 @@
 <body>
   <header>
     <div class="container">
-      <img src="img/profile.jpg" alt="Nazli Singh profile photo" style="width:120px;height:120px;border-radius:50%;margin-bottom:1rem;box-shadow:var(--shadow);" />
+      <!-- <img src="img/profile.jpg" alt="Nazli Singh profile photo" style="width:120px;height:120px;border-radius:50%;margin-bottom:1rem;box-shadow:var(--shadow);" /> -->
       <h1 style="color:white; margin:0.2em 0;">Nazli Singh</h1>
       <p class="header-subtitle">
         AWS DevOps Engineer | Cloud Security & AI Enthusiast<br>
