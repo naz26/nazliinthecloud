@@ -379,15 +379,18 @@
     <!-- Rest of the HTML content remains exactly the same as in the previous version -->
     <!-- I'll include it here for completeness -->
     <header>
-        <div class="container">
-            <h1>Nazli Singh</h1>
-            <p class="header-subtitle">AWS DevOps Engineer, Cybersecurity and AI enthusiast. This website is a work in progress! </p>
-            <div class="header-cta">
-                <a href="#contact" class="btn-primary">Get in Touch</a>
-                <a href="#projects" class="btn-secondary">View My Work</a>
-            </div>
+    <div class="container">
+        <h1>Nazli Singh</h1>
+        <p class="header-subtitle">
+            AWS DevOps Engineer | Cloud Security & AI Enthusiast<br>
+            Building in the cloud — securely, efficiently, and creatively.
+        </p>
+        <div class="header-cta">
+            <a href="#projects" class="btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn-secondary">Contact Me</a>
         </div>
-    </header>
+    </div>
+</header>
 
     <nav id="navbar">
         <div class="container">
@@ -403,63 +406,67 @@
 
     <main class="container">
         <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="profile-container">
-                    <img src="/api/placeholder/300/300" alt="Nazli Singh" class="profile-img">
-                    <div class="skills">
-                        <h3>Skills</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">AWS AI Practitioner</span>
-                            <span class="skill-tag">AWS Cloud Practitioner</span>
-                            <span class="skill-tag">ISC(2) CC</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text">
-                    <p>Welcome to my website! My Name is Nazli and I am an AWS DevOps Engineer. I have a passion for Cybersecurity, AI, ALL things Cloud and Creative!.</p>
-                    <div class="quick-stats">
-                        <div class="stat">
-                            <span class="stat-number">3+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">2</span>
-                            <span class="stat-label">Technical Articles</span>
-                        </div>
-                    </div>
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+        <div class="profile-container">
+            <img src="/api/placeholder/300/300" alt="Nazli Singh" class="profile-img">
+            <div class="skills">
+                <h3>Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">GitLab CI/CD</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">KMS & IAM</span>
+                    <span class="skill-tag">AI Services (Rekognition, Bedrock)</span>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="about-text">
+            <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
+            <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
+            <div class="quick-stats">
+                <div class="stat">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Projects Deployed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Blog Articles</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <section id="projects">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="/api/placeholder/400/250" alt="Project 1">
-                    </div>
-                    <div class="project-content">
-                        <h3>Project 1</h3>
-                        <p>A brief description of my first project. Highlight the key features and technologies used.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Git</span>
-                            <span class="tech-tag">Github</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="btn-primary"><i class="fab fa-github"></i> View Code</a>
-                            <a href="#" class="btn-secondary"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="project-card">
+        <div class="project-image">
+            <img src="/api/placeholder/400/250" alt="Secure S3 Static Website">
+        </div>
+        <div class="project-content">
+            <h3>Secure Static Website Hosting on AWS</h3>
+            <p>This very site was built using HTML/CSS and hosted on Amazon S3 with Route 53 and HTTPS enforced via CloudFront. All buckets are encrypted using KMS and access is controlled with custom IAM policies.</p>
+            <div class="project-tech">
+                <span class="tech-tag">AWS S3</span>
+                <span class="tech-tag">Route 53</span>
+                <span class="tech-tag">CloudFront</span>
+                <span class="tech-tag">KMS</span>
             </div>
+            <div class="project-links">
+                <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                <a href="https://nazliinthecloud.com" class="btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            </div>
+        </div>
+    </div>
+</div>
         </section>
 
         <section id="creative">
@@ -480,14 +487,14 @@
             <h2 class="section-title">Latest Articles</h2>
             <div class="blog-posts">
                 <article class="blog-post">
-                    <div class="post-meta">
-                        <span class="post-date">Feb 5, 2025</span>
-                        <span class="post-category">Development</span>
-                    </div>
-                    <h3>Blog Post Title 1</h3>
-                    <p>Preview of my first blog post. Share your insights and experiences...</p>
-                    <a href="#" class="btn-primary">Read more <i class="fas fa-arrow-right"></i></a>
-                </article>
+                <div class="post-meta">
+                    <span class="post-date">July 28, 2025</span>
+                    <span class="post-category">AWS Security</span>
+                </div>
+                <h3>Top IAM Pitfalls and How to Avoid Them</h3>
+                <p>A look at common AWS IAM misconfigurations from real projects — and how to implement least privilege without breaking things.</p>
+                <a href="#" class="btn-primary">Read more <i class="fas fa-arrow-right"></i></a>
+            </article>
             </div>
         </section>
 
