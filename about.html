@@ -6,35 +6,36 @@
   <title>About Me — Nazli Singh</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
   :root {
-    --primary-color: #6a1b9a;
-    --secondary-color: #1e1e2f;
-    --accent-color: #e1bee7;
-    --bg-color: #fdfdfd;
-    --text-color: #333;
-    --light-gray: #f5f5f5;
-    --border-color: #ddd;
-    --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --primary-color: #b39ddb;
+    --secondary-color: #7e57c2;
+    --accent-color: #ede7f6;
+    --highlight-color: #fce4ec;
+    --bg-color: #faf5ff;
+    --text-color: #2e2e3a;
+    --tag-bg: #ede7f6;
+    --shadow: 0 5px 15px rgba(126, 87, 194, 0.1);
   }
 
   body {
+    font-family: 'Inter', sans-serif;
     background: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.7;
   }
 
   h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--primary-color);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
   }
 
   header {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: white;
     padding: 4rem 2rem;
     text-align: center;
@@ -49,16 +50,17 @@
   }
 
   .btn-primary, .btn-secondary {
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 1.4rem;
     border-radius: 5px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
   }
 
   .btn-primary {
     background: white;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     border: 2px solid white;
   }
 
@@ -70,8 +72,8 @@
 
   .btn-primary:hover,
   .btn-secondary:hover {
-    background: var(--accent-color);
-    color: var(--secondary-color);
+    background: var(--highlight-color);
+    color: var(--text-color);
     transform: translateY(-2px);
     box-shadow: var(--shadow);
   }
@@ -98,14 +100,14 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     align-items: center;
     gap: 0.4rem;
   }
 
   nav a:hover {
-    color: var(--accent-color);
+    color: var(--highlight-color);
   }
 
   section {
@@ -131,7 +133,7 @@
   }
 
   .skill-tag, .tech-tag, .cert-tag {
-    background: var(--light-gray);
+    background: var(--tag-bg);
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     margin: 0.25rem;
@@ -140,7 +142,7 @@
   }
 
   footer {
-    background: var(--primary-color);
+    background: var(--secondary-color);
     color: white;
     padding: 2rem 1rem;
     text-align: center;
@@ -159,7 +161,7 @@
   }
 
   .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--highlight-color);
   }
 
   @media (max-width: 768px) {
