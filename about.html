@@ -172,6 +172,30 @@
   text-align: center;
 }
 
+.blog-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .post-meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 0.5rem 0 1rem;
+  }
 
   @media (max-width: 768px) {
     .header-cta {
@@ -186,6 +210,10 @@
 
     section {
       padding: 2rem 1rem;
+    }
+
+    .blog-highlights {
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -222,6 +250,20 @@
     <li>Experimenting with AI/ML services on AWS</li>
     <li>Documenting and sharing my journey through blog posts and creative content</li>
   </ul>
+
+  <h2>📝 Blog Highlights</h2>
+  <div class="blog-highlights">
+    <div class="blog-card">
+      <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
+      <div class="post-meta">Published on Medium · Career Journey</div>
+      <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health, self-doubt, and the courage it takes to start over.</p>
+      <a href="https://medium.com/version-1/code-and-coping-c0ec8141e3fa" class="btn-primary" target="_blank">Read on Medium <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <!-- Add more blog cards as needed -->
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="blog.html" class="btn-secondary">View All Articles</a>
+    </div>
+  </div>
 
   <h2>📬 Let’s Connect</h2>
   <p>You can find me on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a>, or explore my code on <a href="https://github.com/naz26" target="_blank">GitHub</a>.</p>
