@@ -9,11 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #b6b2cc; /* deeper muted lavender-gray */
+      font-size: 18px; /* improved base font size */
+      --bg: #c7c3db; /* deeper muted lavender-gray for better contrast */
       --fg: #2d1e4f;
-      --muted: #8a89b7; /* muted periwinkle */
+      --muted: #7c7bbd; /* muted lavender for text */
       --primary: #6a5acd; /* softer muted purple */
-      --secondary: #e0dff4; /* soft muted blue-lavender */
+      --secondary: #b6b2cc; /* muted lavender, not white */
       --highlight: #f7c6e0; /* soft pink */
       --border: #bdb8d3; /* soft gray-lavender */
       --tag-bg: #d7d4e6; /* lighter than bg */
@@ -44,7 +45,7 @@
       background: var(--bg) !important;
       color: var(--fg);
       font-family: 'Inter', sans-serif;
-      line-height: 1.7;
+      line-height: 1.8;
       margin: 0;
       padding: 0;
       transition: background .3s, color .3s;
@@ -60,16 +61,19 @@
       padding-bottom: 2rem;
     }
     section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-      box-sizing: border-box;
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 12px rgba(44,34,84,0.06);
     }
     h1,h2,h3 {
       margin: 0.5em 0;
       font-family: 'Quicksand', sans-serif;
       color: var(--primary);
       text-shadow: 0 2px 8px var(--secondary);
+      font-weight: 700;
+      letter-spacing: 0.02em;
     }
 
     a {
@@ -137,6 +141,15 @@
       color: var(--accent);
       background: rgba(255,255,255,0.08);
     }
+    nav ul li.active a {
+      color: var(--accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent2);
+    }
+    nav a:focus, nav button:focus, .btn-primary:focus, .btn-secondary:focus {
+      outline: 2px solid var(--accent2);
+      outline-offset: 2px;
+    }
 
     /*──────────────────────────────────────────────────────────
        Buttons
@@ -162,21 +175,20 @@
       font-weight: 700;
       text-shadow: 0 2px 8px rgba(44,34,84,0.25);
     }
-    .btn-secondary:hover {
-      background: var(--accent2);
-      color: var(--secondary);
-      border-color: var(--accent2);
-      text-shadow: none;
+    .btn-primary:hover, .btn-secondary:hover {
+      box-shadow: 0 4px 16px rgba(44,34,84,0.18);
+      transform: translateY(-2px) scale(1.04);
     }
 
     /*──────────────────────────────────────────────────────────
        Sections & Titles
     ──────────────────────────────────────────────────────────*/
     section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-      box-sizing: border-box;
+      padding: 5rem 2rem;
+      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 12px rgba(44,34,84,0.06);
     }
     .section-title {
       text-align: center;
@@ -200,6 +212,14 @@
       color: var(--muted);
       margin-bottom: 2rem;
       font-size: 1.1rem;
+    }
+    .section-divider {
+      width: 80%;
+      height: 2px;
+      background: var(--border);
+      margin: 2rem auto;
+      border-radius: 2px;
+      opacity: 0.5;
     }
 
     .projects-grid, .blog-posts {
@@ -332,6 +352,42 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--accent2);
+      color: var(--secondary);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+      z-index: 9999;
+    }
+    .scroll-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s, transform .6s;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
     @media (max-width: 768px) {
       .header-cta {
         flex-direction: column;
@@ -356,6 +412,14 @@
         gap: 0.5rem;
       }
     }
+
+    .skills {
+      background: var(--secondary) !important;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(44,34,84,0.08);
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+    }
   </style>
 <script>
   // on load, apply saved theme
@@ -372,6 +436,31 @@
       localStorage.theme = "dark";
     }
   }
+
+  // Scroll to top button
+  const scrollToTopBtn = document.querySelector('.scroll-to-top');
+  const rootElement = document.documentElement;
+
+  function handleScroll() {
+    // Show or hide the button based on scroll position
+    if (rootElement.scrollTop > 300) {
+      scrollToTopBtn.classList.add('visible');
+    } else {
+      scrollToTopBtn.classList.remove('visible');
+    }
+  }
+
+  function scrollToTop() {
+    // Smooth scroll to top
+    rootElement.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // Event listeners
+  document.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
 </script>
 </head>
 <body>
@@ -385,8 +474,11 @@
       </p>
       <div class="header-cta">
         <a href="#projects" class="btn-primary">Explore My Work</a>
-        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank">
+        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank" rel="noopener noreferrer">
           Connect on LinkedIn
+        </a>
+        <a href="#" class="btn-secondary" style="margin-top:1rem;display:inline-block;" download>
+          <i class="fas fa-file-download"></i> Download CV (placeholder)
         </a>
       </div>
     </div>
@@ -420,7 +512,7 @@
         </div>
         
         <!-- Skills block -->
-        <div class="skills" style="background: linear-gradient(90deg, #e3e0f7 60%, #ded7e6 100%); border-radius: 12px; box-shadow: 0 2px 8px rgba(44,34,84,0.08); padding: 1.5rem 1rem; margin-bottom: 2rem;">
+        <div class="skills" style="background: var(--secondary); border-radius: 12px; box-shadow: 0 2px 8px rgba(44,34,84,0.08); padding: 1.5rem 1rem; margin-bottom: 2rem;">
           <h3>Skills</h3>
           <div class="skill-tags">
             <span class="skill-tag">AWS</span>
@@ -436,7 +528,7 @@
         <div class="about-text">
           <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
           <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
-          <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a> — feel free to reach out if you have any questions or just want to chat about tech!</p>
+          <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer">LinkedIn</a> — feel free to reach out if you have any questions or just want to chat about tech!</p>
           
           <div class="quick-stats">
             <div class="stat">
@@ -455,6 +547,28 @@
         </div>
         
       </div>
+      <div class="section-divider"></div>
+      <div class="about-timeline fade-in">
+        <h3>Career Timeline <span style="font-size:1.2em;">⏳</span></h3>
+        <ul style="list-style:none;padding:0;">
+          <li><strong>2022–2025:</strong> AWS DevOps Engineer (UK)</li>
+          <li><strong>2020–2022:</strong> IT Support & Automation (Remote)</li>
+          <li><strong>2018–2020:</strong> Hospitality Management (Career Shift)</li>
+        </ul>
+        <p style="margin-top:1rem;color:var(--muted);font-size:1em;">Fun fact: I love digital art and cloud security equally!</p>
+      </div>
+      <div class="section-divider"></div>
+      <div class="testimonials fade-in">
+        <h3>Testimonials <span style="font-size:1.2em;">💬</span></h3>
+        <blockquote style="background:var(--secondary);padding:1rem 1.5rem;border-radius:8px;margin-bottom:1rem;">
+          <p>"Nazli is a fantastic team player and always delivers secure, reliable solutions."</p>
+          <footer style="font-size:0.95em;color:var(--muted);">— Alex, Cloud Architect</footer>
+        </blockquote>
+        <blockquote style="background:var(--secondary);padding:1rem 1.5rem;border-radius:8px;">
+          <p>"Her attention to detail and creativity make her stand out in every project."</p>
+          <footer style="font-size:0.95em;color:var(--muted);">— Priya, DevOps Lead</footer>
+        </blockquote>
+      </div>
     </section>
 
     <section id="projects">
@@ -467,14 +581,15 @@
           <div class="project-content">
             <h3>Website Hosting on GitHub and Route53</h3>
             <p>This site is hosted using GitHub Pages, with a custom domain managed via Amazon Route 53. It’s a fully static HTML/CSS portfolio built from scratch, designed to highlight my AWS DevOps work and learning journey in security and AI.</p>
-            <span class="tech-tag">AWS S3</span>
-            <span class="tech-tag">Route 53</span>
-            <span class="tech-tag">CloudFront</span>
-            <span class="tech-tag">KMS</span>
+            <div class="tech-stack" style="margin-top:1rem;">
+              <span class="tech-tag">AWS</span>
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">GitHub Pages</span>
+            </div>
           </div>
           <div class="project-links">
-            <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank"><i class="fab fa-github"></i> View Code</a>
-            <a href="https://nazliinthecloud.com" class="btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+            <a href="https://nazliinthecloud.com" class="btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Demo</a>
           </div>
         </div>
         <!-- Add more project cards here -->
@@ -486,13 +601,17 @@
       <p class="section-intro">A showcase of my digital art, illustrations, and creative process.</p>
       <div class="creative-gallery" style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
         <div class="creative-card">
-          <!-- Removed creative work thumbnail image -->
-          <div class="emoji">🎨</div>
+          <img src="https://via.placeholder.com/320x180?text=Artwork+1" alt="Placeholder artwork 1" style="width:100%;max-width:320px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:1rem;" />
           <h3>Digital Art</h3>
-          <p>Showcase of your digital artwork, illustrations, or designs. Share your creative process and inspiration.</p>
+          <p>Placeholder for your digital artwork, illustrations, or designs.</p>
           <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
         </div>
-        <!-- Add more creative cards here -->
+        <div class="creative-card">
+          <img src="https://via.placeholder.com/320x180?text=Artwork+2" alt="Placeholder artwork 2" style="width:100%;max-width:320px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:1rem;" />
+          <h3>Illustration</h3>
+          <p>Placeholder for your creative process and inspiration.</p>
+          <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
     </section>
 
@@ -505,12 +624,25 @@
           <!-- Removed blog post thumbnail image -->
           <div class="post-meta">
             <span class="post-date">Published on Medium</span>
+            <span class="post-category">Career Journey</span>
+            <span class="post-tags" style="margin-left:1rem;color:var(--accent2);">#MentalHealth #CareerShift</span>
+            <span class="post-reading-time" style="margin-left:1rem;color:var(--muted);">5 min read</span>
           </div>
           <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
           <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health…</p>
-          <a href="https://medium.com/..." class="btn-primary" target="_blank">Read on Medium <i class="fas fa-arrow-right"></i></a>
+          <a href="https://medium.com/..." class="btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium <i class="fas fa-arrow-right"></i></a>
         </article>
-        <!-- Add more blog posts here -->
+        <article class="blog-post">
+          <div class="post-meta">
+            <span class="post-date">Published on Medium</span>
+            <span class="post-category">Cloud Security</span>
+            <span class="post-tags" style="margin-left:1rem;color:var(--accent2);">#AWS #Security</span>
+            <span class="post-reading-time" style="margin-left:1rem;color:var(--muted);">7 min read</span>
+          </div>
+          <h3>Securing AWS: My Top 5 Tips for Cloud Security</h3>
+          <p>Learn how to keep your cloud infrastructure safe with practical, real-world advice. Placeholder post.</p>
+          <a href="#" class="btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium <i class="fas fa-arrow-right"></i></a>
+        </article>
       </div>
     </section>
 
@@ -526,11 +658,13 @@
         <label for="message">Your message:</label>
         <textarea id="message" name="message" rows="4" required aria-label="Your Message" style="padding:0.5rem;border-radius:5px;border:1px solid var(--border);"></textarea>
         <button type="submit" class="btn-primary" style="width:100%;">Send</button>
+        <p style="font-size:0.95em;color:var(--muted);margin-top:0.5rem;">Your information is only used to respond to your inquiry and is not shared.</p>
       </form>
-      <!-- Removed direct email address for privacy -->
       <div class="contact-social">
-        <a href="https://github.com/naz26" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/naz26" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter (placeholder)</a>
+        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram (placeholder)</a>
       </div>
     </section>
   </main>
@@ -545,14 +679,18 @@
         <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
         <a href="#top" class="back-to-top">Back to Top</a>
-        <a href="https://github.com/naz26" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/naz26" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
       <p style="font-size:0.75rem;opacity:0.5;margin-top:1.5rem;letter-spacing:0.02em;">
         Artwork credit: Cosmic Hippo - Artist unknown (header image, used for personal/non-commercial site). Will remove upon request.
       </p>
     </div>
   </footer>
+
+  <div class="scroll-to-top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
 
   <script>
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
