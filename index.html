@@ -9,17 +9,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f2eff8;
-      --fg: #2e2e3a;
-      --muted: #7e6a8a;
-      --primary: #b39ddb;
-      --secondary: #7e57c2;
-      --highlight: #fce4ec;
-      --border: #ded7e6;
-      --tag-bg: #ede7f6;
-      --shadow: 0 5px 15px rgba(126,87,194,0.12);
+      --bg: #23234d; /* deep indigo night */
+      --fg: #eaeafc; /* soft off-white text */
+      --muted: #7c7bbd; /* muted lavender */
+      --primary: #7c5fe9; /* vibrant purple */
+      --secondary: #2d1e4f; /* rich dark purple */
+      --highlight: #ffb6c1; /* soft pink highlight */
+      --border: #3a2e5c; /* muted border */
+      --tag-bg: #3e3150; /* tag background, dark lavender */
+      --shadow: 0 5px 15px rgba(44, 34, 84, 0.18);
       --card-radius: 12px;
       --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      --accent: #ff8c42; /* sunset orange accent */
+      --accent2: #5ec6fa; /* sky blue accent */
     }
 
     body {
@@ -35,11 +37,12 @@
     h1,h2,h3 {
       margin: 0.5em 0;
       font-family: 'Quicksand', sans-serif;
-      color: var(--secondary);
+      color: var(--primary);
+      text-shadow: 0 2px 8px var(--secondary);
     }
 
     a {
-      color: var(--secondary);
+      color: var(--accent2);
       text-decoration: none;
       transition: color .2s;
     }
@@ -53,13 +56,14 @@
       background-image: url('img/header-bg.jpg');
       background-size: cover;
       background-position: center;
-      color: white;
+      color: var(--fg);
       padding: 4rem 2rem 2rem 2rem;
       text-align: center;
       box-shadow: var(--shadow);
       border-bottom-left-radius: var(--card-radius);
       border-bottom-right-radius: var(--card-radius);
     }
+    header h1 { color: var(--accent); }
     header img {
       box-shadow: var(--shadow);
       border-radius: 50%;
@@ -89,7 +93,7 @@
     }
     nav a, nav button {
       font-family: 'Quicksand', sans-serif;
-      color: white;
+      color: var(--fg);
       font-weight: 500;
       background: none;
       border: none;
@@ -99,7 +103,7 @@
       padding: 0.3rem 0.7rem;
     }
     nav a:hover, nav button:hover {
-      color: var(--highlight);
+      color: var(--accent);
       background: rgba(255,255,255,0.08);
     }
 
@@ -116,19 +120,19 @@
       border: none;
     }
     .btn-primary {
-      background: white;
+      background: var(--accent2);
       color: var(--secondary);
-      border: 2px solid white;
+      border: 2px solid var(--accent2);
     }
     .btn-secondary {
       background: transparent;
-      border: 2px solid white;
-      color: white;
+      border: 2px solid var(--accent2);
+      color: var(--accent2);
     }
     .btn-primary:hover, .btn-secondary:hover {
       background: var(--highlight);
-      color: var(--fg);
-      box-shadow: 0 8px 24px rgba(126,87,194,0.18);
+      color: var(--secondary);
+      box-shadow: 0 8px 24px rgba(44,34,84,0.18);
       transform: translateY(-2px) scale(1.03);
     }
 
@@ -146,13 +150,14 @@
       position: relative;
       margin-bottom: 2rem;
       letter-spacing: 1px;
+      color: var(--accent);
     }
     .section-title::after {
       content: '';
       display: block;
       width: 50px;
       height: 3px;
-      background: var(--primary);
+      background: var(--accent2);
       margin: .5rem auto 0;
       border-radius: 2px;
     }
@@ -167,7 +172,7 @@
       gap: 2rem;
     }
     .project-card, .creative-card, .blog-post {
-      background: white;
+      background: var(--secondary);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 2rem 1.5rem;
@@ -176,11 +181,13 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      color: var(--fg);
     }
     .project-card:hover, .creative-card:hover, .blog-post:hover {
-      box-shadow: 0 8px 24px rgba(126,87,194,0.18);
+      box-shadow: 0 8px 24px rgba(44,34,84,0.28);
       transform: scale(1.02);
-      background: var(--highlight);
+      background: var(--primary);
+      color: var(--fg);
     }
     .project-card img, .creative-card img, .blog-post img {
       border-radius: 8px;
@@ -189,6 +196,7 @@
       width: 100%;
       max-width: 320px;
       object-fit: cover;
+      border: 2px solid var(--accent2);
     }
 
     /*──────────────────────────────────────────────────────────
@@ -201,8 +209,8 @@
       margin: .2rem;
       display: inline-block;
       font-size: .85rem;
-      color: var(--fg);
-      box-shadow: 0 2px 8px rgba(126,87,194,0.08);
+      color: var(--accent2);
+      box-shadow: 0 2px 8px rgba(44,34,84,0.08);
     }
     .emoji {
       font-size: 3rem;
@@ -210,14 +218,17 @@
       display: block;
       margin-bottom: 1rem;
       text-align: center;
+      color: var(--accent);
+      text-shadow: 0 2px 8px var(--primary);
     }
 
     form {
-      background: white;
+      background: var(--secondary);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 2rem 1.5rem;
       margin-bottom: 2rem;
+      color: var(--fg);
     }
     input, textarea {
       font-family: inherit;
@@ -227,20 +238,22 @@
       padding: 0.7rem;
       margin-bottom: 1rem;
       transition: border-color .2s;
+      background: var(--bg);
+      color: var(--fg);
     }
     input:focus, textarea:focus {
-      border-color: var(--primary);
+      border-color: var(--accent2);
       outline: none;
     }
     label {
       font-weight: 500;
       margin-bottom: 0.3rem;
-      color: var(--secondary);
+      color: var(--accent2);
     }
 
     .contact-social a {
       margin-right: 1rem;
-      color: var(--secondary);
+      color: var(--accent2);
       font-weight: 500;
       transition: color .2s;
     }
@@ -250,7 +263,7 @@
 
     footer {
       background: var(--secondary);
-      color: white;
+      color: var(--fg);
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 3rem;
@@ -267,7 +280,7 @@
       gap: 1rem;
     }
     .footer-links a {
-      color: white;
+      color: var(--accent2);
       font-weight: 500;
       text-decoration: none;
       transition: color .2s;
