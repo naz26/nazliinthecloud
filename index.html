@@ -133,6 +133,7 @@
       list-style: none;
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 2rem;
     }
     nav a, nav button {
@@ -630,7 +631,7 @@
         <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
         <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
         <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li>
-        <li><a href="#creative"><i class="fas fa-paint-brush"></i> Creative</a></li>
+        <li><a href="creative.html"><i class="fas fa-paint-brush"></i> Creative</a></li>
         <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         <li>
           <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"
@@ -748,76 +749,19 @@
       <p class="section-intro">Photography and reading that fuel creativity and fresh perspectives.</p>
       
       <div class="creative-grid">
-        <!-- Photography Section -->
         <div class="creative-card">
           <div class="emoji">📸</div>
           <h3>Photography</h3>
-          <p>Capturing moments and perspectives through my lens. From urban landscapes to nature's quiet beauty.</p>
-          
-          <div class="photo-gallery">
-            <div class="photo-item">
-              <img src="img/photo1.jpg" alt="Urban sunset" onerror="this.style.display='none'">
-            </div>
-            <div class="photo-item">
-              <img src="img/photo2.jpg" alt="Nature landscape" onerror="this.style.display='none'">
-            </div>
-            <div class="photo-item">
-              <img src="img/photo3.jpg" alt="Street photography" onerror="this.style.display='none'">
-            </div>
-            <div class="photo-item">
-              <img src="img/photo4.jpg" alt="Architecture" onerror="this.style.display='none'">
-            </div>
-          </div>
-          
-          <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--muted);">📍 Locations: London, Edinburgh, Lake District</p>
+          <p>Urban landscapes, nature, and street photography from my travels around the UK.</p>
+          <a href="creative.html#photography" class="btn-primary">View Gallery</a>
         </div>
         
-        <!-- Reading Corner Section -->
         <div class="creative-card">
           <div class="emoji">📚</div>
           <h3>Reading Corner</h3>
-          <p>My literary journey - from tech insights to personal growth and fiction that sparks imagination.</p>
-          
-          <div class="book-list">
-            <div class="book-item">
-              <div class="book-title">The Phoenix Project</div>
-              <div class="book-author">by Gene Kim</div>
-              <span class="book-status status-finished">Finished</span>
-              <p style="font-size: 0.85rem; margin-top: 0.5rem;">"Essential DevOps principles wrapped in an engaging story."</p>
-            </div>
-            
-            <div class="book-item">
-              <div class="book-title">Atomic Habits</div>
-              <div class="book-author">by James Clear</div>
-              <span class="book-status status-reading">Currently Reading</span>
-              <p style="font-size: 0.85rem; margin-top: 0.5rem;">Building better systems for continuous improvement.</p>
-            </div>
-            
-            <div class="book-item">
-              <div class="book-title">The Midnight Library</div>
-              <div class="book-author">by Matt Haig</div>
-              <span class="book-status status-finished">Finished</span>
-              <p style="font-size: 0.85rem; margin-top: 0.5rem;">"A beautiful exploration of life's infinite possibilities."</p>
-            </div>
-            
-            <div class="book-item">
-              <div class="book-title">Designing Data-Intensive Applications</div>
-              <div class="book-author">by Martin Kleppmann</div>
-              <span class="book-status status-wishlist">Want to Read</span>
-            </div>
-          </div>
-          
-          <div style="margin-top: 1rem; padding: 1rem; background: var(--bg); border-radius: 8px;">
-            <strong>2024 Reading Goal:</strong> 24 books (Currently: 18/24) 📖
-          </div>
+          <p>Tech insights, personal growth, and fiction recommendations with reviews.</p>
+          <a href="creative.html#reading" class="btn-primary">See Reading List</a>
         </div>
-      </div>
-      
-      <div class="section-divider"></div>
-      
-      <div style="text-align: center; color: var(--muted);">
-        <p>"Creativity is intelligence having fun." - Albert Einstein</p>
-        <p style="font-size: 0.9rem;">These pursuits help me approach technical challenges with fresh perspectives.</p>
       </div>
     </section>
 
