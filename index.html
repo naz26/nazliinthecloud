@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nazli Singh - Portfolio</title>
+    <meta name="description" content="Nazli Singh's portfolio: AWS DevOps, Cloud Security, AI, and digital art. Projects, blog, and contact info." />
+    <meta property="og:title" content="Nazli Singh - Portfolio" />
+    <meta property="og:description" content="AWS DevOps Engineer, Cloud Security & AI Enthusiast. Explore projects, blog, and creative work." />
+    <meta property="og:image" content="https://nazliinthecloud.com/img/header-bg.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nazliinthecloud.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nazli Singh - Portfolio" />
+    <meta name="twitter:description" content="AWS DevOps Engineer, Cloud Security & AI Enthusiast. Explore projects, blog, and creative work." />
+    <meta name="twitter:image" content="https://nazliinthecloud.com/img/header-bg.jpg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
@@ -13,7 +23,7 @@
       --bg: #c7c3db; /* deeper muted lavender-gray for better contrast */
       --fg: #2d1e4f;
       --muted: #7c7bbd; /* muted lavender for text */
-      --primary: #6a5acd; /* softer muted purple */
+      --primary: #42518a; /* deeper muted blue for headings */
       --secondary: #b6b2cc; /* muted lavender, not white */
       --highlight: #f7c6e0; /* soft pink */
       --border: #bdb8d3; /* soft gray-lavender */
@@ -71,7 +81,7 @@
       margin: 0.5em 0;
       font-family: 'Quicksand', sans-serif;
       color: var(--primary);
-      text-shadow: 0 2px 8px var(--secondary);
+      text-shadow: 0 2px 8px rgba(66,81,138,0.08); /* softer shadow for light mode */
       font-weight: 700;
       letter-spacing: 0.02em;
     }
@@ -88,7 +98,7 @@
     ──────────────────────────────────────────────────────────*/
     header {
       background-color: var(--secondary);
-      background-image: url('img/header-bg.jpg');
+      background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('img/header-bg.jpg');
       background-size: cover;
       background-position: center;
       color: var(--fg);
@@ -133,13 +143,18 @@
       background: none;
       border: none;
       cursor: pointer;
-      transition: color .2s;
-      border-radius: 6px;
-      padding: 0.3rem 0.7rem;
+      transition: color .2s, box-shadow .2s, transform .2s;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      min-width: 44px;
+      min-height: 44px;
+      box-shadow: none;
     }
     nav a:hover, nav button:hover {
       color: var(--accent);
       background: rgba(255,255,255,0.08);
+      box-shadow: 0 2px 8px rgba(44,34,84,0.12);
+      transform: scale(1.05);
     }
     nav ul li.active a {
       color: var(--accent);
@@ -230,7 +245,7 @@
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 2rem 1.5rem;
-      transition: var(--transition);
+      transition: var(--transition), box-shadow .2s, transform .2s;
       margin-bottom: 1.5rem;
       display: flex;
       flex-direction: column;
@@ -239,7 +254,7 @@
     }
     .project-card:hover, .creative-card:hover, .blog-post:hover {
       box-shadow: 0 8px 24px rgba(44,34,84,0.28);
-      transform: scale(1.02);
+      transform: scale(1.04) translateY(-4px);
       background: var(--primary);
       color: var(--fg);
     }
@@ -370,12 +385,14 @@
       cursor: pointer;
       opacity: 0;
       pointer-events: none;
-      transition: opacity .3s;
+      transition: opacity .3s, transform .3s;
       z-index: 9999;
+      transform: translateY(40px);
     }
     .scroll-to-top.visible {
       opacity: 1;
       pointer-events: auto;
+      transform: translateY(0);
     }
 
     .fade-in {
@@ -389,13 +406,23 @@
     }
 
     @media (max-width: 768px) {
-      .header-cta {
-        flex-direction: column;
-        align-items: center;
-      }
       nav ul {
         flex-direction: column;
         gap: 1rem;
+      }
+      nav a, nav button {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.7rem 1.2rem;
+      }
+      .contact-social a {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.7rem 1.2rem;
+      }
+      .header-cta {
+        flex-direction: column;
+        align-items: center;
       }
       .container {
         padding-left: 1rem;
@@ -461,6 +488,10 @@
   // Event listeners
   document.addEventListener('scroll', handleScroll);
   scrollToTopBtn.addEventListener('click', scrollToTop);
+  // Accessibility: allow scroll-to-top button to be triggered by keyboard
+  document.querySelector('.scroll-to-top').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') scrollToTop();
+  });
 </script>
 </head>
 <body>
@@ -473,18 +504,15 @@
         Building in the cloud—securely, efficiently, and creatively.
       </p>
       <div class="header-cta">
-        <a href="#projects" class="btn-primary">Explore My Work</a>
-        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+        <a href="#projects" class="btn-primary" aria-label="Explore My Work">Explore My Work</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
           Connect on LinkedIn
-        </a>
-        <a href="#" class="btn-secondary" style="margin-top:1rem;display:inline-block;" download>
-          <i class="fas fa-file-download"></i> Download CV (placeholder)
         </a>
       </div>
     </div>
   </header>
 
-  <nav id="navbar" aria-label="Main navigation">
+  <nav id="navbar" aria-label="Main navigation" role="navigation">
     <div class="container">
       <ul>
         <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
@@ -599,20 +627,7 @@
     <section id="creative">
       <h2 class="section-title">Creative Work</h2>
       <p class="section-intro">A showcase of my digital art, illustrations, and creative process.</p>
-      <div class="creative-gallery" style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;">
-        <div class="creative-card">
-          <img src="https://via.placeholder.com/320x180?text=Artwork+1" alt="Placeholder artwork 1" style="width:100%;max-width:320px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:1rem;" />
-          <h3>Digital Art</h3>
-          <p>Placeholder for your digital artwork, illustrations, or designs.</p>
-          <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
-        </div>
-        <div class="creative-card">
-          <img src="https://via.placeholder.com/320x180?text=Artwork+2" alt="Placeholder artwork 2" style="width:100%;max-width:320px;border-radius:8px;box-shadow:var(--shadow);margin-bottom:1rem;" />
-          <h3>Illustration</h3>
-          <p>Placeholder for your creative process and inspiration.</p>
-          <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
+      <!-- Placeholder creative cards removed for now -->
     </section>
 
     <section id="blog">
@@ -621,7 +636,6 @@
       <div class="emoji">📝</div>
       <div class="blog-posts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
         <article class="blog-post">
-          <!-- Removed blog post thumbnail image -->
           <div class="post-meta">
             <span class="post-date">Published on Medium</span>
             <span class="post-category">Career Journey</span>
@@ -629,20 +643,10 @@
             <span class="post-reading-time" style="margin-left:1rem;color:var(--muted);">5 min read</span>
           </div>
           <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
-          <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health…</p>
+          <p>I’ve shared my journey from hospitality burnout to finding purpose in tech</p>
           <a href="https://medium.com/..." class="btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium <i class="fas fa-arrow-right"></i></a>
         </article>
-        <article class="blog-post">
-          <div class="post-meta">
-            <span class="post-date">Published on Medium</span>
-            <span class="post-category">Cloud Security</span>
-            <span class="post-tags" style="margin-left:1rem;color:var(--accent2);">#AWS #Security</span>
-            <span class="post-reading-time" style="margin-left:1rem;color:var(--muted);">7 min read</span>
-          </div>
-          <h3>Securing AWS: My Top 5 Tips for Cloud Security</h3>
-          <p>Learn how to keep your cloud infrastructure safe with practical, real-world advice. Placeholder post.</p>
-          <a href="#" class="btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium <i class="fas fa-arrow-right"></i></a>
-        </article>
+        <!-- Placeholder blog post removed -->
       </div>
     </section>
 
@@ -663,8 +667,6 @@
       <div class="contact-social">
         <a href="https://github.com/naz26" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter (placeholder)</a>
-        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram (placeholder)</a>
       </div>
     </section>
   </main>
@@ -688,7 +690,7 @@
     </div>
   </footer>
 
-  <div class="scroll-to-top" aria-label="Scroll to top">
+  <div class="scroll-to-top" aria-label="Scroll to top" role="button" tabindex="0">
     <i class="fas fa-chevron-up"></i>
   </div>
 
