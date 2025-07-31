@@ -180,25 +180,60 @@
     }
   }
 </style>
+<style>
+  /* Dark-mode overrides */
+  [data-theme="dark"] {
+    --bg-color: #2e2e3a;
+    --text-color: #fafafc;
+    --secondary-color: #12121a;
+    --primary-color: #9575cd;
+    --accent-color: #512da8;
+    --highlight-color: #673ab7;
+    /* etc… */
+  }
+</style>
+
+<script>
+  // on load, apply saved theme
+  const root = document.documentElement;
+  if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
+
+  // toggle handler
+  function toggleTheme(){
+    if (root.getAttribute("data-theme")==="dark"){
+      root.removeAttribute("data-theme");
+      localStorage.removeItem("theme");
+    } else {
+      root.setAttribute("data-theme","dark");
+      localStorage.theme = "dark";
+    }
+  }
+</script>
+
 </head>
 <body>
     <!-- Rest of the HTML content remains exactly the same as in the previous version -->
     <!-- I'll include it here for completeness -->
     <header>
-    <div class="container">
-        <h1>Nazli Singh</h1>
-        <p class="header-subtitle">
-            AWS DevOps Engineer | Cloud Security & AI Enthusiast<br>
-            Building in the cloud — securely, efficiently, and creatively.
-        </p>
-        <div class="header-cta">
-            <a href="#projects" class="btn-primary">Explore My Work</a>
-            <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank">
-                Connect on LinkedIn
-            </a>
-        </div>
+    <header style="
+    background: var(--secondary-color) url('/img/header-bg.jpg') center/cover no-repeat;
+    color: white;
+">
+  <div class="container">
+    <h1 style="color:white; margin:0.2em 0;">Nazli Singh</h1>
+    <p class="header-subtitle">
+      AWS DevOps Engineer | Cloud Security & AI Enthusiast<br>
+      Building in the cloud—securely, efficiently, and creatively.
+    </p>
+    <div class="header-cta">
+      <a href="#projects" class="btn-primary">Explore My Work</a>
+      <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank">
+        Connect on LinkedIn
+      </a>
     </div>
+  </div>
 </header>
+
 
     <nav id="navbar">
         <div class="container">
@@ -208,6 +243,13 @@
             <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
             <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
             <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            <li>
+                <button id="theme-toggle" onclick="toggleTheme()"
+                        style="background:none;border:none;color:white;font-size:1.25rem;cursor:pointer;">
+                    🌓
+                </button>
+                </li>
+
             </ul>
         </div>
         </nav>
