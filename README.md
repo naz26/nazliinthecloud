@@ -108,9 +108,7 @@ Contributions, feedback, and feature requests are welcome!
    git checkout -b feature/my-update
    ```
 
-git checkout -b feature/my-update
 
-````
 3. Commit your changes:
    ```bash
 git commit -m "Add my feature"
