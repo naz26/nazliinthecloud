@@ -7,22 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <style>
+ <style>
   /*──────────────────────────────────────────────────────────
      Base Palette (light mode)
   ──────────────────────────────────────────────────────────*/
   :root {
-    /* neutrals */
-    --bg:         #f2eff8;    /* slightly deeper off-white */
-    --fg:         #2e2e3a;    /* deep slate for text */
-    --muted:      #7e6a8a;    /* secondary muted text */
-
-    /* primary accents */
-    --primary:    #b39ddb;    /* lavender mist */
-    --secondary:  #7e57c2;    /* twilight plum */
-    --highlight:  #fce4ec;    /* blush pink */
-
-    /* UI */
+    --bg:         #f2eff8;
+    --fg:         #2e2e3a;
+    --muted:      #7e6a8a;
+    --primary:    #b39ddb;
+    --secondary:  #7e57c2;
+    --highlight:  #fce4ec;
     --border:     #ded7e6;
     --tag-bg:     #ede7f6;
     --shadow:     0 5px 15px rgba(126,87,194,0.1);
@@ -32,14 +27,12 @@
      Dark Mode Overrides
   ──────────────────────────────────────────────────────────*/
   [data-theme="dark"] {
-    --bg:         #1e1e2f;   /* near-black twilight */
-    --fg:         #eceff4;   /* soft off-white */
-    --muted:      #a29bb4;   /* light muted */
-
-    --primary:    #9575cd;   /* richer lavender */
-    --secondary:  #512da8;   /* deep indigo */
-    --highlight:  #673ab7;   /* strong violet */
-
+    --bg:         #1e1e2f;
+    --fg:         #eceff4;
+    --muted:      #a29bb4;
+    --primary:    #9575cd;
+    --secondary:  #512da8;
+    --highlight:  #673ab7;
     --border:     #4c426e;
     --tag-bg:     #3e3150;
     --shadow:     0 5px 15px rgba(0,0,0,0.4);
@@ -48,9 +41,7 @@
   /*──────────────────────────────────────────────────────────
      Global Styles
   ──────────────────────────────────────────────────────────*/
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+  *, *::before, *::after { box-sizing: border-box; }
 
   body {
     margin: 0;
@@ -62,7 +53,7 @@
     transition: background .3s, color .3s;
   }
 
-  h1, h2, h3 {
+  h1,h2,h3 {
     margin: 0.5em 0;
     font-family: 'Quicksand', sans-serif;
     color: var(--secondary);
@@ -73,9 +64,7 @@
     text-decoration: none;
     transition: color .2s;
   }
-  a:hover {
-    color: var(--highlight);
-  }
+  a:hover { color: var(--highlight); }
 
   /*──────────────────────────────────────────────────────────
      Header & Navigation
@@ -89,9 +78,7 @@
     padding: 4rem 2rem;
     text-align: center;
   }
-  header h1 {
-    color: white !important;
-  }
+  header h1 { color: white !important; }
 
   nav {
     background: var(--secondary);
@@ -102,14 +89,13 @@
   }
   nav ul {
     margin: 0;
-    padding: 0.5rem 0;
+    padding: .5rem 0;
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 2rem;
   }
-  nav a,
-  nav button {
+  nav a, nav button {
     font-family: 'Quicksand', sans-serif;
     color: white;
     font-weight: 500;
@@ -118,19 +104,15 @@
     cursor: pointer;
     transition: color .2s;
   }
-  nav a:hover,
-  nav button:hover {
-    color: var(--highlight);
-  }
+  nav a:hover, nav button:hover { color: var(--highlight); }
 
   /*──────────────────────────────────────────────────────────
      Buttons
   ──────────────────────────────────────────────────────────*/
-  .btn-primary,
-  .btn-secondary {
+  .btn-primary, .btn-secondary {
     display: inline-block;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: .75rem 1.5rem;
     border-radius: 5px;
     transition: all .3s ease;
   }
@@ -144,8 +126,7 @@
     border: 2px solid white;
     color: white;
   }
-  .btn-primary:hover,
-  .btn-secondary:hover {
+  .btn-primary:hover, .btn-secondary:hover {
     background: var(--highlight);
     color: var(--fg);
     box-shadow: var(--shadow);
@@ -172,21 +153,19 @@
     width: 50px;
     height: 3px;
     background: var(--primary);
-    margin: 0.5rem auto 0;
+    margin: .5rem auto 0;
   }
 
   /*──────────────────────────────────────────────────────────
      Utility Tags & Emoji
   ──────────────────────────────────────────────────────────*/
-  .skill-tag,
-  .tech-tag,
-  .cert-tag {
+  .skill-tag, .tech-tag, .cert-tag {
     background: var(--tag-bg);
-    padding: 0.4rem 0.8rem;
+    padding: .4rem .8rem;
     border-radius: 20px;
-    margin: 0.2rem;
+    margin: .2rem;
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: .85rem;
     color: var(--fg);
   }
   .emoji {
@@ -206,35 +185,19 @@
     text-align: center;
     padding: 2rem 1rem;
     margin-top: 3rem;
-    font-size: 0.9rem;
+    font-size: .9rem;
   }
-  .footer-links a:hover {
-    color: var(--highlight);
-  }
+  .footer-links a:hover { color: var(--highlight); }
 
   /*──────────────────────────────────────────────────────────
      Responsive
   ──────────────────────────────────────────────────────────*/
   @media (max-width: 768px) {
-    nav ul {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .header-cta {
-      flex-direction: column;
-      gap: 1rem;
-    }
-    section {
-      padding: 2rem 1rem;
-    }
+    nav ul { flex-direction: column; gap: 1rem; }
+    .header-cta { flex-direction: column; gap: 1rem; }
+    section { padding: 2rem 1rem; }
   }
 </style>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Nazli Singh - AWS DevOps Engineer, Cloud Security & AI Enthusiast. Explore my portfolio showcasing projects, skills, and creative work.">
-    <meta name="keywords" content="AWS, DevOps, Cloud Security, AI, Portfolio, Nazli Singh">
-    <meta name="author" content="Nazli Singh">
-
 <script>
   // on load, apply saved theme
   const root = document.documentElement;
@@ -251,173 +214,162 @@
     }
   }
 </script>
-
 </head>
 <body>
-    <header style="
-    background: var(--secondary-color) url('/img/header-bg.jpg') center/cover no-repeat;
-    color: white;
-">
-  <div class="container">
-    <h1 style="color:white; margin:0.2em 0;">Nazli Singh</h1>
-    <p class="header-subtitle">
-      AWS DevOps Engineer | Cloud Security & AI Enthusiast<br>
-      Building in the cloud—securely, efficiently, and creatively.
-    </p>
-    <div class="header-cta">
-      <a href="#projects" class="btn-primary">Explore My Work</a>
-      <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank">
-        Connect on LinkedIn
-      </a>
+  <header>
+    <div class="container">
+      <h1 style="color:white; margin:0.2em 0;">Nazli Singh</h1>
+      <p class="header-subtitle">
+        AWS DevOps Engineer | Cloud Security & AI Enthusiast<br>
+        Building in the cloud—securely, efficiently, and creatively.
+      </p>
+      <div class="header-cta">
+        <a href="#projects" class="btn-primary">Explore My Work</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank">
+          Connect on LinkedIn
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
+  <nav id="navbar">
+    <div class="container">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li>
+          <button id="theme-toggle" onclick="toggleTheme()"
+                  style="background:none;border:none;color:white;font-size:1.25rem;cursor:pointer;">
+              🌓
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <nav id="navbar">
-        <div class="container">
-            <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-            <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
-            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-            <li>
-                <button id="theme-toggle" onclick="toggleTheme()"
-                        style="background:none;border:none;color:white;font-size:1.25rem;cursor:pointer;">
-                    🌓
-                </button>
-                </li>
-
-            </ul>
-        </div>
-        </nav>
-
-<main class="container">
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <div class="about-content">
-      
-      <!-- Profile block -->
-      <div class="profile-container">
-        <div class="emoji">🙋‍♀️</div>
-        <h3>Nazli Singh</h3>
-      </div>
-      
-      <!-- Skills block -->
-      <div class="skills">
-        <h3>Skills</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Terraform</span>
-          <span class="skill-tag">GitLab CI/CD</span>
-          <span class="skill-tag">Ansible</span>
-          <span class="skill-tag">KMS & IAM</span>
-          <span class="skill-tag">AI Services (Rekognition, Bedrock)</span>
-        </div>
-      </div>
-      
-      <!-- About text and stats -->
-      <div class="about-text">
-        <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
-        <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
-        <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a> — feel free to reach out if you have any questions or just want to chat about tech!</p>
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
         
-        <div class="quick-stats">
-          <div class="stat">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">5</span>
-            <span class="stat-label">Projects Deployed</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">4</span>
-            <span class="stat-label">Blog Articles</span>
+        <!-- Profile block -->
+        <div class="profile-container">
+          <div class="emoji">🙋‍♀️</div>
+          <h3>Nazli Singh</h3>
+        </div>
+        
+        <!-- Skills block -->
+        <div class="skills">
+          <h3>Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">GitLab CI/CD</span>
+            <span class="skill-tag">Ansible</span>
+            <span class="skill-tag">KMS & IAM</span>
+            <span class="skill-tag">AI Services (Rekognition, Bedrock)</span>
           </div>
         </div>
+        
+        <!-- About text and stats -->
+        <div class="about-text">
+          <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
+          <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
+          <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a> — feel free to reach out if you have any questions or just want to chat about tech!</p>
+          
+          <div class="quick-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">5</span>
+              <span class="stat-label">Projects Deployed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">4</span>
+              <span class="stat-label">Blog Articles</span>
+            </div>
+          </div>
+        </div>
+        
       </div>
-      
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects">
-    <div class="project-card">
-        <div class="emoji">🛠️</div>
-        <div class="project-image">
-        </div>
-        <div class="project-content">
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <div class="emoji">🛠️</div>
+          <div class="project-content">
             <h3>Website Hosting on GitHub and Route53</h3>
-            <p><p>This site is hosted using GitHub Pages, with a custom domain managed via Amazon Route 53. It’s a fully static HTML/CSS portfolio built from scratch, designed to highlight my AWS DevOps work and learning journey in security and AI.</p>
-            <div class="project-tech">
-                <span class="tech-tag">AWS S3</span>
-                <span class="tech-tag">Route 53</span>
-                <span class="tech-tag">CloudFront</span>
-                <span class="tech-tag">KMS</span>
-            </div>
-            <div class="project-links">
-                <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank"><i class="fab fa-github"></i> View Code</a>
-                <a href="https://nazliinthecloud.com" class="btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
+            <p>This site is hosted using GitHub Pages, with a custom domain managed via Amazon Route 53. It’s a fully static HTML/CSS portfolio built from scratch, designed to highlight my AWS DevOps work and learning journey in security and AI.</p>
+            <span class="tech-tag">AWS S3</span>
+            <span class="tech-tag">Route 53</span>
+            <span class="tech-tag">CloudFront</span>
+            <span class="tech-tag">KMS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank"><i class="fab fa-github"></i> View Code</a>
+            <a href="https://nazliinthecloud.com" class="btn-secondary" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          </div>
         </div>
-    </div>
-        </div>
-  </section>
-
-  <section id="creative">
-    <h2 class="section-title">Creative Work</h2>
-    <div class="creative-content">
-        <div class="creative-card">
-            <div class="creative-image">
-                <div class="emoji">🎨</div>
-            </div>
-            <h3>Digital Art</h3>
-            <p>Showcase of your digital artwork, illustrations, or designs. Share your creative process and inspiration.</p>
-            <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
-        </div>
-    </div>
-  </section>
-
-  <section id="blog">
-    <h2 class="section-title">Latest Articles</h2>
-    <div class="emoji">📝</div>
-    <div class="blog-posts">…</div>
-    <article class="blog-post">
-      <div class="post-meta">
-        <span class="post-date">Published on Medium</span>
-        <span class="post-category">Career Journey</span>
       </div>
-      <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
-      <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health, self-doubt, and the courage it takes to start over. It’s been a wild ride, but one I’m grateful for.</p>
-      <a href="https://medium.com/version-1/code-and-coping-c0ec8141e3fa" class="btn-primary" target="_blank">
-        Read on Medium <i class="fas fa-arrow-right"></i>
-      </a>
-    </article>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="emoji">📫</div>
-    <h2 class="section-title">Get in Touch</h2>
-    <p>If you’d like to collaborate, have questions, or just want to say hi, feel free to reach out!</p>
-    <!-- you can put a contact form or email here, or leave empty -->
-  </section>
-</main>
+    <section id="creative">
+      <h2 class="section-title">Creative Work</h2>
+      <div class="creative-content">
+          <div class="creative-card">
+              <div class="creative-image">
+                  <div class="emoji">🎨</div>
+              </div>
+              <h3>Digital Art</h3>
+              <p>Showcase of your digital artwork, illustrations, or designs. Share your creative process and inspiration.</p>
+              <a href="#" class="btn-primary">View Gallery <i class="fas fa-arrow-right"></i></a>
+          </div>
+      </div>
+    </section>
 
-<footer>
-            <div class="container footer-content">
-                <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
-                <div class="footer-links">
-                    <a href="https://github.com/naz26" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                </div>
-            </div>
-        </footer>
+    <section id="blog">
+      <h2 class="section-title">Latest Articles</h2>
+      <div class="emoji">📝</div>
+      <div class="blog-posts">
+        <article class="blog-post">
+          <div class="post-meta">
+            <span class="post-date">Published on Medium</span>
+            <span class="post-category">Career Journey</span>
+          </div>
+          <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
+          <p>I’ve shared my journey from hospitality burnout to finding purpose in tech—navigating mental health…</p>
+          <a href="https://medium.com/..." class="btn-primary" target="_blank">Read on Medium <i class="fas fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </section>
 
-        <script>
-            document.getElementById('copyright-year').textContent = new Date().getFullYear();
-        </script>
-        </body>
-        </html>
+    <section id="contact">
+      <div class="emoji">📫</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p>If you’d like to collaborate, have questions, or just want to say hi, feel free to reach out!</p>
+      <!-- you can put a contact form or email here, or leave empty -->
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
+      <div class="footer-links">
+          <a href="https://github.com/naz26" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
