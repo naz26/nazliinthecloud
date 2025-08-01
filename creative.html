@@ -98,10 +98,17 @@
     nav {
       background: var(--secondary);
       box-shadow: var(--shadow);
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 999;
       border-bottom: 1px solid var(--border);
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+    nav.nav-hidden {
+      transform: translateY(-100%);
     }
     nav ul {
       margin: 0;
@@ -109,7 +116,18 @@
       list-style: none;
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 2rem;
+    }
+    
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--fg);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
     }
     nav a, nav button {
       font-family: 'Quicksand', sans-serif;
@@ -306,10 +324,53 @@
     }
 
     @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 1rem;
+      body {
+        padding-top: 60px;
       }
+      
+      .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: var(--shadow);
+      }
+      
+      nav ul.nav-open {
+        max-height: 400px;
+      }
+      
+      nav li {
+        border-bottom: 1px solid var(--border);
+      }
+      
+      nav li:last-child {
+        border-bottom: none;
+      }
+      
+      nav a, nav button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0;
+      }
+      
       .container {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -344,7 +405,10 @@
 
   <nav id="navbar" aria-label="Main navigation" role="navigation">
     <div class="container">
-      <ul>
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul id="nav-menu">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
         <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
@@ -477,6 +541,38 @@
 
   <script>
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    
+    // Navigation auto-hide on mobile
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+    
+    function handleNavScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (window.innerWidth <= 768) {
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          navbar.classList.add('nav-hidden');
+        } else {
+          navbar.classList.remove('nav-hidden');
+        }
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }
+    
+    function toggleNav() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('nav-open');
+    }
+    
+    // Close nav when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('nav-open');
+      });
+    });
+    
+    document.addEventListener('scroll', handleNavScroll);
   </script>
 </body>
 </html>
