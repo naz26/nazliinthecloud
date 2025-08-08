@@ -48,6 +48,7 @@ nazliinthecloud/
    ```bash
    git clone https://github.com/naz26/nazliinthecloud.git
    cd nazliinthecloud
+   ```
 
 ## Add Your Images
 
