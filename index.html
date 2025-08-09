@@ -863,6 +863,24 @@
   </div>
 
   <script>
+    // Fade-in effect for .fade-in elements (e.g., Career Timeline)
+    document.addEventListener('DOMContentLoaded', function() {
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries, obs) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        fadeEls.forEach(function(el) { observer.observe(el); });
+      } else {
+        // Fallback: show all fade-in elements
+        fadeEls.forEach(function(el) { el.classList.add('visible'); });
+      }
+    });
     const root = document.documentElement;
     if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
 
