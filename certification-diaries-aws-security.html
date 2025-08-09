@@ -36,9 +36,12 @@
       --tag-bg: #3e3150;
     }
     }
-    h1,h2,h3 {
+    html, body {
+      font-family: 'Inter', 'Quicksand', 'Poppins', 'Roboto', Arial, sans-serif;
+    }
+    h1, h2, h3 {
       margin: 0.5em 0;
-      font-family: 'Quicksand', sans-serif;
+      font-family: 'Quicksand', 'Inter', 'Poppins', 'Roboto', Arial, sans-serif;
       color: var(--primary);
       text-shadow: 0 2px 8px rgba(75,60,110,0.10);
       font-weight: 700;
@@ -204,21 +207,6 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 style="color:white; margin:0.2em 0;"><a href="index.html" style="color:white;text-decoration:none;">Nazli Singh</a></h1>
-      <p class="header-subtitle" style="color: #eaeafc; text-shadow: 0 2px 12px #2d1e4f, 0 0 8px var(--accent2); background: rgba(44,34,84,0.45); border-radius: 8px; padding: 0.5em 1em; display: inline-block;">
-        AWS DevOps Engineer | Cloud Security &amp; AI Enthusiast<br>
-        <span style="font-size: 0.9rem; color: #f7c6e0;">Exploring automation, security, and creativity in tech</span>
-      </p>
-      <div class="header-cta">
-        <a href="index.html#projects" class="btn-primary" aria-label="Explore My Work">Explore My Work</a>
-        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
-          Connect on LinkedIn
-        </a>
-      </div>
-    </div>
-  </header>
   <nav id="navbar" aria-label="Main navigation" role="navigation">
     <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
