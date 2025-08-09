@@ -24,7 +24,7 @@
       --transition: all 0.3s cubic-bezier(.4,0,.2,1);
       --accent: #e6a7c7;
       --accent2: #7ca7e6;
-    }
+    
     [data-theme="dark"] {
       --bg: #23234d;
       --fg: #eaeafc;
@@ -34,35 +34,7 @@
       --highlight: #ffb6c1;
       --border: #3a2e5c;
       --tag-bg: #3e3150;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.18);
-      --accent: #ff8c42;
-      --accent2: #5ec6fa;
     }
-    html, body {
-      background: var(--bg) !important;
-      color: var(--fg);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-      transition: background .3s, color .3s;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-    main.container {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-    section {
-      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
-      border-radius: 16px;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 12px rgba(44,34,84,0.06);
-      padding: 3rem 2rem;
     }
     h1,h2,h3 {
       margin: 0.5em 0;
@@ -83,6 +55,8 @@
       border-bottom: 1px solid var(--border);
       transform: translateY(0);
       transition: transform 0.3s ease;
+      width: 100vw;
+      min-height: 56px;
     }
     nav.nav-hidden {
       transform: translateY(-100%);
@@ -101,9 +75,14 @@
       background: none;
       border: none;
       color: var(--fg);
-      font-size: 1.5rem;
+      font-size: 2rem;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0.5rem 1rem;
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1001;
     }
     nav a, nav button {
       font-family: 'Quicksand', sans-serif;
@@ -140,16 +119,22 @@
       }
       .nav-toggle {
         display: block;
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+      }
+      nav {
+        position: fixed;
+        width: 100vw;
+        min-height: 56px;
+      }
+      nav .container {
+        padding-left: 0;
+        padding-right: 0;
       }
       nav ul {
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
+        width: 100vw;
         background: var(--secondary);
         flex-direction: column;
         gap: 0;
@@ -158,6 +143,7 @@
         overflow: hidden;
         transition: max-height 0.3s ease;
         box-shadow: var(--shadow);
+        z-index: 1000;
       }
       nav ul.nav-open {
         max-height: 70vh;
@@ -234,10 +220,10 @@
     </div>
   </header>
   <nav id="navbar" aria-label="Main navigation" role="navigation">
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
     <div class="container">
-      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
       <ul id="nav-menu">
         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
         <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
@@ -363,6 +349,33 @@
     <i class="fas fa-chevron-up"></i>
   </div>
   <script>
+    // Hamburger/mobile nav logic (moved from <style> block)
+    function toggleNav() {
+      const navMenu = document.getElementById('nav-menu');
+      const navToggle = document.querySelector('.nav-toggle');
+      const isOpen = navMenu.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+    }
+    // Close nav when clicking on a link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        const navMenu = document.getElementById('nav-menu');
+        const navToggle = document.querySelector('.nav-toggle');
+        navMenu.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    // Close nav when clicking outside
+    document.addEventListener('click', function(event) {
+      const navMenu = document.getElementById('nav-menu');
+      const navToggle = document.querySelector('.nav-toggle');
+      if (window.innerWidth <= 768 && navMenu.classList.contains('nav-open')) {
+        if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+          navMenu.classList.remove('nav-open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
     // on load, apply saved theme
     const root = document.documentElement;
     if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
