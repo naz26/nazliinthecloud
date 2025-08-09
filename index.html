@@ -617,83 +617,7 @@
       margin-top: 0.5rem;
     }
   </style>
-<script>
-  // on load, apply saved theme
-  const root = document.documentElement;
-  if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
-
-  // toggle handler
-  function toggleTheme(){
-    if (root.getAttribute("data-theme")==="dark"){
-      root.removeAttribute("data-theme");
-      localStorage.removeItem("theme");
-    } else {
-      root.setAttribute("data-theme","dark");
-      localStorage.theme = "dark";
-    }
-  }
-
-  // Scroll to top button
-  const scrollToTopBtn = document.querySelector('.scroll-to-top');
-  const rootElement = document.documentElement;
-
-  function handleScroll() {
-    // Show or hide the button based on scroll position
-    if (rootElement.scrollTop > 300) {
-      scrollToTopBtn.classList.add('visible');
-    } else {
-      scrollToTopBtn.classList.remove('visible');
-    }
-  }
-
-  function scrollToTop() {
-    // Smooth scroll to top
-    rootElement.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  // Navigation auto-hide on mobile
-  let lastScrollTop = 0;
-  const navbar = document.getElementById('navbar');
-  
-  function handleNavScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (window.innerWidth <= 768) {
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        navbar.classList.add('nav-hidden');
-      } else {
-        navbar.classList.remove('nav-hidden');
-      }
-    }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  }
-  
-  function toggleNav() {
-    const navMenu = document.getElementById('nav-menu');
-    navMenu.classList.toggle('nav-open');
-  }
-  
-  // Close nav when clicking on a link
-  document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('nav-menu').classList.remove('nav-open');
-    });
-  });
-
-  // Event listeners
-  document.addEventListener('scroll', handleScroll);
-  document.addEventListener('scroll', handleNavScroll);
-  scrollToTopBtn.addEventListener('click', scrollToTop);
-  // Accessibility: allow scroll-to-top button to be triggered by keyboard
-  document.querySelector('.scroll-to-top').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') scrollToTop();
-  });
-</script>
-</head>
+  </head>
 <body>
   <div id="top"></div>
   <header>
@@ -719,6 +643,7 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul id="nav-menu">
+        <li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
         <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
         <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
@@ -912,7 +837,73 @@
   </div>
 
   <script>
+    const root = document.documentElement;
+    if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
+
+    function toggleTheme(){
+      if (root.getAttribute("data-theme")==="dark"){
+        root.removeAttribute("data-theme");
+        localStorage.removeItem("theme");
+      } else {
+        root.setAttribute("data-theme","dark");
+        localStorage.theme = "dark";
+      }
+    }
+
     document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    const rootElement = document.documentElement;
+
+    function handleScroll() {
+      if (rootElement.scrollTop > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    }
+
+    function scrollToTop() {
+      rootElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    function handleNavScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (window.innerWidth <= 768) {
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          navbar.classList.add('nav-hidden');
+        } else {
+          navbar.classList.remove('nav-hidden');
+        }
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }
+
+    function toggleNav() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('nav-open');
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('nav-open');
+      });
+    });
+
+    document.addEventListener('scroll', handleScroll);
+    document.addEventListener('scroll', handleNavScroll);
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    document.querySelector('.scroll-to-top').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') scrollToTop();
+    });
   </script>
 </body>
 </html>

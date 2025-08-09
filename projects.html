@@ -284,6 +284,34 @@
       background: rgba(255,255,255,0.08);
     }
 
+    .scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--accent2);
+      color: var(--secondary);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      z-index: 9999;
+      transform: translateY(40px);
+    }
+    .scroll-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
     @media (max-width: 768px) {
       body {
         padding-top: 60px;
@@ -444,9 +472,9 @@
     </div>
   </main>
 
-  <footer>
-    <div class="container footer-content">
-      <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
+    <footer>
+      <div class="container footer-content">
+        <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -457,43 +485,68 @@
         <a href="https://github.com/naz26" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
+      </div>
+    </footer>
+    <div class="scroll-to-top" aria-label="Scroll to top" role="button" tabindex="0">
+      <i class="fas fa-chevron-up"></i>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
-    
-    // Navigation auto-hide on mobile
-    let lastScrollTop = 0;
-    const navbar = document.getElementById('navbar');
-    
-    function handleNavScroll() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (window.innerWidth <= 768) {
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-          navbar.classList.add('nav-hidden');
+    <script>
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      const scrollToTopBtn = document.querySelector('.scroll-to-top');
+      const rootElement = document.documentElement;
+
+      function handleScroll() {
+        if (rootElement.scrollTop > 300) {
+          scrollToTopBtn.classList.add('visible');
         } else {
-          navbar.classList.remove('nav-hidden');
+          scrollToTopBtn.classList.remove('visible');
         }
       }
-      
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    }
-    
-    function toggleNav() {
-      const navMenu = document.getElementById('nav-menu');
-      navMenu.classList.toggle('nav-open');
-    }
-    
-    // Close nav when clicking on a link
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-menu').classList.remove('nav-open');
+
+      function scrollToTop() {
+        rootElement.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+
+      // Navigation auto-hide on mobile
+      let lastScrollTop = 0;
+      const navbar = document.getElementById('navbar');
+
+      function handleNavScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (window.innerWidth <= 768) {
+          if (scrollTop > lastScrollTop && scrollTop > 100) {
+            navbar.classList.add('nav-hidden');
+          } else {
+            navbar.classList.remove('nav-hidden');
+          }
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      }
+
+      function toggleNav() {
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('nav-open');
+      }
+
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('nav-menu').classList.remove('nav-open');
+        });
       });
-    });
-    
-    document.addEventListener('scroll', handleNavScroll);
-  </script>
-</body>
-</html>
+
+      document.addEventListener('scroll', handleScroll);
+      document.addEventListener('scroll', handleNavScroll);
+      scrollToTopBtn.addEventListener('click', scrollToTop);
+      document.querySelector('.scroll-to-top').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') scrollToTop();
+      });
+    </script>
+  </body>
+  </html>
