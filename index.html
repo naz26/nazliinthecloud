@@ -449,9 +449,10 @@
         transition: max-height 0.3s ease;
         box-shadow: var(--shadow);
       }
-      
       nav ul.nav-open {
-        max-height: 400px;
+        max-height: 70vh;
+        overflow-y: auto;
+        touch-action: pan-y;
       }
       
       nav li {
