@@ -83,8 +83,7 @@
       padding: 0.5rem 1rem;
       position: absolute;
       left: 0.5rem;
-      top: 50%;
-      transform: translateY(-50%);
+  top: 0.75rem;
       z-index: 1001;
     }
     nav a, nav button {
@@ -128,27 +127,28 @@
         width: 100vw;
         min-height: 56px;
       }
-      nav .container {
-        padding-left: 0;
-        padding-right: 0;
-      }
-      nav ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        width: 100vw;
-        background: var(--secondary);
-        flex-direction: column;
-        gap: 0;
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        box-shadow: var(--shadow);
-        z-index: 1000;
-      }
-      nav ul.nav-open {
+        nav ul {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100vw;
+          height: 100dvh;
+          background: var(--secondary);
+          flex-direction: column;
+          gap: 0;
+          padding: 3.5rem 0 0 0; /* space for nav bar */
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          box-shadow: var(--shadow);
+          z-index: 1000;
+        }
+        nav ul.nav-open {
+          max-height: 100dvh;
+          overflow-y: auto;
+          touch-action: pan-y;
+        }
         max-height: 70vh;
         overflow-y: auto;
         touch-action: pan-y;
@@ -162,20 +162,23 @@
       nav a, nav button {
         display: block;
         width: 100%;
-        text-align: center;
-        padding: 1rem;
-        border-radius: 0;
-      }
-    }
-    a {
-      color: var(--accent2);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    a:hover { color: var(--highlight); }
-    .back-link {
-      display: inline-block;
-      margin-bottom: 2rem;
+        nav a, nav button, #theme-toggle {
+          font-family: 'Quicksand', sans-serif;
+          color: var(--fg);
+          font-weight: 500;
+          background: none;
+          border: none;
+          cursor: pointer;
+          transition: color .2s, box-shadow .2s, transform .2s;
+          border-radius: 10px;
+          padding: 0.5rem 1rem;
+          min-width: 44px;
+          min-height: 44px;
+          box-shadow: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       color: var(--accent2);
       text-decoration: none;
       font-weight: 500;
