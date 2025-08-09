@@ -326,46 +326,54 @@
       }
       
       nav ul {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         background: var(--secondary);
         flex-direction: column;
         gap: 0;
         padding: 0;
         max-height: 0;
-        overflow: hidden;
+        overflow-y: auto;
+        overflow-x: hidden;
         transition: max-height 0.3s ease;
         box-shadow: var(--shadow);
+        z-index: 1000;
       }
-      
       nav ul.nav-open {
-        max-height: 400px;
+        max-height: 100vh;
       }
-      
       nav li {
         border-bottom: 1px solid var(--border);
       }
-      
       nav li:last-child {
         border-bottom: none;
       }
-      
       nav a, nav button {
         display: block;
         width: 100%;
         text-align: center;
-        padding: 1rem;
+        padding: 1.1rem 0.5rem;
         border-radius: 0;
       }
-      
       .container {
         padding-left: 1rem;
         padding-right: 1rem;
       }
       section {
         padding: 2rem 1rem;
+      }
+      #theme-toggle {
+        display: block !important;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        color: var(--fg);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 1rem 0;
       }
     }
   </style>

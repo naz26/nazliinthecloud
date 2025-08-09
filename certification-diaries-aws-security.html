@@ -24,7 +24,7 @@
       --transition: all 0.3s cubic-bezier(.4,0,.2,1);
       --accent: #e6a7c7;
       --accent2: #7ca7e6;
-    
+    }
     [data-theme="dark"] {
       --bg: #23234d;
       --fg: #eaeafc;
@@ -34,7 +34,6 @@
       --highlight: #ffb6c1;
       --border: #3a2e5c;
       --tag-bg: #3e3150;
-    }
     }
     html, body {
       font-family: 'Inter', 'Quicksand', 'Poppins', 'Roboto', Arial, sans-serif;
@@ -127,60 +126,56 @@
         width: 100vw;
         min-height: 56px;
       }
-        nav ul {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          width: 100vw;
-          height: 100dvh;
-          background: var(--secondary);
-          transition: max-height 0.3s ease;
-          box-shadow: var(--shadow);
-          z-index: 1000;
-        }
-        nav ul.nav-open {
-          max-height: 100dvh;
-          overflow-y: auto;
-          touch-action: pan-y;
-        }
-  nav li {
+      nav ul {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--secondary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: var(--shadow);
+        z-index: 1000;
+      }
+      nav ul.nav-open {
+        max-height: 100vh;
+      }
+      nav li {
         border-bottom: 1px solid var(--border);
       }
       nav li:last-child {
         border-bottom: none;
       }
-      nav a, nav button, #theme-toggle {
-        display: flex;
+      nav a, nav button {
+        display: block;
         width: 100%;
-        font-family: 'Quicksand', sans-serif;
+        text-align: center;
+        padding: 1.1rem 0.5rem;
+        border-radius: 0;
+      }
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      #theme-toggle {
+        display: block !important;
+        margin: 0 auto;
+        font-size: 1.5rem;
         color: var(--fg);
-        font-weight: 500;
         background: none;
         border: none;
         cursor: pointer;
-        transition: color .2s, box-shadow .2s, transform .2s;
-        border-radius: 10px;
-        padding: 1rem;
-        min-width: 44px;
-        min-height: 44px;
-        box-shadow: none;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        padding: 1rem 0;
       }
-    }
-    .back-link:hover {
-      color: var(--accent);
-    }
-    blockquote {
-      background: var(--highlight);
-      color: var(--primary);
-      border-left: 4px solid var(--accent);
-      margin: 1.5rem 0;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      font-style: italic;
     }
     pre, code {
       background: var(--tag-bg);
@@ -328,32 +323,7 @@
   </div>
   <script>
     // Hamburger/mobile nav logic (moved from <style> block)
-    function toggleNav() {
-      const navMenu = document.getElementById('nav-menu');
-      const navToggle = document.querySelector('.nav-toggle');
-      const isOpen = navMenu.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    }
-    // Close nav when clicking on a link
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.querySelector('.nav-toggle');
-        navMenu.classList.remove('nav-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-    // Close nav when clicking outside
-    document.addEventListener('click', function(event) {
-      const navMenu = document.getElementById('nav-menu');
-      const navToggle = document.querySelector('.nav-toggle');
-      if (window.innerWidth <= 768 && navMenu.classList.contains('nav-open')) {
-        if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
-          navMenu.classList.remove('nav-open');
-          navToggle.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
+  // Removed duplicate toggleNav and redundant nav close logic
     // on load, apply saved theme
     const root = document.documentElement;
     if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
