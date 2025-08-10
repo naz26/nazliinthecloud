@@ -111,6 +111,9 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 nav .container { display: flex; align-items: center; justify-content: center; position: relative; }
+.brand { position: absolute; left: 1rem; top: 0.4rem; }
+.brand-link { color: var(--primary); font-weight: 700; letter-spacing: 0.3px; }
+.brand-link:hover { color: var(--accent); }
 .nav-toggle, #nav-toggle {
   display: none;
   background: none;

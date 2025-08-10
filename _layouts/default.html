@@ -14,6 +14,16 @@
   <!-- Plausible Analytics -->
   <script defer data-domain="nazliinthecloud.com" src="https://plausible.io/js/plausible.js"></script>
   {% include nav.html %}
+  <header class="hero-header lofi-bg">
+    <div class="container">
+      <h1 class="hero-title">{{ site.author }}</h1>
+      {% if page.url == '/' or page.url == '/index.html' or page.permalink == '/' %}
+        <p class="hero-subtitle">{{ site.description }}</p>
+      {% elsif page.title %}
+        <p class="hero-subtitle">{{ page.title }}</p>
+      {% endif %}
+    </div>
+  </header>
   <main class="container">
     {{ content }}
   </main>
