@@ -1,27 +1,43 @@
 # nazliinthecloud
 
-Personal portfolio and blog for Nazli Singh, built with Jekyll and GitHub Pages.
+A personal portfolio website for **Nazli Singh**, showcasing DevOps, AWS, Cloud Security & AI projects, blog posts, and contact information. This is a fully static, lightweight site built with plain HTML, CSS, and a bit of JavaScript for theme toggling.
 
-## Local Development
+[🔗 Live Demo](https://nazliinthecloud.com)
 
-1. Install Ruby (3.2+ recommended) and Bundler.
-2. Clone this repo and `cd` into the project folder.
-3. Run `bundle install` to install dependencies.
-4. Run `bundle exec jekyll serve` to preview locally at http://localhost:4000
+---
 
-## Structure
-- Main pages: Markdown files in the root (e.g. `index.md`, `about.md`)
-- Blog posts: `_posts/` folder, named `YYYY-MM-DD-title.md`
-- Layouts: `_layouts/`
-- Includes: `_includes/`
-- Styles: `assets/css/style.css`
-- Images: `assets/img/`
+## Table of Contents
 
-## Deployment
-Push to GitHub. If using GitHub Pages, enable Pages in repo settings.
+- [Features](#features)  
+- [Site Structure](#site-structure)  
+- [Getting Started](#getting-started)  
+- [Running Locally](#running-locally)  
+- [Deployment](#deployment)  
+- [Customization](#customization)  
+- [Contributing](#contributing)  
+- [License](#license)  
 
-## Contributions
-PRs welcome! Please open an issue first for major changes.
+---
+
+## Features
+
+- ✨ **Clean, responsive design** with a cozy twilight-inspired palette  
+- 🌙 **Light / Dark mode toggle** (persists in `localStorage`)  
+- 🖼️ Hero section with a custom header background and emoji accents  
+- 📄 Multi-page layout: Home, About, Projects, Blog, Contact  
+- 🔧 Inline CSS using CSS variables for easy theming  
+- 🔗 Google Fonts: [Inter](https://fonts.google.com/specimen/Inter) & [Quicksand](https://fonts.google.com/specimen/Quicksand)  
+- 🔍 Simple, no-build setup—just static files  
+
+---
+
+## Site Structure
+nazliinthecloud/
+├── index.html ← Homepage (hero, featured work, blog preview, contact)
+├── about.html ← About Me page (bio, skills, certifications)
+├── projects.html ← Projects page (detailed portfolio entries)
+├── blog.html ← Blog archive (links out to Medium posts)
+├── img/
 │ ├── header-bg.jpg ← Hero background image
 │ ├── ... ← Other site images (profile, screenshots)
 └── README.md ← This file

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Work - Nazli Singh</title>
-    <meta name="description" content="Photography, reading, and creative pursuits by Nazli Singh - AWS DevOps Engineer exploring creativity beyond code." />
+    <title>Projects - Nazli Singh</title>
+    <meta name="description" content="Explore Nazli Singh's DevOps, AWS, and cloud security projects - automation, infrastructure, and innovative solutions." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
@@ -83,7 +83,7 @@
 
     header {
       background-color: var(--secondary);
-  background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('assets/img/header-bg.jpg');
+      background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('img/header-bg.jpg');
       background-size: cover;
       background-position: center;
       color: var(--fg);
@@ -189,98 +189,59 @@
       text-shadow: 0 2px 8px var(--primary);
     }
 
-    .creative-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .photo-item {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    
-    .photo-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(44,34,84,0.2);
-    }
-    
-    .photo-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border: none;
-    }
-    
-    .book-list {
-      margin-top: 1rem;
-    }
-    
-    .book-item {
-      background: var(--bg);
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid var(--accent2);
-    }
-    
-    .book-title {
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    
-    .book-author {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .book-status {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-    
-    .status-reading {
-      background: var(--accent);
-      color: white;
-    }
-    
-    .status-finished {
-      background: var(--accent2);
-      color: white;
-    }
-    
-    .status-wishlist {
-      background: var(--tag-bg);
-      color: var(--primary);
-    }
-
-    .creative-card {
+    .project-card {
       background: var(--secondary);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 2rem 1.5rem;
       transition: var(--transition), box-shadow .2s, transform .2s;
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-bottom: 2rem;
       color: var(--fg);
+    }
+    .project-card:hover {
+      box-shadow: 0 8px 24px rgba(44,34,84,0.28);
+      transform: scale(1.02) translateY(-4px);
+      background: var(--primary);
+      color: var(--fg);
+    }
+    .project-card:hover h3 {
+      color: var(--accent2);
+      text-shadow: 0 2px 8px var(--secondary);
+    }
+
+    .tech-tag {
+      background: var(--tag-bg);
+      padding: .4rem .8rem;
+      border-radius: 20px;
+      margin: .2rem;
+      display: inline-block;
+      font-size: .85rem;
+      color: var(--accent2);
+      box-shadow: 0 2px 8px rgba(44,34,84,0.08);
+    }
+
+    .project-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-weight: 600;
+      padding: .75rem 1.5rem;
+      border-radius: var(--card-radius);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: none;
+      background: var(--accent2);
+      color: #23234d;
+      border: 2px solid var(--accent2);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 4px 16px rgba(44,34,84,0.18);
+      transform: translateY(-2px) scale(1.04);
     }
 
     .section-divider {
@@ -435,7 +396,7 @@
   <header>
     <div class="container">
       <h1 style="color:white; margin:0.2em 0;"><a href="/" style="color:white;text-decoration:none;">Nazli Singh</a></h1>
-      <p style="color: #eaeafc; text-shadow: 0 2px 12px #2d1e4f;">Creative Work & Personal Interests</p>
+      <p style="color: #eaeafc; text-shadow: 0 2px 12px #2d1e4f;">Featured Projects & Work</p>
     </div>
   </header>
 
@@ -447,9 +408,9 @@
       <ul id="nav-menu">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-        <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+        <li class="active"><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
         <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-        <li class="active"><a href="creative.html"><i class="fas fa-paint-brush"></i> Creative</a></li>
+        <li><a href="creative.html"><i class="fas fa-paint-brush"></i> Creative</a></li>
         <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         <li>
           <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"
@@ -462,100 +423,60 @@
   </nav>
 
   <main class="container">
-    <section id="photography">
-      <div class="emoji">📸</div>
-      <h2 class="section-title">Photography</h2>
-      <p class="section-intro">Capturing moments and perspectives through my lens. From urban landscapes to nature's quiet beauty.</p>
+    <section>
+      <div class="emoji">🛠️</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-intro">Explore my work in cloud automation, security, and infrastructure.</p>
       
-      <div class="photo-gallery">
-        <div class="photo-item">
-          <img src="assets/img/photo1.jpg" alt="Urban sunset photograph" onerror="this.style.display='none'">
+      <div class="project-card">
+        <h3>Website Hosting on GitHub and Route 53</h3>
+        <p>This site is hosted using GitHub Pages, with a custom domain managed via Amazon Route 53. It's a fully static HTML/CSS portfolio built from scratch, designed to highlight my AWS DevOps work and learning journey in security and AI.</p>
+        <div class="tech-stack" style="margin-top:1rem;">
+          <span class="tech-tag">AWS Route 53</span>
+          <span class="tech-tag">GitHub Pages</span>
+          <span class="tech-tag">DNS Management</span>
+          <span class="tech-tag">HTML/CSS</span>
         </div>
-        <div class="photo-item">
-          <img src="assets/img/photo2.jpg" alt="Nature landscape photograph" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo3.jpg" alt="Street photography scene" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo4.jpg" alt="Architectural detail photograph" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo5.jpg" alt="Portrait photograph" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo6.jpg" alt="Travel destination photograph" onerror="this.style.display='none'">
+        <div class="project-links">
+          <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+          <a href="https://nazliinthecloud.com" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> Live Site</a>
         </div>
       </div>
-      
-      <p style="text-align: center; color: var(--muted); margin-top: 2rem;">
-        📍 Locations: London, Edinburgh, Lake District, Manchester<br>
-        📷 Equipment: Canon EOS R6, iPhone 14 Pro
-      </p>
-    </section>
 
-    <section id="reading">
-      <div class="emoji">📚</div>
-      <h2 class="section-title">Reading Corner</h2>
-      <p class="section-intro">My literary journey - from tech insights to personal growth and fiction that sparks imagination.</p>
-      
-      <div class="book-list">
-        <div class="book-item">
-          <div class="book-title">The Phoenix Project</div>
-          <div class="book-author">by Gene Kim</div>
-          <span class="book-status status-finished">Finished</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">"Essential DevOps principles wrapped in an engaging story. This book transformed how I think about IT operations and collaboration."</p>
+      <div class="project-card">
+        <h3>AWS Infrastructure Automation</h3>
+        <p>Terraform-based infrastructure as code for deploying secure, scalable AWS environments. Includes VPC setup, security groups, IAM roles, and automated CI/CD pipelines using GitLab.</p>
+        <div class="tech-stack" style="margin-top:1rem;">
+          <span class="tech-tag">Terraform</span>
+          <span class="tech-tag">AWS VPC</span>
+          <span class="tech-tag">GitLab CI/CD</span>
+          <span class="tech-tag">IAM</span>
         </div>
-        
-        <div class="book-item">
-          <div class="book-title">Atomic Habits</div>
-          <div class="book-author">by James Clear</div>
-          <span class="book-status status-reading">Currently Reading</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Building better systems for continuous improvement. The 1% better every day philosophy resonates with my approach to learning new technologies.</p>
-        </div>
-        
-        <div class="book-item">
-          <div class="book-title">The Midnight Library</div>
-          <div class="book-author">by Matt Haig</div>
-          <span class="book-status status-finished">Finished</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">"A beautiful exploration of life's infinite possibilities. Made me reflect on career transitions and the paths we choose."</p>
-        </div>
-        
-        <div class="book-item">
-          <div class="book-title">Designing Data-Intensive Applications</div>
-          <div class="book-author">by Martin Kleppmann</div>
-          <span class="book-status status-wishlist">Want to Read</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Deep dive into distributed systems and data architecture - perfect for my cloud security studies.</p>
-        </div>
-
-        <div class="book-item">
-          <div class="book-title">Klara and the Sun</div>
-          <div class="book-author">by Kazuo Ishiguro</div>
-          <span class="book-status status-finished">Finished</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">"Thought-provoking AI narrative that complements my work with machine learning services."</p>
-        </div>
-
-        <div class="book-item">
-          <div class="book-title">The Unicorn Project</div>
-          <div class="book-author">by Gene Kim</div>
-          <span class="book-status status-wishlist">Want to Read</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Follow-up to The Phoenix Project, focusing on developer experience and digital transformation.</p>
+        <div class="project-links">
+          <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;"><i class="fas fa-lock"></i> Private Repo</a>
         </div>
       </div>
-      
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg); border-radius: 8px; text-align: center;">
-        <strong>2024 Reading Goal:</strong> 24 books (Currently: 18/24) 📖<br>
-        <span style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; display: block;">
-          Genres: 40% Tech/Business, 35% Fiction, 25% Personal Development
-        </span>
+
+      <div class="project-card">
+        <h3>Cloud Security Compliance Automation</h3>
+        <p>Ansible playbooks for automated security compliance checks and remediation across AWS infrastructure. Focuses on CIS benchmarks and security best practices.</p>
+        <div class="tech-stack" style="margin-top:1rem;">
+          <span class="tech-tag">Ansible</span>
+          <span class="tech-tag">AWS Security</span>
+          <span class="tech-tag">CIS Benchmarks</span>
+          <span class="tech-tag">Compliance</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn-primary" style="opacity: 0.6; cursor: not-allowed;"><i class="fas fa-lock"></i> Private Repo</a>
+        </div>
       </div>
     </section>
 
     <div class="section-divider"></div>
     
     <div style="text-align: center; color: var(--muted); margin: 2rem 0;">
-      <p>"Creativity is intelligence having fun." - Albert Einstein</p>
-      <p style="font-size: 0.9rem;">These pursuits help me approach technical challenges with fresh perspectives and maintain work-life balance.</p>
+      <p>"Code is like humor. When you have to explain it, it's bad." - Cory House</p>
+      <p style="font-size: 0.9rem;">More projects coming soon! Check out my <a href="https://github.com/naz26" target="_blank">GitHub</a> for the latest updates.</p>
     </div>
   </main>
 

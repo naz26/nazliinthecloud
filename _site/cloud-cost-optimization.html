@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Work - Nazli Singh</title>
-    <meta name="description" content="Photography, reading, and creative pursuits by Nazli Singh - AWS DevOps Engineer exploring creativity beyond code." />
+    <title>Cloud Cost Optimization - Nazli Singh</title>
+    <meta name="description" content="Practical AWS cost optimization tips to cut waste and save money." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   <style>
@@ -83,7 +83,7 @@
 
     header {
       background-color: var(--secondary);
-  background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('assets/img/header-bg.jpg');
+      background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('img/header-bg.jpg');
       background-size: cover;
       background-position: center;
       color: var(--fg);
@@ -189,98 +189,70 @@
       text-shadow: 0 2px 8px var(--primary);
     }
 
-    .creative-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .photo-item {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    
-    .photo-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(44,34,84,0.2);
-    }
-    
-    .photo-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border: none;
-    }
-    
-    .book-list {
-      margin-top: 1rem;
-    }
-    
-    .book-item {
-      background: var(--bg);
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-left: 4px solid var(--accent2);
-    }
-    
-    .book-title {
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    
-    .book-author {
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .book-status {
-      display: inline-block;
-      padding: 0.2rem 0.6rem;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 500;
-    }
-    
-    .status-reading {
-      background: var(--accent);
-      color: white;
-    }
-    
-    .status-finished {
-      background: var(--accent2);
-      color: white;
-    }
-    
-    .status-wishlist {
-      background: var(--tag-bg);
-      color: var(--primary);
-    }
-
-    .creative-card {
+    .blog-post {
       background: var(--secondary);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: 2rem 1.5rem;
       transition: var(--transition), box-shadow .2s, transform .2s;
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-bottom: 2rem;
       color: var(--fg);
+    }
+    .blog-post:hover {
+      box-shadow: 0 8px 24px rgba(44,34,84,0.28);
+      transform: scale(1.02) translateY(-4px);
+      background: var(--primary);
+      color: var(--fg);
+    }
+    .blog-post:hover h3 {
+      color: var(--accent2);
+      text-shadow: 0 2px 8px var(--secondary);
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0.5rem 0 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .post-category {
+      background: var(--tag-bg);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      color: var(--accent2);
+    }
+
+    .post-tags {
+      color: var(--accent2);
+      font-size: 0.85rem;
+    }
+
+    .post-reading-time {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-weight: 600;
+      padding: .75rem 1.5rem;
+      border-radius: var(--card-radius);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: none;
+      background: var(--accent2);
+      color: #23234d;
+      border: 2px solid var(--accent2);
+      margin-top: 1rem;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 4px 16px rgba(44,34,84,0.18);
+      transform: translateY(-2px) scale(1.04);
     }
 
     .section-divider {
@@ -435,7 +407,7 @@
   <header>
     <div class="container">
       <h1 style="color:white; margin:0.2em 0;"><a href="/" style="color:white;text-decoration:none;">Nazli Singh</a></h1>
-      <p style="color: #eaeafc; text-shadow: 0 2px 12px #2d1e4f;">Creative Work & Personal Interests</p>
+      <p style="color: #eaeafc; text-shadow: 0 2px 12px #2d1e4f;">Blog & Articles</p>
     </div>
   </header>
 
@@ -448,8 +420,8 @@
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
         <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
-        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-        <li class="active"><a href="creative.html"><i class="fas fa-paint-brush"></i> Creative</a></li>
+        <li class="active"><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="creative.html"><i class="fas fa-paint-brush"></i> Creative</a></li>
         <li><a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a></li>
         <li>
           <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"
@@ -462,100 +434,28 @@
   </nav>
 
   <main class="container">
-    <section id="photography">
-      <div class="emoji">📸</div>
-      <h2 class="section-title">Photography</h2>
-      <p class="section-intro">Capturing moments and perspectives through my lens. From urban landscapes to nature's quiet beauty.</p>
-      
-      <div class="photo-gallery">
-        <div class="photo-item">
-          <img src="assets/img/photo1.jpg" alt="Urban sunset photograph" onerror="this.style.display='none'">
+    <section>
+      <article class="blog-post">
+        <div class="post-meta">
+          <span class="post-category">DevOps</span>
+          <span class="post-tags">#AWS #CostOptimization</span>
+          <span class="post-reading-time">4 min read</span>
         </div>
-        <div class="photo-item">
-          <img src="assets/img/photo2.jpg" alt="Nature landscape photograph" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo3.jpg" alt="Street photography scene" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo4.jpg" alt="Architectural detail photograph" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo5.jpg" alt="Portrait photograph" onerror="this.style.display='none'">
-        </div>
-        <div class="photo-item">
-          <img src="assets/img/photo6.jpg" alt="Travel destination photograph" onerror="this.style.display='none'">
-        </div>
-      </div>
-      
-      <p style="text-align: center; color: var(--muted); margin-top: 2rem;">
-        📍 Locations: London, Edinburgh, Lake District, Manchester<br>
-        📷 Equipment: Canon EOS R6, iPhone 14 Pro
-      </p>
-    </section>
-
-    <section id="reading">
-      <div class="emoji">📚</div>
-      <h2 class="section-title">Reading Corner</h2>
-      <p class="section-intro">My literary journey - from tech insights to personal growth and fiction that sparks imagination.</p>
-      
-      <div class="book-list">
-        <div class="book-item">
-          <div class="book-title">The Phoenix Project</div>
-          <div class="book-author">by Gene Kim</div>
-          <span class="book-status status-finished">Finished</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">"Essential DevOps principles wrapped in an engaging story. This book transformed how I think about IT operations and collaboration."</p>
-        </div>
-        
-        <div class="book-item">
-          <div class="book-title">Atomic Habits</div>
-          <div class="book-author">by James Clear</div>
-          <span class="book-status status-reading">Currently Reading</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Building better systems for continuous improvement. The 1% better every day philosophy resonates with my approach to learning new technologies.</p>
-        </div>
-        
-        <div class="book-item">
-          <div class="book-title">The Midnight Library</div>
-          <div class="book-author">by Matt Haig</div>
-          <span class="book-status status-finished">Finished</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">"A beautiful exploration of life's infinite possibilities. Made me reflect on career transitions and the paths we choose."</p>
-        </div>
-        
-        <div class="book-item">
-          <div class="book-title">Designing Data-Intensive Applications</div>
-          <div class="book-author">by Martin Kleppmann</div>
-          <span class="book-status status-wishlist">Want to Read</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Deep dive into distributed systems and data architecture - perfect for my cloud security studies.</p>
-        </div>
-
-        <div class="book-item">
-          <div class="book-title">Klara and the Sun</div>
-          <div class="book-author">by Kazuo Ishiguro</div>
-          <span class="book-status status-finished">Finished</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">"Thought-provoking AI narrative that complements my work with machine learning services."</p>
-        </div>
-
-        <div class="book-item">
-          <div class="book-title">The Unicorn Project</div>
-          <div class="book-author">by Gene Kim</div>
-          <span class="book-status status-wishlist">Want to Read</span>
-          <p style="font-size: 0.85rem; margin-top: 0.5rem;">Follow-up to The Phoenix Project, focusing on developer experience and digital transformation.</p>
-        </div>
-      </div>
-      
-      <div style="margin-top: 2rem; padding: 1.5rem; background: var(--bg); border-radius: 8px; text-align: center;">
-        <strong>2024 Reading Goal:</strong> 24 books (Currently: 18/24) 📖<br>
-        <span style="font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; display: block;">
-          Genres: 40% Tech/Business, 35% Fiction, 25% Personal Development
-        </span>
-      </div>
+        <h2>Cloud Cost Optimization: Tips for AWS Users</h2>
+        <p>Managing cloud spend is a constant challenge. This post covers simple strategies that help keep AWS bills under control without slowing you down.</p>
+        <p><strong>Right-size your resources:</strong> Regularly review EC2 instance sizes and scale down anything underutilized. Use auto scaling groups to match demand.</p>
+        <p><strong>Leverage savings plans and spot instances:</strong> Commit to baseline usage with savings plans and run flexible workloads on spot instances for deep discounts.</p>
+        <p><strong>Monitor and alert:</strong> Enable AWS Cost Explorer and set budgets with alerts so surprises don't catch you off guard.</p>
+        <p>Cost optimization is an ongoing process. Build it into your workflows to get the most value from the cloud.</p>
+        <p><a href="blog.html" class="btn-primary">&larr; Back to Blog</a></p>
+      </article>
     </section>
 
     <div class="section-divider"></div>
-    
+
     <div style="text-align: center; color: var(--muted); margin: 2rem 0;">
-      <p>"Creativity is intelligence having fun." - Albert Einstein</p>
-      <p style="font-size: 0.9rem;">These pursuits help me approach technical challenges with fresh perspectives and maintain work-life balance.</p>
+      <p>"The best way to learn is to teach." - Frank Oppenheimer</p>
+      <p style="font-size: 0.9rem;">Follow me on <a href="https://medium.com/@nazlisingh" target="_blank">Medium</a> for the latest articles and insights.</p>
     </div>
   </main>
 

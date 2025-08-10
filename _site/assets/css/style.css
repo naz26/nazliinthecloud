@@ -16,35 +16,6 @@ nav ul {
   gap: 2rem;
   list-style: none;
   padding: 0;
-  margin: 0;
-}
-nav ul.mobile {
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  background: #d1d0e6;
-  box-shadow: 0 2px 8px rgba(44,34,84,0.12);
-  z-index: 1000;
-  display: none;
-}
-nav ul.mobile.nav-open {
-  display: flex;
-}
-@media (max-width: 768px) {
-  nav ul {
-    display: none;
-  }
-  nav ul.mobile {
-    display: none;
-  }
-  nav ul.mobile.nav-open {
-    display: flex;
-  }
-  #nav-toggle {
-    display: block !important;
-  }
 }
 nav a {
   color: #2d1e4f;
