@@ -1,41 +1,30 @@
 <nav id="navbar" aria-label="Main navigation" role="navigation">
-  <button id="nav-toggle" aria-label="Toggle navigation" style="background:none;border:none;font-size:2rem;display:none;position:absolute;right:1rem;top:1rem;z-index:1001;">
-    &#9776;
-  </button>
-  <ul id="nav-menu">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/projects.html">Projects</a></li>
-    <li><a href="/blog.html">Blog</a></li>
-    <li><a href="/creative.html">Creative</a></li>
-    <li><a href="/index.html#contact">Contact</a></li>
-  </ul>
+  <div class="container">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+    <ul id="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/creative.html">Creative</a></li>
+      <li><a href="/index.html#contact">Contact</a></li>
+      <li><button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌓</button></li>
+    </ul>
+  </div>
   <script>
-    // Hamburger menu toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    function toggleNav() {
-      navMenu.classList.toggle('nav-open');
-    }
-    navToggle.addEventListener('click', toggleNav);
-    // Close menu on link click (mobile)
-    navMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('nav-open');
-      });
-    });
-    // Show hamburger only on mobile
-    function handleResize() {
-      if (window.innerWidth <= 768) {
-        navToggle.style.display = 'block';
-        navMenu.classList.add('mobile');
-      } else {
-        navToggle.style.display = 'none';
-        navMenu.classList.remove('mobile');
-        navMenu.classList.remove('nav-open');
+    (function(){
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function(){
+          navMenu.classList.toggle('nav-open');
+        });
+        navMenu.querySelectorAll('a').forEach(function(link){
+          link.addEventListener('click', function(){
+            navMenu.classList.remove('nav-open');
+          });
+        });
       }
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    })();
   </script>
 </nav>

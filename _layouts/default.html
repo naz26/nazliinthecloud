@@ -6,6 +6,8 @@
   <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
   {% seo %}
 </head>
 <body>
@@ -16,5 +18,41 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  <button class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">▲</button>
+  <script>
+    // Theme persistence
+    (function() {
+      const root = document.documentElement;
+      if (localStorage.theme === 'dark') root.setAttribute('data-theme','dark');
+    })();
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      if (root.getAttribute('data-theme') === 'dark') {
+        root.removeAttribute('data-theme');
+        localStorage.removeItem('theme');
+      } else {
+        root.setAttribute('data-theme','dark');
+        localStorage.theme = 'dark';
+      }
+    }
+    window.toggleTheme = toggleTheme;
+
+    // Scroll-to-top
+    const stt = document.querySelector('.scroll-to-top');
+    window.addEventListener('scroll', () => {
+      if (!stt) return;
+      if (window.scrollY > 400) {
+        stt.style.opacity = '1';
+        stt.style.pointerEvents = 'auto';
+        stt.style.transform = 'translateY(0)';
+      } else {
+        stt.style.opacity = '0';
+        stt.style.pointerEvents = 'none';
+        stt.style.transform = 'translateY(40px)';
+      }
+    });
+    if (stt) stt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
 </body>
 </html>

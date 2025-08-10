@@ -8,6 +8,9 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+# Disable built-in Jekyll themes to ensure only our CSS is used
+theme: null
+
 # --- SEO & Social ---
 author: Nazli Singh
 social:
