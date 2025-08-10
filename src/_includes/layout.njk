@@ -6,6 +6,9 @@
   <meta name="description" content="{{ site.description }}">
   <link rel="canonical" href="{{ page.url | url | absoluteUrl(site.url) }}">
   <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="{{ site.title }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Fira+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/style.css">
   <script defer data-domain="nazliinthecloud.com" src="https://plausible.io/js/script.js"></script>
 </head>
@@ -16,6 +19,9 @@
     <a href="/blog/">Blog</a>
     <a href="/contact/">Contact</a>
   </nav>
+  <header class="hero">
+    <img src="/assets/header.svg" alt="Sky with sun" />
+  </header>
   <main>
     {{ content | safe }}
   </main>
