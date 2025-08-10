@@ -1,0 +1,10 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+{% set posts = collections.blog | reverse %}
+{{ posts | rssFeed({
+  title: site.title,
+  description: site.description,
+  url: site.url
+}) }}
