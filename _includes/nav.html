@@ -2,11 +2,21 @@
   <div class="container">
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
     <ul id="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/projects.html">Projects</a></li>
-      <li><a href="/blog.html">Blog</a></li>
-      <li><a href="/creative.html">Creative</a></li>
+      <li>
+        <a href="/" {% if page.url == '/' or page.url == '/index.html' %}aria-current="page"{% endif %}>Home</a>
+      </li>
+      <li>
+        <a href="/about.html" {% if page.url == '/about.html' %}aria-current="page"{% endif %}>About</a>
+      </li>
+      <li>
+        <a href="/projects.html" {% if page.url == '/projects.html' %}aria-current="page"{% endif %}>Projects</a>
+      </li>
+      <li>
+        <a href="/blog.html" {% if page.url == '/blog.html' %}aria-current="page"{% endif %}>Blog</a>
+      </li>
+      <li>
+        <a href="/creative.html" {% if page.url == '/creative.html' %}aria-current="page"{% endif %}>Creative</a>
+      </li>
       <li><a href="/index.html#contact">Contact</a></li>
       <li><button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌓</button></li>
     </ul>
