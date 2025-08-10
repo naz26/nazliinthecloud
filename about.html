@@ -1,42 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me - Nazli Singh</title>
-  <meta name="description" content="Learn about Nazli Singh - AWS DevOps Engineer, career journey from hospitality to tech, skills, and certifications." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Me — Nazli Singh</title>
+  <meta name="description" content="About Nazli Singh — AWS DevOps Engineer focused on automation, cloud security, and AI in cloud-native environments." />
+  <link rel="canonical" href="https://nazliinthecloud.com/about.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="About Me — Nazli Singh" />
+  <meta property="og:description" content="AWS DevOps Engineer | Cloud Security & AI" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nazliinthecloud.com/about.html" />
+  <meta property="og:image" content="img/header-bg.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      font-size: 18px;
-      --bg: #e3e0f7;
-      --fg: #2d1e4f;
-      --muted: #7c7bbd;
-      --primary: #4b3c6e;
-      --secondary: #d1d0e6;
-      --highlight: #f7c6e0;
-      --border: #bdb8d3;
-      --tag-bg: #ded7e6;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.08);
-      --card-radius: 12px;
-      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      --accent: #e6a7c7;
-      --accent2: #7ca7e6;
+    :root{
+      --bg: #0f1221;
+      --card: #181b2f;
+      --text: #e8eaf6;
+      --muted:#b7bcde;
+      --brand:#8bd3ff;
+      --brand-2:#9b6eff;
+      --accent:#ffd166;
+      --ok:#2bd37b;
+      --danger:#ff6b6b;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 14px;
+      --spacing: 14px;
+      --maxw: 1100px;
+    }
+    [data-theme="light"]{
+      --bg:#f7f8ff; --card:#ffffff; --text:#1d223b; --muted:#4c5275; --shadow:0 12px 24px rgba(20,23,55,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:50;background:rgba(15,18,33,.75);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+    [data-theme="light"] .site-header{background:rgba(255,255,255,.82);border-bottom:1px solid rgba(20,23,55,.08)}
+    .nav{max-width:var(--maxw);margin:auto;display:flex;align-items:center;gap:16px;padding:10px 16px}
+    .brand{font-weight:800;font-size:1.05rem;letter-spacing:.3px}
+    .nav a{font-weight:600;color:var(--text)}
+    .nav a:hover{color:var(--brand)}
+    .spacer{flex:1}
+    .theme-toggle, .menu-toggle{appearance:none;border:0;background:transparent;color:var(--text);cursor:pointer;font-size:1rem;padding:8px;border-radius:10px}
+    .theme-toggle:hover,.menu-toggle:hover{background:rgba(255,255,255,.06)}
+    .menu{display:flex;gap:14px;align-items:center}
+    @media (max-width: 820px){
+      .menu{display:none}
+      .menu.open{display:flex;position:absolute;top:56px;left:0;right:0;flex-direction:column;padding:10px 16px;background:var(--card);box-shadow:var(--shadow)}
+      .menu a{width:100%;padding:10px;border-radius:10px;background:transparent}
+      .menu a:hover{background:rgba(255,255,255,.05)}
     }
 
-    [data-theme="dark"] {
-      --bg: #23234d;
-      --fg: #eaeafc;
-      --muted: #7c7bbd;
-      --primary: #7c5fe9;
-      --secondary: #2d1e4f;
-      --highlight: #ffb6c1;
-      --border: #3a2e5c;
-      --tag-bg: #3e3150;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.18);
-      --accent: #ff8c42;
-      --accent2: #5ec6fa;
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero::before{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background: radial-gradient(1200px 400px at 10% -10%, rgba(139,211,255,.18), transparent 60%),
+                  radial-gradient(800px 300px at 100% 0%, rgba(155,110,255,.16), transparent 60%),
+                  url('img/header-bg.jpg') center/cover no-repeat;
+      opacity:.35;
+      mix-blend:screen;
     }
-    /* ...rest of your CSS... */
+    .container{max-width:var(--maxw);margin:auto;padding:28px 16px}
+    .hero-grid{display:grid;grid-template-columns: 220px 1fr;gap:24px;align-items:center}
+    @media (max-width:820px){ .hero-grid{grid-template-columns: 1fr; text-align:center} }
+    .avatar{border-radius:50%;border:4px solid rgba(255,255,255,.22);box-shadow:var(--shadow)}
+    .kicker{font-family:Quicksand,Inter,sans-serif;color:var(--muted);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+    .title{font-size:clamp(1.8rem, 3.5vw, 2.6rem);line-height:1.15;margin:.2rem 0 .6rem}
+    .subtitle{color:var(--muted);max-width:60ch}
+
+    /* Stats */
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+    @media (max-width:600px){.stats{grid-template-columns:1fr 1fr}}
+    .stat{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);text-align:center}
+    [data-theme="light"] .stat{border-color:rgba(20,23,55,.08)}
+    .stat b{font-size:1.3rem}
+
+    /* Content sections */
+    section{margin-top:34px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    [data-theme="light"] .card{border-color:rgba(20,23,55,.08)}
+    h2{font-size:1.4rem;margin:0 0 .8rem}
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:1fr 1fr}
+    @media (max-width:900px){.two{grid-template-columns:1fr}}
+
+    /* Skills pills */
+    .skills{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;border:1px dashed rgba(255,255,255,.18);background:linear-gradient(180deg, rgba(255,255,255,.05), transparent);color:var(--text);font-weight:600}
+    .pill i{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+    [data-theme="light"] .pill{border-color:rgba(20,23,55,.14)}
+    .pill.alt i{background:var(--brand-2)}
+
+    /* Timeline */
+    .timeline{position:relative;padding-left:22px}
+    .timeline::before{content:"";position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand), var(--brand-2))}
+    .item{position:relative;padding:10px 0 10px 12px}
+    .item::before{content:"";position:absolute;left:-2px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,209,102,.18)}
+
+    /* Footer */
+    footer{padding:50px 16px 30px;color:var(--muted);text-align:center}
+    .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0e1a;padding:10px 14px;border-radius:12px;border:0;font-weight:800;cursor:pointer;box-shadow:var(--shadow)}
+    .cta span{color:#0b0e1a}
+    .cta:hover{filter:saturate(110%) brightness(1.06)}
+
+    /* Accessibility helpers */
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html" aria-label="Home">Nazli Singh</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" onclick="toggleMenu()" title="Menu">☰</button>
+      <div id="menu" class="menu" role="menubar">
+        <a role="menuitem" href="about.html" aria-current="page">About</a>
+        <a role="menuitem" href="projects.html">Projects</a>
+        <a role="menuitem" href="blog.html">Blog</a>
+        <a role="menuitem" href="creative.html">Creative</a>
+        <a role="menuitem" href="#contact">Contact</a>
+      </div>
+      <div class="spacer"></div>
+      <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">🌗</button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <img class="avatar" src="img/profile.jpg" alt="Portrait of Nazli Singh" width="220" height="220" loading="eager" />
+        <div>
+          <p class="kicker">About Me</p>
+          <h1 class="title">AWS DevOps Engineer · Cloud Security & AI</h1>
+          <p class="subtitle">
+            I build reliable, secure delivery pipelines on AWS with Terraform, GitLab CI, and Ansible — and I love weaving in AI where it genuinely helps teams move faster and safer.
+          </p>
+          <div class="stats" aria-label="Quick stats">
+            <div class="stat" tabindex="0"><b>3+ yrs</b><br><small>Experience</small></div>
+            <div class="stat" tabindex="0"><b>5</b><br><small>Projects deployed</small></div>
+            <div class="stat" tabindex="0"><b>4</b><br><small>Articles</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <main id="main" class="container" role="main">
+    <section class="grid two" aria-labelledby="about-heading">
+      <div class="card">
+        <h2 id="about-heading">Hi, I'm Nazli 👋</h2>
+        <p>
+          I’m based in the UK and work remotely across cloud‑native teams. Day to day I’m automating infrastructure with <b>AWS</b> &amp; <b>Terraform</b>, hardening access with <b>IAM/KMS</b>, and shipping via <b>GitLab CI</b> and <b>Ansible</b>. I care about <b>security by default</b>, clear docs, and fast feedback loops.
+        </p>
+        <p>
+          I’m currently studying for the <b>AWS Security Specialty</b> and experimenting with services like <b>Rekognition</b> and <b>Bedrock</b> to improve ops signal‑to‑noise and reduce toil.
+        </p>
+        <div class="skills" aria-label="Skills">
+          <span class="pill"><i></i>AWS</span>
+          <span class="pill alt"><i></i>Terraform</span>
+          <span class="pill"><i></i>GitLab CI/CD</span>
+          <span class="pill alt"><i></i>Ansible</span>
+          <span class="pill"><i></i>IAM &amp; KMS</span>
+          <span class="pill alt"><i></i>CloudWatch</span>
+          <span class="pill"><i></i>Rekognition</span>
+          <span class="pill alt"><i></i>Bedrock</span>
+          <span class="pill"><i></i>Python</span>
+        </div>
+        <p style="margin-top:12px">
+          <a class="cta" href="projects.html" aria-label="See my projects"><span>See Projects</span> →</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Certifications & Focus</h2>
+        <ul>
+          <li>✅ AWS Certified: Solutions Architect – Associate (in progress if applicable)</li>
+          <li>🔒 AWS Security Specialty — <em>studying</em></li>
+          <li>📚 Focus areas: cost optimization, access management, observability, threat‑aware CI/CD</li>
+        </ul>
+        <h2 style="margin-top:18px">Career Timeline</h2>
+        <div class="timeline" aria-label="Career timeline">
+          <div class="item"><b>2022–2025</b> — AWS DevOps Engineer (UK): IaC with Terraform, GitLab CI, Ansible; security hardening with IAM/KMS.</div>
+          <div class="item"><b>2020–2022</b> — IT Support & Automation (Remote): scripting, monitoring, first cloud steps.</div>
+          <div class="item"><b>2018–2020</b> — Hospitality Management: people ops, operations, the career switch catalyst.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Let’s connect</h2>
+      <p>
+        Best on <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>. For email, drop me a note via the contact form on the homepage or use your preferred channel.
+      </p>
+      <p>
+        <a class="cta" href="index.html#contact"><span>Contact Form</span> →</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="y"></span> Nazli Singh — Built with HTML, CSS & a sprinkle of JS ☁️</small>
+  </footer>
+
+  <script>
+    // Persisted theme toggle
+    (function initTheme(){
+      const saved = localStorage.getItem('theme');
+      if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+    })();
+    function toggleTheme(){
+      const html = document.documentElement;
+      const cur = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', cur);
+      localStorage.setItem('theme', cur);
+    }
+    // Mobile menu
+    function toggleMenu(){
+      const m = document.getElementById('menu');
+      const btn = document.querySelector('.menu-toggle');
+      const open = m.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
