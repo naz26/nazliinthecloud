@@ -1,0 +1,13 @@
+{
+  "name": "nazliinthecloud",
+  "version": "1.0.0",
+  "description": "Personal portfolio and blog for Nazli Singh built with Eleventy and Decap CMS",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0"
+  }
+}

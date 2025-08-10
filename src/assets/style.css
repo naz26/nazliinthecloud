@@ -1,0 +1,53 @@
+:root {
+  /* Colors sampled from header.svg */
+  --bg: #e8f0ff;
+  --fg: #023047;
+  --accent: #ffb703;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 42rem;
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fira Mono', monospace;
+}
+
+nav a {
+  margin-right: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

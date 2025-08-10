@@ -1,0 +1,10 @@
+# Node dependencies
+node_modules/
+
+# Build output
+_site/
+
+# Other
+.DS_Store
+.env
+*.log

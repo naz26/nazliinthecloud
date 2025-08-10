@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: nazliinthecloud/nazliinthecloud
+  branch: main
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/about.md"
+        label: "About"
+        name: "about"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
