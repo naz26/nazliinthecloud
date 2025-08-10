@@ -1,0 +1,10 @@
+title: Nazli Singh Portfolio
+email: your-email@example.com
+description: >-
+  AWS DevOps Engineer, Cloud Security & AI Enthusiast. Portfolio, blog, and creative work.
+baseurl: ""
+url: "https://nazliinthecloud.com"
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
