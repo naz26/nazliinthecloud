@@ -1,63 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Cost Optimization - Nazli Singh</title>
-    <meta name="description" content="Practical AWS cost optimization tips to cut waste and save money." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      font-size: 18px;
-      --bg: #e3e0f7;
-      --fg: #2d1e4f;
-      --muted: #7c7bbd;
-      --primary: #4b3c6e;
-      --secondary: #d1d0e6;
-      --highlight: #f7c6e0;
-      --border: #bdb8d3;
-      --tag-bg: #ded7e6;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.08);
-      --card-radius: 12px;
-      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      --accent: #e6a7c7;
-      --accent2: #7ca7e6;
-    }
+---
+layout: default
+title: Cloud Cost Optimization
+description: "Practical AWS cost optimization tips to cut waste and save money."
+---
 
-    [data-theme="dark"] {
-      --bg: #23234d;
-      --fg: #eaeafc;
-      --muted: #7c7bbd;
-      --primary: #7c5fe9;
-      --secondary: #2d1e4f;
-      --highlight: #ffb6c1;
-      --border: #3a2e5c;
-      --tag-bg: #3e3150;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.18);
-      --accent: #ff8c42;
-      --accent2: #5ec6fa;
-    }
+<!-- Main Cloud Cost Optimization Content Starts Here -->
+<section>
+  <div class="emoji">💸</div>
+  <h2 class="section-title">Cloud Cost Optimization</h2>
+  <p class="section-intro">Practical AWS cost optimization tips to cut waste and save money. Learn how to make your cloud spend efficient and sustainable.</p>
+</section>
 
-    html, body {
-      background: var(--bg) !important;
-      color: var(--fg);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-      transition: background .3s, color .3s;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-    main.container {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
+<section>
+  <h3>Key Strategies</h3>
+  <ul>
+    <li>Right-size EC2 instances and use Auto Scaling</li>
+    <li>Leverage Reserved and Spot Instances</li>
+    <li>Enable S3 lifecycle policies and Intelligent-Tiering</li>
+    <li>Monitor with AWS Cost Explorer and Budgets</li>
+    <li>Automate unused resource cleanup</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Tools & Automation</h3>
+  <ul>
+    <li>Terraform for infrastructure as code and cost tracking</li>
+    <li>Lambda for scheduled cleanup tasks</li>
+    <li>CloudWatch for monitoring and alerts</li>
+  </ul>
+</section>
+
+<div class="section-divider"></div>
+
+<div style="text-align: center; color: var(--muted); margin: 2rem 0;">
+  <p>Want more tips? <a href="blog.html">Read the blog</a> or <a href="index.html#contact">get in touch</a> for advice!</p>
+</div>
     section {
       background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
       border-radius: 16px;
