@@ -19,8 +19,14 @@
     <a href="/blog/">Blog</a>
     <a href="/contact/">Contact</a>
   </nav>
-  <header class="hero">
-    <img src="/assets/header.svg" alt="Sky with sun" />
+  <header class="hero-banner">
+    <div class="author-info">
+      <div class="author-photo-placeholder">NS</div>
+      <div class="author-text">
+        <h1>{{ site.title or "Nazli Singh" }}</h1>
+        <p>{{ site.description or "AWS DevOps Engineer | Cloud Security | AI Enthusiast" }}</p>
+      </div>
+    </div>
   </header>
   <main>
     {{ content | safe }}
