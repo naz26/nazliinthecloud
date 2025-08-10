@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nazli Singh - Portfolio</title>
+    <meta name="description" content="Nazli Singh's portfolio: AWS DevOps, Cloud Security, AI, and digital art. Projects, blog, and contact info." />
+    <meta name="keywords" content="Nazli Singh, nazliinthecloud, AWS, DevOps, Cloud Security, AI, Portfolio, Blog, Projects, Digital Art, UK, Women in Tech" />
+    <link rel="canonical" href="https://nazliinthecloud.com/" />
+    <meta property="og:title" content="Nazli Singh - Portfolio" />
+    <meta property="og:description" content="AWS DevOps Engineer, Cloud Security & AI Enthusiast. Explore projects, blog, and creative work." />
+    <meta property="og:image" content="https://nazliinthecloud.com/img/header-bg.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nazliinthecloud.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Nazli Singh - Portfolio" />
+    <meta name="twitter:description" content="AWS DevOps Engineer, Cloud Security & AI Enthusiast. Explore projects, blog, and creative work." />
+    <meta name="twitter:image" content="https://nazliinthecloud.com/img/header-bg.jpg" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nazli Singh",
+      "url": "https://nazliinthecloud.com/",
+      "image": "https://nazliinthecloud.com/img/header-bg.jpg",
+      "sameAs": [
+        "https://github.com/naz26",
+        "https://www.linkedin.com/in/nazli-singh/"
+      ],
+      "jobTitle": "AWS DevOps Engineer",
+      "description": "AWS DevOps Engineer, Cloud Security & AI Enthusiast. Portfolio, blog, and creative work."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Nazli Singh Portfolio",
+      "url": "https://nazliinthecloud.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nazliinthecloud.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      font-size: 18px;
+      --bg: #e3e0f7; /* soft cozy lavender */
+      --fg: #2d1e4f;
+      --muted: #7c7bbd;
+      --primary: #4b3c6e; /* muted deep indigo for headings */
+      --secondary: #d1d0e6; /* soft lavender-gray for sections */
+      --highlight: #f7c6e0;
+      --border: #bdb8d3;
+      --tag-bg: #ded7e6;
+      --shadow: 0 5px 15px rgba(44, 34, 84, 0.08);
+      --card-radius: 12px;
+      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      --accent: #e6a7c7; /* muted pink accent */
+      --accent2: #7ca7e6; /* muted blue accent */
+    }
+
+    [data-theme="dark"] {
+      --bg: #23234d; /* deep indigo night */
+      --fg: #eaeafc; /* soft off-white text */
+      --muted: #7c7bbd; /* muted lavender */
+      --primary: #7c5fe9; /* vibrant purple */
+      --secondary: #2d1e4f; /* rich dark purple */
+      --highlight: #ffb6c1; /* soft pink highlight */
+      --border: #3a2e5c; /* muted border */
+      --tag-bg: #3e3150; /* tag background, dark lavender */
+      --shadow: 0 5px 15px rgba(44, 34, 84, 0.18);
+      --card-radius: 12px;
+      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
+      --accent: #ff8c42; /* sunset orange accent */
+      --accent2: #5ec6fa; /* sky blue accent */
+    }
+
+    html, body {
+      background: var(--bg) !important;
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
+      transition: background .3s, color .3s;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    main.container {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    section, .skills {
+      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%) !important;
+      border-radius: 16px;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 2px 12px rgba(44,34,84,0.06);
+    }
+    h1,h2,h3 {
+      margin: 0.5em 0;
+      font-family: 'Quicksand', sans-serif;
+      color: var(--primary);
+      text-shadow: 0 2px 8px rgba(75,60,110,0.10);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      color: var(--accent2);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    a:hover { color: var(--highlight); }
+
+    /*──────────────────────────────────────────────────────────
+       Header & Navigation
+    ──────────────────────────────────────────────────────────*/
+    header {
+      background-color: var(--secondary);
+      background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('img/header-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--fg);
+      padding: 4rem 2rem 2rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-bottom-left-radius: var(--card-radius);
+      border-bottom-right-radius: var(--card-radius);
+    }
+    header h1 { color: var(--accent); }
+    header img {
+      box-shadow: var(--shadow);
+      border-radius: 50%;
+      border: 3px solid var(--primary);
+      transition: var(--transition);
+    }
+    header img:hover {
+      transform: scale(1.05);
+      border-color: var(--highlight);
+    }
+
+    nav {
+      background: var(--secondary);
+      box-shadow: var(--shadow);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border);
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+    }
+    nav.nav-hidden {
+      transform: translateY(-100%);
+    }
+    nav ul {
+      margin: 0;
+      padding: .5rem 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--fg);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    nav a, nav button {
+      font-family: 'Quicksand', sans-serif;
+      color: var(--fg);
+      font-weight: 500;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color .2s, box-shadow .2s, transform .2s;
+      border-radius: 10px;
+      padding: 0.5rem 1rem;
+      min-width: 44px;
+      min-height: 44px;
+      box-shadow: none;
+    }
+    nav a:hover, nav button:hover {
+      color: var(--accent);
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 2px 8px rgba(44,34,84,0.12);
+      transform: scale(1.05);
+    }
+    nav ul li.active a {
+      color: var(--accent);
+      font-weight: 700;
+      border-bottom: 2px solid var(--accent2);
+    }
+    nav a:focus, nav button:focus, .btn-primary:focus, .btn-secondary:focus {
+      outline: 2px solid var(--accent2);
+      outline-offset: 2px;
+    }
+
+    /*──────────────────────────────────────────────────────────
+       Buttons
+    ──────────────────────────────────────────────────────────*/
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      font-weight: 600;
+      padding: .75rem 1.5rem;
+      border-radius: var(--card-radius);
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent2);
+      color: #23234d; /* deep indigo for button text in light mode */
+      border: 2px solid var(--accent2);
+    }
+    .btn-secondary {
+      background: rgba(44,34,84,0.65); /* semi-transparent dark overlay */
+      border: 2px solid var(--accent2);
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(44,34,84,0.25);
+    }
+    .btn-primary:hover, .btn-secondary:hover {
+      box-shadow: 0 4px 16px rgba(44,34,84,0.18);
+      transform: translateY(-2px) scale(1.04);
+    }
+
+    /*──────────────────────────────────────────────────────────
+       Sections & Titles
+    ──────────────────────────────────────────────────────────*/
+    section {
+      padding: 3rem 2rem;
+      background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 12px rgba(44,34,84,0.06);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      position: relative;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      color: var(--accent);
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--accent2);
+      margin: .5rem auto 0;
+      border-radius: 2px;
+    }
+    .section-intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    .section-divider {
+      width: 80%;
+      height: 2px;
+      background: var(--border);
+      margin: 2rem auto;
+      border-radius: 2px;
+      opacity: 0.5;
+    }
+
+    .projects-grid, .blog-posts {
+      gap: 2rem;
+    }
+    .project-card, .creative-card, .blog-post {
+      background: var(--secondary);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.5rem;
+      transition: var(--transition), box-shadow .2s, transform .2s;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--fg);
+    }
+    .project-card:hover, .creative-card:hover, .blog-post:hover {
+      box-shadow: 0 8px 24px rgba(44,34,84,0.28);
+      transform: scale(1.04) translateY(-4px);
+      background: var(--primary);
+      color: var(--fg);
+    }
+    .project-card:hover h3,
+    .creative-card:hover h3,
+    .blog-post:hover h3 {
+      color: var(--accent2); /* sky blue for contrast */
+      text-shadow: 0 2px 8px var(--secondary);
+    }
+    .project-card img, .creative-card img, .blog-post img {
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 320px;
+      object-fit: cover;
+      border: 2px solid var(--accent2);
+    }
+
+    /*──────────────────────────────────────────────────────────
+       Utility Tags & Emoji
+    ──────────────────────────────────────────────────────────*/
+    .skill-tag, .tech-tag, .cert-tag {
+      background: var(--tag-bg);
+      padding: .4rem .8rem;
+      border-radius: 20px;
+      margin: .2rem;
+      display: inline-block;
+      font-size: .85rem;
+      color: var(--accent2);
+      box-shadow: 0 2px 8px rgba(44,34,84,0.08);
+    }
+    .emoji {
+      font-size: 3rem;
+      line-height: 1;
+      display: block;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: var(--accent);
+      text-shadow: 0 2px 8px var(--primary);
+    }
+
+    form {
+      background: var(--secondary);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: 2rem 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--fg);
+    }
+    input, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      transition: border-color .2s;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    input:focus, textarea:focus {
+      border-color: var(--accent2);
+      outline: none;
+    }
+    label {
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--accent2);
+    }
+
+    .contact-social a {
+      margin-right: 1rem;
+      color: var(--accent2);
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .contact-social a:hover {
+      color: var(--highlight);
+    }
+
+    footer {
+      background: var(--secondary);
+      color: var(--fg);
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: .9rem;
+      border-top-left-radius: var(--card-radius);
+      border-top-right-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+    }
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .footer-links a {
+      color: var(--accent2);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color .2s;
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+    }
+    .footer-links a:hover {
+      color: var(--highlight);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--accent2);
+      color: var(--secondary);
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s, transform .3s;
+      z-index: 9999;
+      transform: translateY(40px);
+    }
+    .scroll-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s, transform .6s;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 60px;
+      }
+      
+      .nav-toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--secondary);
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        box-shadow: var(--shadow);
+      }
+      nav ul.nav-open {
+        max-height: 70vh;
+        overflow-y: auto;
+        touch-action: pan-y;
+      }
+      
+      nav li {
+        border-bottom: 1px solid var(--border);
+      }
+      
+      nav li:last-child {
+        border-bottom: none;
+      }
+      
+      nav a, nav button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0;
+      }
+      
+      .contact-social a {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.7rem 1.2rem;
+      }
+      .header-cta {
+        flex-direction: column;
+        align-items: center;
+      }
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      section {
+        padding: 2rem 1rem;
+      }
+      .projects-grid, .blog-posts {
+        grid-template-columns: 1fr;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+
+    .skills {
+      background: var(--secondary) !important;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(44,34,84,0.08);
+      padding: 1.5rem 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Creative Section Styles */
+    .creative-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .photo-item {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .photo-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(44,34,84,0.2);
+    }
+    
+    .photo-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: none;
+    }
+    
+    .book-list {
+      margin-top: 1rem;
+    }
+    
+    .book-item {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent2);
+    }
+    
+    .book-title {
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    
+    .book-author {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .book-status {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    .status-reading {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .status-finished {
+      background: var(--accent2);
+      color: white;
+    }
+    
+    .status-wishlist {
+      background: var(--tag-bg);
+      color: var(--primary);
+    }
+
+    /* Quick Stats Styling */
+    .quick-stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--secondary);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+    }
+    
+    .stat {
+      text-align: center;
+      flex: 1;
+    }
+    
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: 'Quicksand', sans-serif;
+    }
+    
+    .stat-label {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+  </style>
+  </head>
+<body>
+  <div id="top"></div>
+  <header>
+    <div class="container">
+      <!-- <img src="img/profile.jpg" alt="Nazli Singh profile photo" style="width:120px;height:120px;border-radius:50%;margin-bottom:1rem;box-shadow:var(--shadow);" /> -->
+      <h1 style="color:white; margin:0.2em 0;"><a href="/" style="color:white;text-decoration:none;">Nazli Singh</a></h1>
+      <p class="header-subtitle" style="color: #eaeafc; text-shadow: 0 2px 12px #2d1e4f, 0 0 8px var(--accent2); background: rgba(44,34,84,0.45); border-radius: 8px; padding: 0.5em 1em; display: inline-block;">
+        AWS DevOps Engineer | Cloud Security &amp; AI Enthusiast<br>
+        <span style="font-size: 0.9rem; color: #f7c6e0;">Exploring automation, security, and creativity in tech</span>
+      </p>
+      <div class="header-cta">
+        <a href="#projects" class="btn-primary" aria-label="Explore My Work">Explore My Work</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" class="btn-secondary" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <nav id="navbar" aria-label="Main navigation" role="navigation">
+    <div class="container">
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul id="nav-menu">
+        <li class="active"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="projects.html"><i class="fas fa-code"></i> Projects</a></li>
+        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="creative.html"><i class="fas fa-paint-brush"></i> Creative</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li>
+          <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"
+                  style="background:none;border:none;color:white;font-size:1.25rem;cursor:pointer;">
+              🌓
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-intro">A quick introduction to who I am, my background, and what drives me in tech.</p>
+      <div class="about-content">
+        <div class="profile-container">
+          <div class="emoji" aria-label="Woman raising hand">🙋‍♀️</div>
+        </div>
+        
+        <!-- Skills block -->
+        <div class="skills" style="background: var(--secondary); border-radius: 12px; box-shadow: 0 2px 8px rgba(44,34,84,0.08); padding: 1.5rem 1rem; margin-bottom: 2rem;">
+          <h3>Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Terraform</span>
+            <span class="skill-tag">GitLab CI/CD</span>
+            <span class="skill-tag">Ansible</span>
+            <span class="skill-tag">KMS & IAM</span>
+            <span class="skill-tag">AI Services (Rekognition, Bedrock)</span>
+          </div>
+        </div>
+        
+        <!-- About text and stats -->
+        <div class="about-text">
+          <p>I'm a DevOps Engineer passionate about automation, cloud security, and AI in cloud-native environments. I’m currently working remotely in the UK, supporting AWS-based infrastructure and delivery pipelines using GitLab, Terraform, and Ansible.</p>
+          <p>I'm also actively studying for the AWS Security Specialty Certification while experimenting with AI services like Rekognition and Bedrock to explore smarter ways of working with cloud data.</p>
+          <p>Let’s connect on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer">LinkedIn</a> — feel free to reach out if you have any questions or just want to chat about tech!</p>
+          
+          <div class="quick-stats">
+            <div class="stat">
+              <span class="stat-number">3+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Projects Deployed</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">2</span>
+              <span class="stat-label">Blog Articles</span>
+            </div>
+          </div>
+      
+      </div>
+      <div class="section-divider"></div>
+      <div class="about-timeline fade-in">
+        <h3>Career Timeline <span style="font-size:1.2em;">⏳</span></h3>
+        <ul style="list-style:none;padding:0;">
+          <li><strong>2022–2025:</strong> AWS DevOps Engineer (UK)</li>
+          <li><strong>2020–2022:</strong> IT Support & Automation (Remote)</li>
+          <li><strong>2018–2020:</strong> Hospitality Management (Career Shift)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-intro">Explore some of my recent work in cloud, automation, and security.</p>
+      <div class="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
+        <div class="project-card">
+          <!-- Removed project thumbnail image -->
+          <div class="emoji">🛠️</div>
+          <div class="project-content">
+            <h3>Website Hosting on GitHub and Route 53</h3>
+            <p>This site is hosted using GitHub Pages, with a custom domain managed via Amazon Route 53. It’s a fully static HTML/CSS portfolio built from scratch, designed to highlight my AWS DevOps work and learning journey in security and AI.</p>
+            <div class="tech-stack" style="margin-top:1rem;">
+              <span class="tech-tag">AWS</span>
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">GitHub Pages</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/naz26/nazliinthecloud" class="btn-primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View Code</a>
+          </div>
+        </div>
+        <!-- Add more project cards here -->
+      </div>
+    </section>
+
+    <section id="blog">
+      <h2 class="section-title">Latest Articles</h2>
+      <p class="section-intro">Insights on DevOps, career transitions, and continuous learning.</p>
+      <div class="emoji">📝</div>
+      <div class="blog-posts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+        <article class="blog-post">
+          <div class="post-meta">
+            <span class="post-date">Published on Medium</span>
+            <span class="post-category">Career Journey</span>
+            <span class="post-tags" style="margin-left:1rem;color:var(--accent2);">#MentalHealth #CareerShift</span>
+            <span class="post-reading-time" style="margin-left:1rem;color:var(--muted);">5 min read</span>
+          </div>
+          <h3>Code and Coping: Navigating Mental Stress in a Hospitality-to-IT Career Shift</h3>
+          <p>My journey from hospitality burnout to finding purpose and growth in tech</p>
+          <a href="https://medium.com/..." class="btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium <i class="fas fa-arrow-right"></i></a>
+        </article>
+        <article class="blog-post">
+          <div class="post-meta">
+            <span class="post-date">Published on Site</span>
+            <span class="post-category">AWS Security</span>
+            <span class="post-tags" style="margin-left:1rem;color:var(--accent2);">#AWS #Security #Certification</span>
+            <span class="post-reading-time" style="margin-left:1rem;color:var(--muted);">7 min read</span>
+          </div>
+          <h3>The Certification Diaries: AWS Certified Security - Specialty Course</h3>
+          <p>Week 1 of my AWS Security Specialty journey with practical tips on keeping hosts secure, networks quiet, and avoiding common cloud pitfalls.</p>
+          <a href="certification-diaries-aws-security.html" class="btn-primary">Read More <i class="fas fa-arrow-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="creative">
+      <h2 class="section-title">Beyond Code</h2>
+      <p class="section-intro">Photography and reading that fuel creativity and fresh perspectives.</p>
+      
+      <div class="creative-grid">
+        <div class="creative-card">
+          <div class="emoji">📸</div>
+          <h3>Photography</h3>
+          <p>Urban landscapes, nature, and street photography from my travels around the UK.</p>
+          <a href="creative.html#photography" class="btn-primary">View Gallery</a>
+        </div>
+        
+        <div class="creative-card">
+          <div class="emoji">📚</div>
+          <h3>Reading Corner</h3>
+          <p>Tech insights, personal growth, and fiction recommendations with reviews.</p>
+          <a href="creative.html#reading" class="btn-primary">See Reading List</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="emoji">📫</div>
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-intro">Interested in collaborating, have questions, or just want to say hi?</p>
+      <form action="https://formspree.io/f/xwpqqyqz" method="POST" style="max-width:400px;margin:auto;display:flex;flex-direction:column;gap:1rem;">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required aria-label="Your Name" style="padding:0.5rem;border-radius:5px;border:1px solid var(--border);">
+        <label for="email">Your email:</label>
+        <input type="email" id="email" name="email" required aria-label="Your Email" style="padding:0.5rem;border-radius:5px;border:1px solid var(--border);">
+        <label for="message">Your message:</label>
+        <textarea id="message" name="message" rows="4" required aria-label="Your Message" style="padding:0.5rem;border-radius:5px;border:1px solid var(--border);"></textarea>
+        <button type="submit" class="btn-primary" style="width:100%;">Send</button>
+        <p style="font-size:0.95em;color:var(--muted);margin-top:0.5rem;">Your information is only used to respond to your inquiry and is not shared.</p>
+      </form>
+      <div class="contact-social">
+        <a href="https://github.com/naz26" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; <span id="copyright-year"></span> Nazli Singh — Built with 💻 and ☁️</p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#creative">Creative</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#top" class="back-to-top">Back to Top</a>
+        <a href="https://github.com/naz26" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+      <p style="font-size:0.75rem;opacity:0.5;margin-top:1.5rem;letter-spacing:0.02em;">
+        Artwork credit: Cosmic Hippo - Artist unknown (header image, used for personal/non-commercial site). Will remove upon request.
+      </p>
+    </div>
+  </footer>
+
+  <div class="scroll-to-top" aria-label="Scroll to top" role="button" tabindex="0">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    if (localStorage.theme === "dark") root.setAttribute("data-theme","dark");
+
+    function toggleTheme(){
+      if (root.getAttribute("data-theme")==="dark"){
+        root.removeAttribute("data-theme");
+        localStorage.removeItem("theme");
+      } else {
+        root.setAttribute("data-theme","dark");
+        localStorage.theme = "dark";
+      }
+    }
+
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    const rootElement = document.documentElement;
+
+    function handleScroll() {
+      if (rootElement.scrollTop > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    }
+
+    function scrollToTop() {
+      rootElement.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    function handleNavScroll() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (window.innerWidth <= 768) {
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          navbar.classList.add('nav-hidden');
+        } else {
+          navbar.classList.remove('nav-hidden');
+        }
+      }
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    }
+
+    function toggleNav() {
+      const navMenu = document.getElementById('nav-menu');
+      navMenu.classList.toggle('nav-open');
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('nav-open');
+      });
+    });
+
+    document.addEventListener('scroll', handleScroll);
+    document.addEventListener('scroll', handleNavScroll);
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    document.querySelector('.scroll-to-top').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') scrollToTop();
+    });
+  </script>
+</body>
+</html>
