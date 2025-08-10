@@ -1,0 +1,11 @@
+_site/
+.DS_Store
+*.log
+*.tmp
+*.bak
+*.swp
+*.orig
+*.zip
+*.tar
+*.tar.gz
+*.7z
