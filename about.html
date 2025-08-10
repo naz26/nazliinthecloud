@@ -45,12 +45,14 @@
 
     html, body {
       background: var(--bg) !important;
+      background-image: none !important;
       color: var(--fg);
       font-family: 'Inter', sans-serif;
       line-height: 1.8;
       margin: 0;
       padding: 0;
       transition: background .3s, color .3s;
+      min-height: 100vh;
     }
     .container {
       max-width: 1100px;
@@ -90,6 +92,8 @@
       background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('img/header-bg.jpg');
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
       color: var(--fg);
       padding: 6rem 2rem 4rem 2rem;
       text-align: center;
@@ -97,6 +101,8 @@
       border-bottom-left-radius: var(--card-radius);
       border-bottom-right-radius: var(--card-radius);
       min-height: 200px;
+      position: relative;
+      overflow: hidden;
     }
     header h1 { color: var(--accent); }
 
