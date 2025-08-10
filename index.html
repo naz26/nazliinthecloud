@@ -690,7 +690,7 @@
   </nav>
 
   <main class="container">
-    <section id="about">
+    <section id="about" class="fade-in">
       <h2 class="section-title">About Me</h2>
       <p class="section-intro">A quick introduction to who I am, my background, and what drives me in tech.</p>
       <div class="about-content">
@@ -731,7 +731,8 @@
               <span class="stat-label">Blog Articles</span>
             </div>
           </div>
-        </div>
+      
+      </div>
       <div class="section-divider"></div>
       <div class="about-timeline fade-in">
         <h3>Career Timeline <span style="font-size:1.2em;">⏳</span></h3>
@@ -742,7 +743,7 @@
       </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="fade-in">
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-intro">Explore some of my recent work in cloud, automation, and security.</p>
       <div class="projects-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
@@ -766,7 +767,7 @@
       </div>
     </section>
 
-    <section id="blog">
+    <section id="blog" class="fade-in">
       <h2 class="section-title">Latest Articles</h2>
       <p class="section-intro">Insights on DevOps, career transitions, and continuous learning.</p>
       <div class="emoji">📝</div>
@@ -796,7 +797,7 @@
       </div>
     </section>
 
-    <section id="creative">
+    <section id="creative" class="fade-in">
       <h2 class="section-title">Beyond Code</h2>
       <p class="section-intro">Photography and reading that fuel creativity and fresh perspectives.</p>
       
@@ -817,7 +818,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="fade-in">
       <div class="emoji">📫</div>
       <h2 class="section-title">Get in Touch</h2>
       <p class="section-intro">Interested in collaborating, have questions, or just want to say hi?</p>
@@ -921,6 +922,25 @@
       link.addEventListener('click', () => {
         document.getElementById('nav-menu').classList.remove('nav-open');
       });
+    });
+
+    // Intersection Observer for fade-in elements
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
     });
 
     document.addEventListener('scroll', handleScroll);
