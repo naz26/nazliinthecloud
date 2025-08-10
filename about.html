@@ -1,63 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Nazli Singh</title>
-    <meta name="description" content="Learn about Nazli Singh - AWS DevOps Engineer, career journey from hospitality to tech, skills, and certifications." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      font-size: 18px;
-      --bg: #e3e0f7;
-      --fg: #2d1e4f;
-      --muted: #7c7bbd;
-      --primary: #4b3c6e;
-      --secondary: #d1d0e6;
-      --highlight: #f7c6e0;
-      --border: #bdb8d3;
-      --tag-bg: #ded7e6;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.08);
-      --card-radius: 12px;
-      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
-      --accent: #e6a7c7;
-      --accent2: #7ca7e6;
-    }
+---
+layout: default
+title: About Me
+description: "Learn about Nazli Singh - AWS DevOps Engineer, career journey from hospitality to tech, skills, and certifications."
+---
 
-    [data-theme="dark"] {
-      --bg: #23234d;
-      --fg: #eaeafc;
-      --muted: #7c7bbd;
-      --primary: #7c5fe9;
-      --secondary: #2d1e4f;
-      --highlight: #ffb6c1;
-      --border: #3a2e5c;
-      --tag-bg: #3e3150;
-      --shadow: 0 5px 15px rgba(44, 34, 84, 0.18);
-      --accent: #ff8c42;
-      --accent2: #5ec6fa;
-    }
+<!-- Main About Content Starts Here -->
+<section>
+  <div class="emoji">👩‍💻</div>
+  <h2 class="section-title">About Me</h2>
+  <p class="section-intro">Hi, I'm Nazli Singh — AWS DevOps Engineer, cloud security enthusiast, and lifelong learner. My journey from hospitality to tech has shaped my passion for automation, security, and helping others break into cloud careers.</p>
+</section>
 
-    html, body {
-      background: var(--bg) !important;
-      color: var(--fg);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.8;
-      margin: 0;
-      padding: 0;
-      transition: background .3s, color .3s;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
-    main.container {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
+<section>
+  <h3>Career Journey</h3>
+  <p>I transitioned from hospitality management to IT, earning AWS certifications and building hands-on experience in DevOps, automation, and cloud security. My story is about resilience, curiosity, and a drive to empower others.</p>
+</section>
+
+<section>
+  <h3>Skills & Tools</h3>
+  <ul>
+    <li>AWS (EC2, S3, IAM, Lambda, Route 53, Security Hub, GuardDuty)</li>
+    <li>DevOps: Terraform, Ansible, GitLab CI/CD, Docker</li>
+    <li>Security: IAM, GuardDuty, Security Hub, automation</li>
+    <li>Python, Bash, Linux, Git</li>
+    <li>Cloud architecture, automation, monitoring</li>
+  </ul>
+</section>
+
+<section>
+  <h3>Certifications</h3>
+  <ul>
+    <li>AWS Certified Solutions Architect – Associate</li>
+    <li>AWS Certified Security – Specialty</li>
+    <li>HashiCorp Certified: Terraform Associate</li>
+    <li>Other cloud and DevOps certifications</li>
+  </ul>
+</section>
+
+<div class="section-divider"></div>
+
+<div style="text-align: center; color: var(--muted); margin: 2rem 0;">
+  <p>Want to connect? <a href="index.html#contact">Contact me</a> or find me on <a href="https://www.linkedin.com/in/nazli-singh/" target="_blank">LinkedIn</a>.</p>
+</div>
     section {
       background: linear-gradient(180deg, var(--secondary) 0%, var(--bg) 100%);
       border-radius: 16px;
@@ -83,7 +67,8 @@
 
     header {
       background-color: var(--secondary);
-  background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('assets/img/header-bg.jpg');
+      background-image: linear-gradient(90deg,rgba(255,255,255,0.18) 0%,rgba(199,195,219,0.45) 100%), url('assets/img/header-bg.jpg');
+      background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       color: var(--fg);
@@ -128,6 +113,7 @@
       font-size: 1.5rem;
       cursor: pointer;
       padding: 0.5rem;
+      z-index: 1001;
     }
     nav a, nav button {
       font-family: 'Quicksand', sans-serif;
@@ -139,53 +125,51 @@
       transition: color .2s, box-shadow .2s, transform .2s;
       border-radius: 10px;
       padding: 0.5rem 1rem;
-      min-width: 44px;
-      min-height: 44px;
-      box-shadow: none;
-    }
-    nav a:hover, nav button:hover {
-      color: var(--accent);
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 2px 8px rgba(44,34,84,0.12);
-      transform: scale(1.05);
-    }
-    nav ul li.active a {
-      color: var(--accent);
-      font-weight: 700;
-      border-bottom: 2px solid var(--accent2);
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      position: relative;
-      margin-bottom: 2rem;
-      letter-spacing: 1px;
-      color: var(--accent);
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--accent2);
-      margin: .5rem auto 0;
-      border-radius: 2px;
-    }
-    .section-intro {
-      text-align: center;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      font-size: 1.1rem;
-    }
-
-    .emoji {
-      font-size: 3rem;
-      line-height: 1;
-      display: block;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: var(--accent);
+      @media (max-width: 768px) {
+        body {
+          padding-top: 60px;
+        }
+        .nav-toggle {
+          display: block;
+          position: absolute;
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        nav ul {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--secondary);
+          flex-direction: column;
+          gap: 0;
+          padding: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+          box-shadow: var(--shadow);
+          z-index: 1000;
+        }
+        nav ul.nav-open {
+          max-height: 70vh;
+          overflow-y: auto;
+          touch-action: pan-y;
+        }
+        nav li {
+          border-bottom: 1px solid var(--border);
+        }
+        nav li:last-child {
+          border-bottom: none;
+        }
+        nav a, nav button {
+          display: block;
+          width: 100%;
+          text-align: center;
+          padding: 1rem;
+          border-radius: 0;
+        }
+      }
       text-shadow: 0 2px 8px var(--primary);
     }
 
