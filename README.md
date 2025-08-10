@@ -1,108 +1,22 @@
 # nazliinthecloud
 
-Personal portfolio and blog for Nazli Singh, built with Jekyll and GitHub Pages.
+Personal portfolio and blog for Nazli Singh built with [Eleventy](https://www.11ty.dev/) and [Decap CMS](https://decapcms.org/).
 
-## Local Development
-
-1. Install Ruby (3.2+ recommended) and Bundler.
-2. Clone this repo and `cd` into the project folder.
-3. Run `bundle install` to install dependencies.
-4. Run `bundle exec jekyll serve` to preview locally at http://localhost:4000
-
-## Structure
-- Main pages: Markdown files in the root (e.g. `index.md`, `about.md`)
-- Blog posts: `_posts/` folder, named `YYYY-MM-DD-title.md`
-- Layouts: `_layouts/`
-- Includes: `_includes/`
-- Styles: `assets/css/style.css`
-- Images: `assets/img/`
-
-## Deployment
-Push to GitHub. If using GitHub Pages, enable Pages in repo settings.
-
-## Contributions
-PRs welcome! Please open an issue first for major changes.
-│ ├── header-bg.jpg ← Hero background image
-│ ├── ... ← Other site images (profile, screenshots)
-└── README.md ← This file
-
-# Getting Started
-
-1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/naz26/nazliinthecloud.git
-   cd nazliinthecloud
-   ```
-
-## Add Your Images
-
-Place any custom images in the `img/` folder (e.g. `profile.jpg`, project screenshots).
-
----
-
-## Edit Content
-
-* Update text in the HTML files (`index.html`, `about.html`, etc.).
-* Tweak colors or typography via the CSS variables at the top of each page’s `<style>` block.
-
----
-
-## Running Locally
-
-There’s no build step—you can serve the static files with any web server. For example, using Python:
+## Local development
 
 ```bash
-# From project root:
-python3 -m http.server 8000
+npm install
+npm run start
 ```
 
-Then open [http://localhost:8000](http://localhost:8000) in your browser.
+## Build
 
----
+```bash
+npm run build
+```
 
-## Deployment
+The generated site will be in the `_site` folder.
 
-This site can be hosted anywhere static files are supported. To deploy on GitHub Pages:
+## Content management
 
-1. Push to your repository’s `main` (or `gh-pages`) branch.
-2. In GitHub repo **Settings → Pages**, set the source to `/ (root)` or `/docs` if you move your files.
-3. Add your custom domain (`nazliinthecloud.com`) under **Custom domain** and configure Route 53 as detailed in `index.html`.
-
----
-
-## Customization
-
-* **Theme colors**: Edit the `:root { … }` CSS variables at the top of each `<style>` block.
-* **Fonts**: Change or add Google Fonts in the `<head>`.
-* **Content sections**:
-
-  * Add new `<section id="…">` blocks.
-  * Duplicate and modify the `.project-card` or `.blog-post` markup.
-* **Dark mode**: The toggle button calls `toggleTheme()`; customize the `[data-theme="dark"]` overrides as needed.
-
----
-
-## Contributing
-
-Contributions, feedback, and feature requests are welcome!
-
-1. Fork this repo
-2. Create a branch:
-
-   ```bash
-   git checkout -b feature/my-update
-   ```
-
-
-3. Commit your changes:
-    ```bash
-      git commit -m "Add my feature"
-      ```
-
-4. Push and open a Pull Request
-
----
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to use and adapt it for your own portfolio!
+After deploying to GitHub Pages, visit `/admin` to manage content via Decap CMS.

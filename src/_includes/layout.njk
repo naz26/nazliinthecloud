@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="canonical" href="{{ page.url | url | absoluteUrl(site.url) }}">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="{{ site.title }}">
+  <link rel="stylesheet" href="/assets/style.css">
+  <script defer data-domain="nazliinthecloud.com" src="https://plausible.io/js/script.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <main>
+    {{ content | safe }}
+  </main>
+</body>
+</html>
