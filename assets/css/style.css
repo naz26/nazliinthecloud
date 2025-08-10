@@ -87,8 +87,8 @@ header, .hero-header {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.hero-title { font-size: 2.2rem; margin: 0; color: #fff; }
-.hero-subtitle { color: #f3f1ee; margin-top: .6rem; }
+.hero-title { font-size: 2.4rem; margin: 0 0 0.25rem 0; color: #1f1d25; text-shadow: 0 1px 0 rgba(255,255,255,0.4); }
+.hero-subtitle { color: #3a3742; margin-top: 0; font-size: 1.05rem; }
 
 h1,h2,h3 {
   margin: 0.5em 0;
@@ -109,10 +109,11 @@ nav {
   top: 0; left: 0; right: 0;
   z-index: 999;
   border-bottom: 1px solid var(--border);
+  min-height: 56px;
 }
 nav .container { display: flex; align-items: center; justify-content: center; position: relative; }
-.brand { position: absolute; left: 1rem; top: 0.4rem; }
-.brand-link { color: var(--primary); font-weight: 700; letter-spacing: 0.3px; }
+.brand { position: absolute; left: 1rem; top: 0.6rem; }
+.brand-link { color: var(--primary); font-weight: 700; letter-spacing: 0.3px; font-size: 1.05rem; }
 .brand-link:hover { color: var(--accent); }
 .nav-toggle, #nav-toggle {
   display: none;

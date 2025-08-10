@@ -1,6 +1,6 @@
 <nav id="navbar" aria-label="Main navigation" role="navigation">
   <div class="container">
-  <div class="brand"><a class="brand-link" href="/">{{ site.author }}</a></div>
+  <div class="brand"><a class="brand-link" href="/">{{ site.author | default: site.title }}</a></div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
     <ul id="nav-menu">
       <li>
@@ -18,7 +18,6 @@
       <li>
         <a href="/creative.html" {% if page.url == '/creative.html' %}aria-current="page"{% endif %}>Creative</a>
       </li>
-      <li><a href="/index.html#contact">Contact</a></li>
       <li><button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌓</button></li>
     </ul>
   </div>
