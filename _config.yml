@@ -1,0 +1,29 @@
+title: "Nazli in the Cloud"
+description: "DevOps • AWS • Cloud Security & AI — projects, notes & blog"
+url: "https://nazliinthecloud.com"
+baseurl: "" # root custom domain
+markdown: kramdown
+permalink: /blog/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-redirect-from
+  - jekyll-redirect-from
+  - jekyll-redirect-from
+  - jekyll-redirect-from
+  - jekyll-redirect-from
+
+
+collections:
+  diaries:
+    output: true
+    permalink: /diaries/:title/
+
+include:
+  - CNAME
+  - img
+
+feed:
+  path: atom.xml

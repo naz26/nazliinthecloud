@@ -1,0 +1,38 @@
+name: Sync Medium Feed
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+
+jobs:
+  medium:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Medium RSS and convert to JSON
+        run: |
+          mkdir -p _data
+          curl -sL "https://medium.com/feed/version-1" \
+            | python3 - <<'PY'
+import sys, xml.etree.ElementTree as ET, json
+data = sys.stdin.read()
+root = ET.fromstring(data)
+items=[]
+for item in root.findall('./channel/item'):
+  def txt(p):
+    e=item.find(p); 
+    return (e.text or '').strip() if e is not None else ''
+  items.append({"title": txt('title'), "link": txt('link'), "pubDate": txt('pubDate')})
+print(json.dumps(items, ensure_ascii=False, indent=2))
+PY
+          > _data/medium.json
+      - name: Commit changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add _data/medium.json
+            git commit -m "chore: sync Medium feed"
+            git push
+          else
+            echo "No changes."
