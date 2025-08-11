@@ -1,37 +1,59 @@
 name: Sync Medium Feed
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 2 * * *"
+    - cron: "17 2 * * *" # daily at 02:17 UTC
+
+permissions:
+  contents: write   # allow the workflow to push _data/medium.json
+
 jobs:
   medium:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Fetch Medium RSS and convert to JSON
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build _data/medium.json from Medium RSS
+        shell: bash
         run: |
+          set -euo pipefail
           mkdir -p _data
-          curl -sL "https://medium.com/feed/version-1" \
-            | python3 - <<'PY'
-import sys, xml.etree.ElementTree as ET, json
-data = sys.stdin.read()
-root = ET.fromstring(data)
-items=[]
-for item in root.findall('./channel/item'):
-  def txt(p):
-    e=item.find(p); 
-    return (e.text or '').strip() if e is not None else ''
-  items.append({"title": txt('title'), "link": txt('link'), "pubDate": txt('pubDate')})
-print(json.dumps(items, ensure_ascii=False, indent=2))
-PY
-          > _data/medium.json
-      - name: Commit changes
+          python - <<'PY'
+          import urllib.request, xml.etree.ElementTree as ET, json
+
+          FEED_URL = "https://medium.com/feed/version-1"
+
+          with urllib.request.urlopen(FEED_URL, timeout=30) as resp:
+              data = resp.read()
+
+          root = ET.fromstring(data)
+          items = []
+          for item in root.findall('./channel/item'):
+              def txt(tag):
+                  el = item.find(tag)
+                  return (el.text or '').strip() if el is not None and el.text else ''
+              items.append({
+                  "title": txt('title'),
+                  "link": txt('link'),
+                  "pubDate": txt('pubDate')
+              })
+
+          with open('_data/medium.json', 'w', encoding='utf-8') as f:
+              json.dump(items, f, ensure_ascii=False, indent=2)
+          PY
+
+      - name: Commit changes (if any)
+        shell: bash
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git config user.name "github-actions[bot]"
+          if [ -n "$(git status --porcelain _data/medium.json 2>/dev/null)" ]; then
+            git config user.name  "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add _data/medium.json
             git commit -m "chore: sync Medium feed"
             git push
           else
             echo "No changes."
+          fi

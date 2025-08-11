@@ -20,3 +20,5 @@
   </div>
   <p class="legal">© <span data-year></span> {{ site.title }}</p>
 </footer>
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear();
