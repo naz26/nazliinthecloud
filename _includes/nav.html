@@ -3,12 +3,10 @@
     <a class="brand" href="{{ '/' | relative_url }}">Nazli in the Cloud</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span>☰</button>
     <nav id="site-nav" class="site-nav" data-collapsible>
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/projects.html">Projects</a>
-      <a href="/blog.html">Blog</a>
-      <a href="/creative.html">Creative</a>
-      <a href="/#contact">Contact</a>
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <a href="{{ '/blog/' | relative_url }}">Blog</a>
+      <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+      <a href="{{ '/about.html' | relative_url }}">About</a>
       <button class="theme-toggle" data-theme-toggle aria-pressed="false" title="Toggle theme">🌓</button>
     </nav>
   </div>
