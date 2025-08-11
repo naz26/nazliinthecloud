@@ -1,0 +1,12 @@
+{
+  "name": "nazliinthecloud-site",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.ts -i assets/css/input.css -o assets/css/site.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.10",
+    "postcss": "8.4.41",
+    "autoprefixer": "10.4.19"
+  }
+}
