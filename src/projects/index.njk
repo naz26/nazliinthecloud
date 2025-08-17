@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: Projects
+permalink: "/projects/index.html"
+---
+<header class="hero">
+  <p class="kicker">Work + Play</p>
+  <h1>Projects</h1>
+  <p>Selected technical projects, infra-as-code tools, and experiments.</p>
+</header>
+
+<div class="controls">
+  <input type="search" placeholder="Search projects…" data-search aria-label="Search projects">
+  <select data-filter-tags aria-label="Filter by tag">
+    <option value="">All tags</option>
+    {% for t in collections.projectTags %}
+      <option value="{{ t }}">{{ t }}</option>
+    {% endfor %}
+  </select>
+  <span class="kicker"><span data-count>{{ collections.projects.length }}</span> projects</span>
+</div>
+
+<div class="grid poster-grid" data-filter-list>
+  {% for p in collections.projects %}
+    {% set title = p.data.title %}
+    {% set url = p.url %}
+    {% set description = p.data.description %}
+    {% set tags = p.data.tags %}
+    {% set category = "project" %}
+    {% set repo = p.data.repo %}
+    {% include "card.njk" %}
+  {% endfor %}
+</div>

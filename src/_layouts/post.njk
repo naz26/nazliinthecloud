@@ -1,0 +1,28 @@
+---
+layout: base.njk
+---
+<article>
+  <header class="hero">
+    <p class="kicker">{{ category or "Blog" }}{% if series %} • {{ series }}{% endif %}</p>
+    <h1>{{ title }}</h1>
+    <p class="kicker">{{ date | date("MMMM dd, yyyy") }}</p>
+  </header>
+
+  <div class="content">
+    {{ content | safe }}
+  </div>
+
+  <p>
+    {% if tags %}
+      {% for t in tags %}
+        <a class="tag" href="/blog/?tag={{ t | url }}">#{{ t }}</a>
+      {% endfor %}
+    {% endif %}
+    {% if series %}
+      <a class="tag" href="/blog/?q={{ series | url }}">Series: {{ series }}</a>
+    {% endif %}
+    {% if category %}
+      <a class="tag" href="/blog/?category={{ category | url }}">{{ category }}</a>
+    {% endif %}
+  </p>
+</article>

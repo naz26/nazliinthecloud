@@ -1,0 +1,15 @@
+{
+  "name": "Your Name — AWS DevOps Engineer",
+  "shortName": "Your Name",
+  "description": "A classy, understated portfolio: blogs, technical projects, achievements. AWS DevOps, automation, reliability.",
+  "url": "https://<your-username>.github.io",
+  "author": "Your Name",
+  "twitter": "",
+  "github": "https://github.com/<your-username>",
+  "linkedin": "https://www.linkedin.com/in/<your-handle>/",
+  "formspreeEndpoint": "https://formspree.io/f/<your-form-id>",
+  "theme": {
+    "accent": "#0b3d91",
+    "accentAlt": "#0a2f70"
+  }
+}

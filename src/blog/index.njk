@@ -1,0 +1,39 @@
+---
+layout: base.njk
+title: Blog
+permalink: "/blog/index.html"
+---
+<header class="hero">
+  <p class="kicker">Writing</p>
+  <h1>Blog</h1>
+  <p>Tech posts, Certification Diaries, and wellbeing/career notes.</p>
+</header>
+
+<div class="controls">
+  <input type="search" placeholder="Search posts…" data-search aria-label="Search posts">
+  <select data-filter-category aria-label="Filter by category">
+    <option value="">All categories</option>
+    <option value="tech">Tech</option>
+    <option value="wellbeing">Wellbeing</option>
+    <option value="career">Career</option>
+  </select>
+  <select data-filter-tags aria-label="Filter by tag">
+    <option value="">All tags</option>
+    {% for t in collections.postTags %}
+      <option value="{{ t }}">{{ t }}</option>
+    {% endfor %}
+  </select>
+  <span class="kicker"><span data-count>{{ collections.posts.length }}</span> posts</span>
+</div>
+
+<div class="grid" data-filter-list>
+  {% for p in collections.posts %}
+    {% set title = p.data.title %}
+    {% set url = p.url %}
+    {% set description = p.data.description %}
+    {% set tags = p.data.tags %}
+    {% set category = p.data.category or "tech" %}
+    {% set repo = p.data.repo %}
+    {% include "card.njk" %}
+  {% endfor %}
+</div>

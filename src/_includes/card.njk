@@ -1,0 +1,15 @@
+<article class="card" data-item
+  data-search="{{ title | lower }} {{ description | lower }} {{ (tags or []) | join(' ') | lower }}"
+  data-tags="{{ (tags or []) | join(',') }}"
+  data-category="{{ category or '' }}">
+  <h3><a href="{{ url }}">{{ title }}</a></h3>
+  {% if description %}<p>{{ description }}</p>{% endif %}
+  <p>
+    {% if tags and tags.length %}
+      {% for t in tags %}<span class="tag">{{ t }}</span>{% endfor %}
+    {% endif %}
+  </p>
+  {% if repo %}
+    <p><a class="btn" href="{{ repo }}" target="_blank" rel="noopener">GitHub →</a></p>
+  {% endif %}
+</article>

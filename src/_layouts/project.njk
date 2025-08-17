@@ -1,0 +1,18 @@
+---
+layout: base.njk
+---
+<article>
+  <header class="hero">
+    <p class="kicker">Project</p>
+    <h1>{{ title }}</h1>
+  </header>
+
+  <div class="content">
+    {{ content | safe }}
+  </div>
+
+  <p>
+    {% if tags %}{% for t in tags %}<span class="tag">{{ t }}</span>{% endfor %}{% endif %}
+    {% if repo %} <a class="btn" href="{{ repo }}" target="_blank">View on GitHub</a> {% endif %}
+  </p>
+</article>

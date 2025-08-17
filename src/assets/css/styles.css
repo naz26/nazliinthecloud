@@ -1,0 +1,330 @@
+/* --------- Color system (Light / Dark) --------- */
+:root {
+  --bg: #ffffff;
+  --text: #0b1220;
+  --muted: #5b6476;
+  --card: #f7f7f8;
+  --border: #e6e8ef;
+  --accent: #0b3d91;
+  --accent-contrast: #ffffff;
+  --link: var(--accent);
+}
+
+:root.dark {
+  --bg: #0b1220;
+  --text: #e9edf5;
+  --muted: #aab4c0;
+  --card: #101a2e;
+  --border: #22314d;
+  --accent: #8ec5ff;
+  --accent-contrast: #081120;
+  --link: #8ec5ff;
+}
+
+/* --------- NEW: N7 (Mass Effect-inspired) --------- */
+:root.n7 {
+  --bg: #060b12;            /* deep space navy */
+  --text: #e6f0ff;          /* high-contrast cool white */
+  --muted: #9fb0c6;         /* desaturated steel */
+  --card: rgba(12, 24, 44, 0.55);  /* glass panel */
+  --border: #1a2a40;        /* hull steel */
+  --accent: #00d1ff;        /* omni-cyan */
+  --accent-contrast: #001018;
+  --link: #00d1ff;
+
+  --n7-red: #e03c31;        /* N7 stripe red */
+  --n7-blue: #0b5fff;       /* deep citadel blue */
+  --glow: rgba(0, 209, 255, 0.55);
+  --grid: rgba(0, 180, 255, 0.10);
+  --scan: rgba(255,255,255,0.025);
+}
+
+/* --------- Époque theme --------- */
+:root.epoque {
+  --bg: #faf6eb;            /* parchment */
+  --text: #1f1a1a;          /* warm charcoal */
+  --muted: #6b5f59;
+  --card: #fffaf0;
+  --border: #b89b6a;        /* brass/gold line */
+  --accent: #1b2a41;        /* midnight */
+  --accent-contrast: #ffffff;
+  --link: #6e2f3a;          /* oxblood */
+  --gilding: #c9a86a;
+  --shadow-warm: rgba(50, 32, 21, 0.15);
+}
+
+/* --------- Base --------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: 1.6;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ===== N7 starfield / grid / scanlines ===== */
+:root.n7 body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1200px 700px at 70% -10%, rgba(11,95,255,0.25), transparent 60%),  /* nebula glow */
+    radial-gradient(900px 600px at 10% 110%, rgba(224,60,49,0.18), transparent 50%),  /* N7 red glow */
+    linear-gradient(0deg, var(--scan), var(--scan)),                                   /* faint scanlines */
+    linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.0));                        /* depth vignette */
+  background-size: auto, auto, 100% 2px, 100% 100%;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-blend-mode: screen, screen, multiply, normal;
+}
+
+/* ===== Époque paper grain ===== */
+:root.epoque body {
+  background-image:
+    radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0,0,0,0.02), rgba(255,255,255,0.02));
+  background-size: 4px 4px, 100% 100%;
+}
+
+.container { max-width: 980px; margin: 0 auto; padding: 0 1.2rem; }
+
+.header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 1.2rem 0; border-bottom:1px solid var(--border);
+  position: sticky; top: 0; background: var(--bg); z-index: 10;
+}
+.brand { font-weight: 800; letter-spacing: .3px; }
+
+.nav a { color: var(--text); margin-left: 1rem; opacity: .85; }
+.nav a:hover, .nav a[aria-current="page"] { color: var(--accent); opacity: 1; }
+
+.theme-toggle {
+  border:1px solid var(--border); background:var(--card); color:var(--text);
+  padding:.42rem .6rem; border-radius:.6rem; cursor:pointer; margin-left: .8rem;
+}
+
+.hero { padding: 3.2rem 0 1.8rem; }
+.hero h1 { font-size: 2.1rem; margin: 0 0 .4rem; }
+.hero p { color: var(--muted); margin: 0; }
+
+/* ===== N7 typography + hero stripe ===== */
+:root.n7 h1, :root.n7 h2, :root.n7 .brand {
+  font-family: "Orbitron", system-ui, sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+:root.n7 .brand { color: var(--accent); }
+:root.n7 .hero {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(0, 209, 255, 0.08), rgba(0, 209, 255, 0.0)),
+    linear-gradient(180deg, rgba(11,95,255,0.08), rgba(11,95,255,0));
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  box-shadow: 0 16px 48px rgba(0,0,0,.35), 0 0 0 1px rgba(0, 209, 255, 0.06) inset;
+}
+:root.n7 .hero::before {
+  /* N7 diagonal stripe */
+  content:"";
+  position:absolute; top:0; left:-10%; width: 140%; height: 6px;
+  background:
+    linear-gradient(90deg, var(--n7-red) 0 20%, transparent 20% 80%, var(--n7-red) 80% 100%);
+  transform: skewY(-8deg) translateY(-2px);
+  box-shadow: 0 0 12px rgba(224,60,49,.35);
+}
+
+/* ===== Époque tweaks (kept) ===== */
+:root.epoque .header {
+  border-bottom: 0;
+  box-shadow: inset 0 -2px 0 var(--border), inset 0 -4px 0 color-mix(in oklab, var(--border) 60%, transparent);
+}
+:root.epoque .brand {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: .5px;
+}
+:root.epoque h1, :root.epoque h2, :root.epoque h3, :root.epoque .brand {
+  font-family: "Playfair Display", Georgia, serif;
+}
+:root.epoque .hero h1 { font-size: 2.25rem; letter-spacing: .4px; }
+:root.epoque .content p:first-of-type::first-letter {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 3.2rem; line-height: .8; float: left; padding-right: .3rem; color: var(--accent);
+}
+
+/* --------- Grid & Cards --------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border:1px solid var(--border);
+  border-radius: .8rem;
+  padding: 1rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,.06); }
+
+/* ===== N7: glass holo cards ===== */
+:root.n7 .card {
+  border-radius: .5rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--border));
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)) padding-box,
+    linear-gradient(180deg, rgba(0,209,255,0.25), rgba(0,209,255,0.0)) border-box;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,.35),
+    0 0 24px var(--glow);
+  backdrop-filter: saturate(120%) blur(6px);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  :root.n7 .card { background: rgba(12,24,44,0.75); }
+}
+:root.n7 .card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.45),
+    0 0 30px var(--glow);
+}
+
+/* --------- Tags & Buttons --------- */
+.tag {
+  display:inline-block; font-size:.75rem; padding:.15rem .5rem;
+  border-radius: 999px; border:1px solid var(--border); margin-right:.3rem;
+  color: var(--muted); background: transparent;
+}
+.btn {
+  display:inline-block; padding:.55rem .9rem; border-radius:.6rem;
+  color: var(--accent-contrast); background: var(--accent);
+  text-decoration:none; border:1px solid transparent;
+}
+.btn:hover { filter: brightness(0.96); }
+
+/* ===== N7: neon tags & thruster buttons ===== */
+:root.n7 .tag {
+  color: var(--text);
+  border-color: color-mix(in oklab, var(--accent) 60%, var(--border));
+  background: linear-gradient(180deg, rgba(0,209,255,0.15), rgba(0,209,255,0.05));
+  box-shadow: 0 0 8px var(--glow) inset, 0 0 8px var(--glow);
+}
+:root.n7 .btn {
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--accent) 92%, white), var(--n7-blue));
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, black);
+  box-shadow: 0 10px 26px rgba(0,0,0,.35), 0 0 16px var(--glow);
+  text-shadow: 0 0 6px rgba(0,0,0,.35);
+}
+:root.n7 .btn:hover {
+  filter: brightness(1.04);
+  box-shadow: 0 12px 30px rgba(0,0,0,.45), 0 0 22px var(--glow);
+}
+
+/* --------- Footer --------- */
+.footer { margin-top: 3rem; padding: 2rem 0; color: var(--muted); border-top:1px solid var(--border); }
+
+/* --------- Controls / Inputs --------- */
+.controls { display:flex; gap:.6rem; flex-wrap: wrap; margin:.8rem 0 1rem; }
+input[type="search"], select, input[type="text"], input[type="email"], textarea {
+  padding:.5rem .6rem; border-radius:.6rem; border:1px solid var(--border);
+  background: var(--bg); color: var(--text); width: 100%;
+}
+input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
+  outline: 3px solid color-mix(in oklab, var(--accent) 60%, transparent);
+  outline-offset: 2px;
+}
+
+/* --------- Lists --------- */
+.list { list-style:none; padding:0; margin:0; }
+.list li { padding: .9rem 0; border-bottom:1px solid var(--border); }
+.list li:last-child { border-bottom: none; }
+.list a { color: var(--text); }
+.list a:hover { color: var(--accent); text-decoration: none; }
+
+/* --------- Utility --------- */
+.kicker { text-transform: uppercase; letter-spacing: .1em; font-size:.75rem; color: var(--muted); }
+
+/* --------- Époque hero embellishments (if you added them earlier) --------- */
+.ornament { display: none; margin: .4rem 0; }
+:root.epoque .ornament { display: flex; justify-content: center; color: var(--gilding); opacity: .9; }
+:root.epoque .vignette { position: relative; }
+:root.epoque .vignette::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  box-shadow: inset 0 0 110px rgba(50, 32, 21, 0.25); border-radius: .5rem;
+}
+:root.epoque .hero.hero--epoque {
+  position: relative;
+  background:
+    radial-gradient(120% 100% at 50% 20%, rgba(0,0,0,0.08), transparent 55%),
+    linear-gradient(180deg, rgba(201,168,106,0.08), rgba(201,168,106,0.0)),
+    var(--card);
+  border: 1px solid var(--border);
+  border-radius: .6rem;
+  box-shadow: 0 16px 48px var(--shadow-warm);
+  padding: 2.6rem 1.2rem 2.2rem; overflow: hidden;
+}
+:root.epoque .hero.hero--epoque::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  box-shadow: inset 0 0 80px rgba(0,0,0,.25); border-radius: inherit;
+}
+:root.epoque .hero--epoque h1 { position: relative; padding-bottom: .5rem; }
+:root.epoque .hero--epoque h1::after {
+  content:""; display:block; height: 2px;
+  background: linear-gradient(to right, transparent, var(--gilding), transparent);
+  margin-top: .5rem; opacity: .8;
+}
+/* If you added 'poster-grid' earlier, those styles remain below */
+:root.epoque .poster-grid .card {
+  text-align: center;
+  border-radius: .5rem;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0)) padding-box,
+    linear-gradient(180deg, rgba(201,168,106,0.25), rgba(201,168,106,0.06)) border-box;
+  border: 2px solid var(--border);
+  box-shadow:
+    0 10px 28px var(--shadow-warm),
+    inset 0 0 0 1px color-mix(in oklab, var(--gilding) 30%, transparent);
+  position: relative;
+}
+:root.epoque .poster-grid .card::before {
+  content:""; position:absolute; left: 10%; right:10%; top: .6rem; height: 4px;
+  background:
+    linear-gradient(to right, transparent, var(--gilding), transparent),
+    repeating-linear-gradient(90deg, transparent 0 8px, rgba(0,0,0,.06) 8px 9px);
+  border-radius: 2px; opacity:.9;
+}
+:root.epoque .poster-grid .card::after {
+  content:""; position:absolute; inset: 6px;
+  border:1px solid color-mix(in oklab, var(--gilding) 45%, transparent);
+  border-radius: .35rem; pointer-events:none;
+}
+:root.epoque .poster-grid .card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  text-transform: uppercase; letter-spacing: .06em; margin-top: .8rem;
+}
+:root.epoque .poster-grid .btn {
+  background: linear-gradient(180deg, color-mix(in oklab, var(--accent) 92%, white), var(--accent));
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, black);
+  box-shadow: 0 4px 10px var(--shadow-warm);
+}
+:root.epoque .poster-grid .tag { border-color: var(--gilding); color: var(--text); }
+:root.epoque .poster-grid { gap: 1.15rem; }
+
+/* --------- Accessibility tweaks --------- */
+:root.dark a, :root.n7 a, :root.epoque a {
+  text-decoration-thickness: .08em; text-underline-offset: .18em;
+}
+/* Optional: thin cyan scanline instead of red stripe */
+:root.n7 .hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,209,255,0.6), transparent);
+  box-shadow: 0 0 10px rgba(0,209,255,0.35);
+  transform: none;
+}

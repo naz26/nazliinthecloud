@@ -1,12 +1,14 @@
 {
-  "name": "nazliinthecloud-site",
+  "name": "aws-devops-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "description": "Classy Eleventy portfolio with blog, projects, achievements, dark mode, tags, and GitHub Pages deploy.",
   "scripts": {
-    "build:css": "tailwindcss -c tailwind.config.ts -i assets/css/input.css -o assets/css/site.css --minify"
+    "start": "eleventy --serve --quiet",
+    "build": "ELEVENTY_ENV=production eleventy"
   },
   "devDependencies": {
-    "tailwindcss": "3.4.10",
-    "postcss": "8.4.41",
-    "autoprefixer": "10.4.19"
+    "@11ty/eleventy": "^2.0.1",
+    "luxon": "^3.7.1"
   }
 }

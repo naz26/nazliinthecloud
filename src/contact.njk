@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Contact
+---
+<header class="hero">
+  <p class="kicker">Say hello</p>
+  <h1>Contact</h1>
+  <p>I’m open to collaboration and speaking invites.</p>
+</header>
+
+<form action="{{ site.formspreeEndpoint }}" method="POST" class="card" style="max-width:640px;">
+  <label>Name<br><input type="text" name="name" required></label><br><br>
+  <label>Email<br><input type="email" name="email" required></label><br><br>
+  <label>Message<br><textarea name="message" rows="6" required></textarea></label><br><br>
+  <button class="btn" type="submit">Send</button>
+  <input type="hidden" name="_subject" value="Portfolio Contact">
+  <input type="hidden" name="_gotcha" style="display:none">
+</form>

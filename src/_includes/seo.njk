@@ -1,0 +1,9 @@
+{# Basic SEO + Open Graph #}
+<meta name="description" content="{{ description or site.description }}">
+<link rel="canonical" href="{{ canonical or (site.url + page.url) }}">
+<meta property="og:type" content="{{ ogType or 'website' }}">
+<meta property="og:title" content="{{ title or site.name }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:url" content="{{ site.url + page.url }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="{{ site.twitter }}">
