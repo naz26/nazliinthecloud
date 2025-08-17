@@ -1,14 +1,13 @@
 {
-  "name": "Your Name — AWS DevOps Engineer",
-  "shortName": "Your Name",
-  "description": "A classy, understated portfolio: blogs, technical projects, achievements. AWS DevOps, automation, reliability.",
+  "name": "Nazli Singh, AWS DevOps Engineer",
+  "shortName": "Nazli Singh",
+  "description": "A classy, understated portfolio: blogs, technical projects, achievements. AWS DevOps, Cybersecurity, and AI.",
   "url": "https://nazliinthecloud.com",
   "base": "",
-  "author": "Your Name",
-  "twitter": "",
-  "github": "https://github.com/<your-username>",
-  "linkedin": "https://www.linkedin.com/in/<your-handle>/",
-  "formspreeEndpoint": "https://formspree.io/f/<your-form-id>",
+  "author": "Nazli Singh",
+  "github": "https://github.com//naz26/nazliinthecloud",
+  "linkedin": "https://www.linkedin.com//in/nazli-singh//",
+  "formspreeEndpoint": "https://formspree.io/f/xwpqqyqz",
   "theme": {
     "accent": "#0b3d91",
     "accentAlt": "#0a2f70"

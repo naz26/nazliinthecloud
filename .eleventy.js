@@ -1,20 +1,20 @@
+// .eleventy.js (CommonJS)
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-  // Passthrough
+  // ── Passthrough (copies to _site)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
-  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" }); 
+  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" }); // custom domain
 
-};
-
-  // Filters / shortcodes
+  // ── Filters / shortcodes
   eleventyConfig.addFilter("slug", (str = "") =>
     str.toString().toLowerCase().trim().replace(/[\s\W-]+/g, "-")
   );
+
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  // 🗓️ Date filters for Nunjucks
+  // Date filter for Nunjucks
   eleventyConfig.addFilter("date", (value, format = "MMM dd, yyyy", zone = "local") => {
     if (!value) return "";
     const jsDate = value instanceof Date ? value : new Date(value);
@@ -24,10 +24,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("htmlDate", (value) => {
     if (!value) return "";
     const jsDate = value instanceof Date ? value : new Date(value);
-    return DateTime.fromJSDate(jsDate).toISODate(); // e.g. 2025-08-17
+    return DateTime.fromJSDate(jsDate).toISODate();
   });
 
-  // Collections
+  // ── Collections
   eleventyConfig.addCollection("posts", (api) =>
     api.getFilteredByGlob("src/blog/posts/**/*.md").sort((a, b) => b.date - a.date)
   );
@@ -59,7 +59,7 @@ module.exports = function (eleventyConfig) {
     return [...set].sort((a, b) => a.localeCompare(b));
   });
 
-  // Optional: all URLs (for a future sitemap)
+  // Optional: for future sitemap
   eleventyConfig.addCollection("allUrls", (api) =>
     api.getAll().filter((p) => p.url && !p.url.endsWith(".json"))
   );
@@ -70,3 +70,4 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
+};
