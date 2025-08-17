@@ -72,7 +72,7 @@ a:hover { text-decoration: underline; }
   background-color: var(--bg);
   background-image:
     radial-gradient(1200px 700px at 70% -10%, rgba(11,95,255,0.25), transparent 60%),  /* nebula glow */
-    radial-gradient(900px 600px at 10% 110%, rgba(224,60,49,0.18), transparent 50%),  /* N7 red glow */
+    radial-gradient(1200px 700px at 10% 110%, rgba(224,60,49,0.18), transparent 50%),  /* N7 red glow */
     linear-gradient(0deg, var(--scan), var(--scan)),                                   /* faint scanlines */
     linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.0));                        /* depth vignette */
   background-size: auto, auto, 100% 2px, 100% 100%;
@@ -257,7 +257,7 @@ input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   box-shadow: inset 0 0 110px rgba(50, 32, 21, 0.25); border-radius: .5rem;
 }
-:root.epoque .hero.hero--epoque {
+:root.epoque .hero {
   position: relative;
   background:
     radial-gradient(120% 100% at 50% 20%, rgba(0,0,0,0.08), transparent 55%),
@@ -268,12 +268,12 @@ input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
   box-shadow: 0 16px 48px var(--shadow-warm);
   padding: 2.6rem 1.2rem 2.2rem; overflow: hidden;
 }
-:root.epoque .hero.hero--epoque::after {
+:root.epoque .hero::after {
   content:""; position:absolute; inset:0; pointer-events:none;
   box-shadow: inset 0 0 80px rgba(0,0,0,.25); border-radius: inherit;
 }
-:root.epoque .hero--epoque h1 { position: relative; padding-bottom: .5rem; }
-:root.epoque .hero--epoque h1::after {
+:root.epoque .hero h1 { position: relative; padding-bottom: .5rem; }
+:root.epoque .hero h1::after {
   content:""; display:block; height: 2px;
   background: linear-gradient(to right, transparent, var(--gilding), transparent);
   margin-top: .5rem; opacity: .8;
