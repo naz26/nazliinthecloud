@@ -4,6 +4,9 @@ module.exports = function (eleventyConfig) {
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
+  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" }); 
+
+};
 
   // Filters / shortcodes
   eleventyConfig.addFilter("slug", (str = "") =>
@@ -67,4 +70,3 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
-};

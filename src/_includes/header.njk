@@ -1,11 +1,11 @@
 <header class="header">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-    <a href="/" class="brand">{{ site.shortName }}</a>
+    <a href="{{ (site.base or '') }}/" class="brand">{{ site.shortName }}</a>
     <nav class="nav" aria-label="Main">
-      <a href="/blog/" aria-current="{{ 'page' if page.url == '/blog/' else 'false' }}">Blog</a>
-      <a href="/projects/" aria-current="{{ 'page' if page.url == '/projects/' else 'false' }}">Projects</a>
-      <a href="/achievements/" aria-current="{{ 'page' if page.url == '/achievements/' else 'false' }}">Achievements</a>
-      <a href="/contact/" aria-current="{{ 'page' if page.url == '/contact/' else 'false' }}">Contact</a>
+      <a href="{{ (site.base or '') }}/blog/" aria-current="{{ 'page' if page.url == '/blog/' else 'false' }}">Blog</a>
+      <a href="{{ (site.base or '') }}/projects/" aria-current="{{ 'page' if page.url == '/projects/' else 'false' }}">Projects</a>
+      <a href="{{ (site.base or '') }}/achievements/" aria-current="{{ 'page' if page.url == '/achievements/' else 'false' }}">Achievements</a>
+      <a href="{{ (site.base or '') }}/contact/" aria-current="{{ 'page' if page.url == '/contact/' else 'false' }}">Contact</a>
       <button class="theme-toggle" data-toggle-theme type="button">🌓</button>
     </nav>
   </div>

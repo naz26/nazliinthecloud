@@ -6,12 +6,12 @@
     <title>{{ (title + " — " + site.shortName) if title else site.name }}</title>
     {% include "seo.njk" %}
 
-    <!-- Époque serif pairing -->
+    <!-- Fonts (Orbitron for N7, Playfair/Cormorant for Époque) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,700;1,400&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="{{ (site.base or '') }}/assets/css/styles.css">
   </head>
   <body>
     {% include "header.njk" %}
@@ -19,7 +19,7 @@
       {{ content | safe }}
     </main>
     {% include "footer.njk" %}
-    <script src="/assets/js/theme.js" defer></script>
-    <script src="/assets/js/filter.js" defer></script>
+    <script src="{{ (site.base or '') }}/assets/js/theme.js" defer></script>
+    <script src="{{ (site.base or '') }}/assets/js/filter.js" defer></script>
   </body>
 </html>

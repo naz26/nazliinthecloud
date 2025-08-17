@@ -3,10 +3,14 @@ layout: base.njk
 title: Home
 ---
 <section class="hero">
+  <div class="ornament ornament--top">{% include "ornament.njk" %}</div>
   <h1>Hi, I’m {{ site.shortName }} — AWS DevOps Engineer.</h1>
   <p>Automation, reliability, and practical writing. This is my portfolio of
-    <a href="/blog/">blogs</a>, <a href="/projects/">projects</a>, and <a href="/achievements/">achievements</a>.
+    <a href="{{ (site.base or '') }}/blog/">blogs</a>,
+    <a href="{{ (site.base or '') }}/projects/">projects</a>,
+    and <a href="{{ (site.base or '') }}/achievements/">achievements</a>.
   </p>
+  <div class="ornament ornament--bottom">{% include "ornament.njk" %}</div>
 </section>
 
 <section>
