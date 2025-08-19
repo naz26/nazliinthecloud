@@ -1,3 +1,4 @@
+
 // .eleventy.js (CommonJS)
 const { DateTime } = require("luxon");
 
@@ -35,6 +36,28 @@ module.exports = function (eleventyConfig) {
     `.trim();
   });
 
+    // "View on Credly" button
+  eleventyConfig.addShortcode("credlyButton", function(
+    url,
+    label = "View on Credly"
+  ) {
+    const esc = s => String(s ?? "")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    const safeUrl = esc(url || "#");
+    const safeLabel = esc(label);
+    return `
+<a class="btn-credly" href="${safeUrl}" target="_blank" rel="noopener noreferrer"
+   aria-label="${safeLabel} (opens in a new tab)">
+  <span class="btn-credly__label">${safeLabel}</span>
+  <svg class="btn-credly__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+    <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.18"/>
+    <path d="M7 12l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none"/>
+  </svg>
+</a>
+    `.trim();
+  });
 
 
   // ── Filters / shortcodes

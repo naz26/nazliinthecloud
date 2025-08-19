@@ -1,3 +1,36 @@
+/* Credly button styles */
+.btn-credly {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.22em 0.75em;
+  font-weight: 600;
+  font-size: 0.97em;
+  border-radius: 1.1em;
+  border: none;
+  background: var(--accent, #02b875);
+  color: var(--accent-contrast, #fff);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin: 0.38em 0;
+}
+.btn-credly:hover,
+.btn-credly:focus {
+  background: var(--link, #02675a);
+  color: var(--text, #fff);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
+.btn-credly__icon {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: middle;
+  flex-shrink: 0;
+  fill: currentColor;
+  opacity: 0.82;
+  transition: opacity 0.2s;
+}
 /* --------- Color system (Light / Dark) --------- */
 :root {
   --bg: #f7fafc;              /* soft sky blue-white */
