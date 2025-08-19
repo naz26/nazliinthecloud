@@ -385,3 +385,25 @@ input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
   box-shadow: 0 0 10px rgba(0,209,255,0.35);
   transform: none;
 }
+
+.medium-btn {
+  display: inline-block;
+  padding: 0.6em 1.4em;
+  font-weight: 600;
+  font-size: 1.05em;
+  border-radius: 2em;
+  border: none;
+  background: var(--accent, #02b875);
+  color: var(--accent-contrast, #fff);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  margin: 1.2em 0;
+}
+.medium-btn:hover,
+.medium-btn:focus {
+  background: var(--link, #02675a);
+  color: var(--text, #fff);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  text-decoration: none;
+}

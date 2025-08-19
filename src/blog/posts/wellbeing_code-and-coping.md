@@ -22,4 +22,4 @@ I fell into hospitality, stayed too long, and hit a wall. So I did the unthinkab
 - The roadmap: research, skills map, future-proof with AI, use your network.  
 - The horizon: specialising toward **CloudSecOps/AISecOps**.
 
-**👉 [Read the full story on Medium]({{ external_url }})**
+{% mediumButton external_url %}

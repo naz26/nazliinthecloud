@@ -1,11 +1,36 @@
 // .eleventy.js (CommonJS)
 const { DateTime } = require("luxon");
 
+
 module.exports = function (eleventyConfig) {
   // ── Passthrough (copies to _site)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/.nojekyll": ".nojekyll" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" }); // custom domain
+
+
+  
+  // "Read on Medium" button
+  eleventyConfig.addShortcode("mediumButton", function(url, label = "Read the full story on Medium") {
+    const safeUrl = String(url || "#")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+    const safeLabel = String(label || "Read the full story on Medium")
+      .replace(/"/g, "&quot;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+
+    return `
+<a class="btn-medium" href="${safeUrl}" target="_blank" rel="noopener noreferrer"
+   aria-label="${safeLabel} (opens in a new tab)">
+  <span class="btn-medium__label">${safeLabel}</span>
+  <svg class="btn-medium__icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3zM5 5h6v2H7v10h10v-4h2v6H5V5z"/>
+  </svg>
+</a>
+    `.trim();
+  });
 
   // ── Filters / shortcodes
   eleventyConfig.addFilter("slug", (str = "") =>
