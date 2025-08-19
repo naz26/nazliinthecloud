@@ -1,27 +1,19 @@
 /* --------- Color system (Light / Dark) --------- */
 :root {
-  --bg: #ffffff;
-  --text: #0b1220;
-  --muted: #5b6476;
-  --card: #f7f7f8;
-  --border: #e6e8ef;
-  --accent: #0b3d91;
-  --accent-contrast: #ffffff;
-  --link: var(--accent);
+  --bg: #f7fafc;              /* soft sky blue-white */
+  --text: #23304a;            /* deep blue for contrast */
+  --muted: #6b8bbd;           /* gentle blue-grey */
+  --card: #ffffffcc;          /* translucent white for glass effect */
+  --border: #b7d4f8;          /* light blue border */
+  --accent: #ffb300;          /* warm golden sun */
+  --accent-contrast: #23304a; /* for buttons on yellow */
+  --link: #1e88e5;            /* sky blue link */
+  --summer-sky: #a7e9ff;      /* for gradients or highlights */
+  --summer-grass: #b6e6a7;    /* optional: for accents or tags */
+  --summer-shadow: rgba(30, 136, 229, 0.08); /* soft blue shadow */
 }
 
-:root.dark {
-  --bg: #0b1220;
-  --text: #e9edf5;
-  --muted: #aab4c0;
-  --card: #101a2e;
-  --border: #22314d;
-  --accent: #8ec5ff;
-  --accent-contrast: #081120;
-  --link: #8ec5ff;
-}
-
-:root.light .hero {
+:root .hero {
   background: 
     linear-gradient(120deg, rgba(255,255,255,0.65) 60%, rgba(220,240,255,0.35) 100%);
   border: 1px solid rgba(180, 200, 255, 0.22);
@@ -33,6 +25,38 @@
   position: relative;
   transition: background 0.3s, box-shadow 0.3s;
 }
+
+:root.dark {
+  --bg: #10182a;              /* deep twilight blue */
+  --text: #e9edf5;            /* soft moonlight white */
+  --muted: #aab4c0;           /* gentle dusk grey */
+  --card: rgba(24, 32, 48, 0.82); /* glassy night panel */
+  --border: #22314d;          /* shadowy blue border */
+  --accent: #7ecbff;          /* cool starlight blue */
+  --accent-contrast: #081120; /* for buttons on blue */
+  --link: #a7c7ff;            /* pale blue link */
+  --twilight-violet: #6c5ecf; /* for gradients or highlights */
+  --twilight-pink: #ffb6d5;   /* optional: for accents or tags */
+  --twilight-shadow: rgba(30, 40, 80, 0.14); /* soft night shadow */
+}
+
+:root.dark .hero {
+  background:
+    linear-gradient(120deg, rgba(24,32,48,0.65) 60%, rgba(40,60,90,0.35) 100%);
+  border: 1px solid rgba(80, 120, 180, 0.18);
+  border-radius: .7rem;
+  box-shadow: 0 8px 32px rgba(0,40,80,0.18), 0 0 0 1px rgba(80,120,180,0.10) inset;
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  padding: 3.2rem 1.2rem 1.8rem;
+  position: relative;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+:root.dark body {
+  background: linear-gradient(180deg, #10182a 0%, #1a2340 100%);
+}
+
 /* --------- NEW: N7 (Mass Effect-inspired) --------- */
 :root.n7 {
   --bg: #060b12;            /* deep space navy */
@@ -53,16 +77,18 @@
 
 /* --------- Époque theme --------- */
 :root.epoque {
-  --bg: #faf6eb;            /* parchment */
-  --text: #1f1a1a;          /* warm charcoal */
-  --muted: #6b5f59;
-  --card: #fffaf0;
-  --border: #b89b6a;        /* brass/gold line */
-  --accent: #1b2a41;        /* midnight */
-  --accent-contrast: #ffffff;
-  --link: #6e2f3a;          /* oxblood */
-  --gilding: #c9a86a;
-  --shadow-warm: rgba(50, 32, 21, 0.15);
+  --bg: #181c2b;            /* deep indigo night */
+  --text: #f7efe2;          /* parchment white */
+  --muted: #b6a98c;         /* antique gold-grey */
+  --card: #23263aee;        /* translucent marble/stone */
+  --border: #bfa76a;        /* gilded gold */
+  --accent: #e6c97b;        /* candlelight gold */
+  --accent-contrast: #181c2b;
+  --link: #7ea7e0;          /* faded royal blue */
+  --gilding: #e6c97b;       /* for lines and ornaments */
+  --shadow-warm: rgba(230, 201, 123, 0.08); /* candlelight shadow */
+  --epoque-blue: #2d3a5a;   /* for gradients or highlights */
+  --epoque-vignette: rgba(24, 28, 43, 0.85); /* vignette overlay */
 }
 
 /* --------- Base --------- */
@@ -92,12 +118,11 @@ a:hover { text-decoration: underline; }
   background-blend-mode: screen, screen, multiply, normal;
 }
 
-/* ===== Époque paper grain ===== */
+/* ===== Époque dramatic background ===== */
 :root.epoque body {
-  background-image:
-    radial-gradient(rgba(0,0,0,0.025) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(0,0,0,0.02), rgba(255,255,255,0.02));
-  background-size: 4px 4px, 100% 100%;
+  background:
+    radial-gradient(ellipse at 60% 0%, #23263a 0%, transparent 70%),
+    linear-gradient(180deg, #181c2b 0%, #23263a 100%);
 }
 
 .container { max-width: 980px; margin: 0 auto; padding: 0 1.2rem; }
@@ -149,24 +174,42 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 0 12px rgba(224,60,49,.35);
 }
 
-/* ===== Époque tweaks (kept) ===== */
-:root.epoque .header {
-  border-bottom: 0;
-  box-shadow: inset 0 -2px 0 var(--border), inset 0 -4px 0 color-mix(in oklab, var(--border) 60%, transparent);
+
+:root.epoque .hero {
+  position: relative;
+  background:
+    radial-gradient(120% 100% at 50% 20%, rgba(230,201,123,0.10), transparent 55%),
+    linear-gradient(180deg, rgba(46,58,90,0.22), rgba(24,28,43,0.92)),
+    var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: .7rem;
+  box-shadow: 0 16px 48px var(--shadow-warm), 0 0 0 2px var(--gilding) inset;
+  padding: 2.8rem 1.4rem 2.2rem;
+  overflow: hidden;
 }
-:root.epoque .brand {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 700;
+
+:root.epoque .hero::after {
+  content:"";
+  position:absolute; inset:0; pointer-events:none;
+  box-shadow: 0 0 120px 40px var(--epoque-vignette) inset;
+  border-radius: inherit;
+  opacity: 0.9;
+}
+
+:root.epoque .hero h1 {
+  position: relative;
+  padding-bottom: .5rem;
   color: var(--accent);
-  letter-spacing: .5px;
-}
-:root.epoque h1, :root.epoque h2, :root.epoque h3, :root.epoque .brand {
+  text-shadow: 0 2px 16px #181c2b, 0 1px 0 var(--gilding);
   font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: .04em;
 }
-:root.epoque .hero h1 { font-size: 2.25rem; letter-spacing: .4px; }
-:root.epoque .content p:first-of-type::first-letter {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 3.2rem; line-height: .8; float: left; padding-right: .3rem; color: var(--accent);
+
+:root.epoque .hero h1::after {
+  content:"";
+  display:block; height: 2px;
+  background: linear-gradient(to right, transparent, var(--gilding), transparent);
+  margin-top: .5rem; opacity: .85;
 }
 
 /* --------- Grid & Cards --------- */
@@ -265,7 +308,7 @@ input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
 
 /* --------- Époque hero embellishments (if you added them earlier) --------- */
 .ornament { display: none; margin: .4rem 0; }
-:root.epoque .ornament { display: flex; justify-content: center; color: var(--gilding); opacity: .9; }
+:root.epoque .ornament { display: none !important; }
 :root.epoque .vignette { position: relative; }
 :root.epoque .vignette::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
