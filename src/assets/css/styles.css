@@ -340,8 +340,8 @@ input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
   text-align: center;
   border-radius: .5rem;
   background:
-    linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0)) padding-box,
-    linear-gradient(180deg, rgba(201,168,106,0.25), rgba(201,168,106,0.06)) border-box;
+    linear-gradient(180deg, rgba(36,38,58,0.18) 0%, rgba(255,255,255,0.18) 60%, rgba(255,255,255,0) 100%) padding-box,
+    linear-gradient(180deg, rgba(201,168,106,0.18), rgba(201,168,106,0.06)) border-box;
   border: 2px solid var(--border);
   box-shadow:
     0 10px 28px var(--shadow-warm),
@@ -386,24 +386,51 @@ input:focus, select:focus, textarea:focus, .btn:focus, .theme-toggle:focus {
   transform: none;
 }
 
-.medium-btn {
-  display: inline-block;
-  padding: 0.6em 1.4em;
+/* Smaller, compact Medium button */
+/* Extra small, minimal Medium button */
+/* Extra tiny Medium button */
+/* Slightly larger, more readable Medium button */
+.btn-medium {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  padding: 0.22em 0.75em;
   font-weight: 600;
-  font-size: 1.05em;
-  border-radius: 2em;
+  font-size: 0.97em;
+  border-radius: 1.1em;
   border: none;
   background: var(--accent, #02b875);
   color: var(--accent-contrast, #fff);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
   text-decoration: none;
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-  margin: 1.2em 0;
+  margin: 0.38em 0;
 }
-.medium-btn:hover,
-.medium-btn:focus {
+.btn-medium:hover,
+.btn-medium:focus {
   background: var(--link, #02675a);
   color: var(--text, #fff);
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
   text-decoration: none;
+}
+
+.btn-medium__emoji {
+  font-size: 1rem;
+  line-height: 1;
+  transform: translateX(0);
+  transition: transform .15s ease;
+}
+
+/* Make the Medium button icon smaller for compact layout */
+.btn-medium__icon {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: middle;
+  flex-shrink: 0;
+  fill: currentColor;
+  opacity: 0.82;
+  transition: opacity 0.2s;
+}
+.btn-medium:hover .btn-medium__emoji {
+  transform: translateX(2px);
 }
