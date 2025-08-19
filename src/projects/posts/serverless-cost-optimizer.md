@@ -1,7 +1,7 @@
 ---
 layout: project.njk
-title: "NazliInTheCloud Website"
-description: "A personal website functioning as an online portfolio and blog "
+title: "My Website"
+description: "A personal website functioning as a professional online portfolio and blog "
 date: 2025-06-30
 repo: "https://github.com/naz26/nazliinthecloud"
 tags: ["aws", "github pages", "portfolio", "blogs", "route 53", "eleventy"]
